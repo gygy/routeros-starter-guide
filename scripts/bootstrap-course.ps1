@@ -1,7 +1,7 @@
 ﻿# One-shot scaffold: workspace docs tree + GitHub course tree
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
-$Course = Join-Path $Root "RouterOS入门与精通"
+$Course = $Root
 $Utf8 = New-Object System.Text.UTF8Encoding $false
 
 function Write-File([string]$Path, [string]$Content) {

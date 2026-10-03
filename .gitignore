@@ -1,4 +1,4 @@
-# 本地/编辑器
+﻿# 本地/编辑器
 .DS_Store
 Thumbs.db
 *.swp
@@ -13,3 +13,10 @@ Thumbs.db
 .env.*
 hub.credentials
 *.key
+*.pem
+id_rsa*
+
+# RouterOS 备份
+*.backup
+*.backup.rsc
+auto-before-reset.rsc

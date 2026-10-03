@@ -48,23 +48,16 @@ if ($status) {
 Invoke-Git push -u origin $Branch
 Write-Host "Pushed to origin/$Branch"
 
-# GitHub：只推送课程目录（工作区 docs/AGENTS/scripts 禁止上 GitHub）
+# GitHub：课程已在仓库根，与 origin 同一工作树（不要再 subtree 子目录）
 $github = & $git @GitConfig remote get-url github 2>$null
 if ($github) {
     $prevSsh = $env:GIT_SSH_COMMAND
     Remove-Item Env:GIT_SSH_COMMAND -ErrorAction SilentlyContinue
-    $prefix = "RouterOS入门与精通"
     try {
-        if (-not (Test-Path (Join-Path $Root $prefix))) {
-            throw "missing course prefix"
-        }
-        $split = & $git @GitConfig subtree split --prefix=$prefix $Branch
-        if ($LASTEXITCODE -ne 0 -or -not $split) { throw "git subtree split failed" }
-        Invoke-Git push github "${split}:refs/heads/$Branch"
-        Write-Host "Pushed course prefix to github/$Branch"
+        Invoke-Git push -u github $Branch
+        Write-Host "Pushed to github/$Branch"
     } catch {
         Write-Host "GitHub push skipped: $($_.Exception.Message)"
-        Write-Host "Do not push the workspace root to GitHub."
     } finally {
         if ($prevSsh) { $env:GIT_SSH_COMMAND = $prevSsh }
     }

@@ -15,11 +15,11 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：打开工具
+## 第1步：打开 Torch
 
 WinBox：`Tools → Torch`
 
-动作：按界面填写目标/接口后 Start；也可用右侧 CLI。
+动作：Interface 选 bridge 后 Start。
 
 ![第1步](images/01-torch.png)
 
@@ -27,21 +27,21 @@ WinBox：`Tools → Torch`
 /tool/torch interface=bridge
 ```
 
-## 第2步：用终端核对
+## 第2步：对照接口
 
-WinBox：`New Terminal`
+WinBox：`Interfaces`
 
-动作：执行同名工具命令看结果。
+动作：流量大的口再 Torch。
 
 ![第2步](images/02-cli.png)
 
 ```routeros
-/tool/torch interface=bridge
+/interface/print stats
 ```
 
 ## 检查
 
-WinBox：有回复或有流量输出
+WinBox：有实时会话/速率
 
 ```routeros
 /tool/torch interface=bridge
@@ -49,4 +49,4 @@ WinBox：有回复或有流量输出
 
 ## 常见问题
 
-先确认自己管理口别抓错。
+别在生产高峰长时间跑。

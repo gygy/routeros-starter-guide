@@ -2,39 +2,55 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[IPsec](https://help.mikrotik.com/docs/spaces/ROS/pages/377798671/IPsec)
+> 官方依据：[IPsec](https://help.mikrotik.com/docs/spaces/ROS/pages/121012236/IPsec)
 
 ## 目的
 
-Windows 内置 VPN 连 IKEv2。
+在路由器侧核对 IPsec 策略/对端。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+- 对端示例：`203.0.113.60`（TEST-NET）
 
-## 第1步：确认策略
 
-WinBox：`IP → IPsec → Policies`
+## 第1步：打开 IPsec
 
-动作：服务器侧策略/Identity 已就绪后再连 Windows。
+WinBox：`IP → IPsec`
+
+动作：看 Peers/Policies。
 
 ![第1步](images/01-ike-win.png)
 
 ```routeros
-/ip/ipsec/identity/print
+/ip/ipsec/peer/print
+```
+
+## 第2步：看 Active Peers / SA
+
+WinBox：`IP → IPsec → Active Peers`
+
+动作：连上后这里会有 SA。
+
+![第2步](images/02-sa.png)
+
+```routeros
+/ip/ipsec/active-peers/print
+/ip/ipsec/installed-sa/print
 ```
 
 ## 检查
 
-WinBox：Windows 能访问内网
+WinBox：有 Peer 配置；连通后有 SA
 
 ```routeros
-/ip/ipsec/active-peers/print
+/ip/ipsec/peer/print
+/ip/ipsec/installed-sa/print
 ```
 
 ## 常见问题
 
-服务器证书 CN 要匹配连接主机名。
+证书与预共享密钥勿写入文档。

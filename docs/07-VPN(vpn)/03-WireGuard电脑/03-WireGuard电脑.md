@@ -6,30 +6,45 @@
 
 ## 目的
 
-电脑 Peer 与手机同理。
+电脑连回家。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+- Endpoint 示例：`203.0.113.50:13231`（TEST-NET）
+- 公钥示例：`BASE64PUBLICKEY=======`
 
-## 第1步：加电脑 Peer
 
-WinBox：`WireGuard → Peers → +`
+## 第1步：核对服务端
 
-动作：Allowed Address=10.10.10.3/32。
+WinBox：`WireGuard`
+
+动作：wg-demo Running，有 Listen Port。
 
 ![第1步](images/01-电脑.png)
 
 ```routeros
-/interface/wireguard/peers/add interface=wg-demo public-key="PC_PUBLIC_KEY" allowed-address=10.10.10.3/32
+/interface/wireguard/print
+```
+
+## 第2步：添加/核对 Peer
+
+WinBox：`WireGuard → Peers`
+
+动作：Public Key、Allowed Address、Endpoint 按对端填写（勿写真实私钥）。
+
+![第2步](images/02-peer.png)
+
+```routeros
+/interface/wireguard/peers/print
 ```
 
 ## 检查
 
-WinBox：电脑能访问家里网段（需放行）
+WinBox：Peer 有握手或能 ping 隧道地址
 
 ```routeros
 /interface/wireguard/peers/print
@@ -37,4 +52,4 @@ WinBox：电脑能访问家里网段（需放行）
 
 ## 常见问题
 
-Allowed Address 别写错。
+电脑防火墙放行 UDP。

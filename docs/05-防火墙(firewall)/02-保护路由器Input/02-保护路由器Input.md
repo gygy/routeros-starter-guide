@@ -43,7 +43,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 WinBox：`IP → Firewall → Filter Rules`
 
-动作：可再加 connection-state=established,related（按你环境）。
+动作：connection-state=established,related。
 
 ![第3步](images/03-lan.png)
 

@@ -19,7 +19,7 @@
 
 WinBox：`Bridge → +`
 
-动作：Name=bridge，Comment=lab-demo。901 已有 Running 的 bridge。
+动作：Name=bridge，Comment=lab-demo。
 
 ![第1步](images/01-建桥.png)
 

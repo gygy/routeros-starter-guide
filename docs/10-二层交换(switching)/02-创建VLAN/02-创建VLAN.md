@@ -2,51 +2,51 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
+> 官方依据：[Bridge VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
 
 ## 目的
 
-在 bridge 上建 vlan10。
+在 Bridge 上建 VLAN。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：添加 VLAN 接口
+## 第1步：打开 Bridge VLANs
 
-WinBox：`Interfaces → VLAN → +`
+WinBox：`Bridge → VLANs`
 
-动作：Name=vlan10，VLAN ID=10，Interface=bridge。901 已实配。
+动作：准备添加条目。
 
-![第1步](images/01-加vlan.png)
+![第1步](images/01-filtering.png)
 
 ```routeros
-/interface/vlan/add name=vlan10 vlan-id=10 interface=bridge
+/interface/bridge/vlan/print
 ```
 
-## 第2步：（可选）开 filtering
+## 第2步：添加 VLAN
 
-WinBox：`Bridge → 双击 bridge`
+WinBox：`Bridge → VLANs → +`
 
-动作：VLAN Filtering 勾选前先配好 tagged/untagged，防锁死。
+动作：vlan-ids=10，tagged/untagged 按拓扑填。
 
-![第2步](images/02-filtering.png)
+![第2步](images/02-加vlan.png)
 
 ```routeros
-/interface/bridge/set bridge vlan-filtering=yes
+/interface/bridge/vlan/add bridge=bridge vlan-ids=10 tagged=bridge
 ```
 
 ## 检查
 
-WinBox：Interfaces 有 vlan10
+WinBox：VLAN 表有 10
 
 ```routeros
-/interface/vlan/print
+/interface/bridge/vlan/print
 ```
 
 ## 常见问题
 
-远程改 filtering 要小心。
+bridge 自身常要 tagged。

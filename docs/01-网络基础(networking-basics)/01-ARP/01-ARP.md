@@ -27,6 +27,18 @@ WinBox：`IP → ARP`
 /ip/arp/print
 ```
 
+## 第2步：刷新观察
+
+WinBox：`IP → ARP`
+
+动作：内网通信后会出现动态条目。
+
+![第2步](images/02-刷新.png)
+
+```routeros
+/ip/arp/print where dynamic
+```
+
 ## 检查
 
 WinBox：能看到邻居或为空（刚开机）

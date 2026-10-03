@@ -15,11 +15,11 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：打开工具
+## 第1步：打开 Ping
 
 WinBox：`Tools → Ping`
 
-动作：按界面填写目标/接口后 Start；也可用右侧 CLI。
+动作：Address 填 1.1.1.1，Start。
 
 ![第1步](images/01-ping.png)
 
@@ -27,11 +27,11 @@ WinBox：`Tools → Ping`
 /ping 1.1.1.1 count=4
 ```
 
-## 第2步：用终端核对
+## 第2步：终端核对
 
 WinBox：`New Terminal`
 
-动作：执行同名工具命令看结果。
+动作：执行同样 ping。
 
 ![第2步](images/02-cli.png)
 
@@ -41,7 +41,7 @@ WinBox：`New Terminal`
 
 ## 检查
 
-WinBox：有回复或有流量输出
+WinBox：有回复
 
 ```routeros
 /ping 1.1.1.1 count=4
@@ -49,4 +49,4 @@ WinBox：有回复或有流量输出
 
 ## 常见问题
 
-先确认自己管理口别抓错。
+先确认自己有默认路由。

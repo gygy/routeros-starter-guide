@@ -31,7 +31,7 @@ WinBox：`IP → Firewall → NAT`
 
 WinBox：`IP → Firewall → NAT → +`
 
-动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。901 已实配。
+动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。
 
 ![第2步](images/02-添加.png)
 

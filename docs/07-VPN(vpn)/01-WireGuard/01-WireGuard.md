@@ -19,7 +19,7 @@
 
 WinBox：`WireGuard → +`
 
-动作：Name=wg-demo，Listen Port=13231。901 已实配且 Running。
+动作：Name=wg-demo，Listen Port=13231。
 
 ![第1步](images/01-wg.png)
 
@@ -43,7 +43,7 @@ WinBox：`IP → Addresses → +`
 
 WinBox：`WireGuard → Peers`
 
-动作：准备添加手机/电脑 Peer；公钥用占位符，勿把真实私钥写进文档。
+动作：准备添加手机/电脑 Peer；公钥用占位符。
 
 ![第3步](images/03-peer.png)
 
@@ -62,4 +62,4 @@ WinBox：wg-demo 为 R
 
 ## 常见问题
 
-光猫要转发 UDP 13231；Peer 公钥各自生成。
+光猫要转发 UDP 13231。

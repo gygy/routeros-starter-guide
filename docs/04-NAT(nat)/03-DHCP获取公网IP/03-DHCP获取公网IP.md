@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[DHCP Client](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
+> 官方依据：[DHCP Client](https://help.mikrotik.com/docs/spaces/ROS/pages/24805389/DHCP)
 
 ## 目的
 
-光猫桥接后 WAN 用 DHCP。
+WAN 口 DHCP 拿公网/上联地址。
 
 ## 网络
 
@@ -15,26 +15,40 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：WAN DHCP Client
+## 第1步：打开 DHCP Client
 
-WinBox：`IP → DHCP Client → +`
+WinBox：`IP → DHCP Client`
 
-动作：Interface=ether1，Add Default Route=yes。
+动作：Interface 选 WAN 口。
 
 ![第1步](images/01-WANDHCP.png)
-
-```routeros
-/ip/dhcp-client/add interface=ether1 add-default-route=yes
-```
-
-## 检查
-
-WinBox：状态 bound
 
 ```routeros
 /ip/dhcp-client/print
 ```
 
+## 第2步：确认地址与路由
+
+WinBox：`IP → Addresses / Routes`
+
+动作：动态地址出现，且有默认路由。
+
+![第2步](images/02-路由.png)
+
+```routeros
+/ip/dhcp-client/print
+/ip/route/print where dst-address=0.0.0.0/0
+```
+
+## 检查
+
+WinBox：Client bound 且有默认路由
+
+```routeros
+/ip/dhcp-client/print
+/ip/route/print where dst-address=0.0.0.0/0
+```
+
 ## 常见问题
 
-拿到地址后再配 masquerade。
+与静态 WAN / PPPoE 不要叠三套。

@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Upgrading](https://help.mikrotik.com/docs/spaces/ROS/pages/18972686/Upgrading+and+installation)
+> 官方依据：[Packages](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Packages)
 
 ## 目的
 
-确认当前包版本，再决定是否升级。
+查看当前版本与软件包。
 
 ## 网络
 
@@ -15,11 +15,11 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：查看 Packages
+## 第1步：打开 Packages
 
 WinBox：`System → Packages`
 
-动作：看 routeros 版本号。升级前先备份。
+动作：看当前版本与已装包。
 
 ![第1步](images/01-Packages.png)
 
@@ -27,14 +27,27 @@ WinBox：`System → Packages`
 /system/package/print
 ```
 
-## 检查
+## 第2步：核对版本
 
-WinBox：System → Packages
+WinBox：`System → Resources`
+
+动作：Version 与 Packages 一致。
+
+![第2步](images/02-版本.png)
 
 ```routeros
 /system/resource/print
 ```
 
+## 检查
+
+WinBox：版本号可读
+
+```routeros
+/system/package/print
+/system/resource/print
+```
+
 ## 常见问题
 
-x86 Demo 许可功能有限；生产机选维护窗口升级。
+升级前先备份；生产选 long-term/stable。

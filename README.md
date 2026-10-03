@@ -2,7 +2,7 @@
 
 > 从家庭上网到企业/ISP。主线 **RouterOS v7**。目录按**家里最常用的功能**往前排。
 
-**第一周先动手。** 首页只推荐能跟着做的材料；其余仍是提纲，见 [COURSE-TREE.md](COURSE-TREE.md)。
+**第一周先动手。** 首页只推荐能跟着做的材料；全书实战课表见 [docs/实战课表.md](docs/实战课表.md)，文件清单见 [COURSE-TREE.md](COURSE-TREE.md)。
 
 ## 本周只看这些
 
@@ -46,7 +46,7 @@
 - 课程索引：[docs/README.md](docs/README.md)
 - **实战短课文总表：** [docs/实战课表.md](docs/实战课表.md)
 - 实验索引：[labs/README.md](labs/README.md)
-- 术语：[glossary/networking.md](glossary/networking.md)
+- 已完成清单：[COURSE-TREE.md](COURSE-TREE.md)
 
 ---
 
@@ -59,7 +59,7 @@
 | `scripts/00-backup/` | 备份脚本，不是开局包 |
 | `cheatsheets/` | 做过实验，需要查命令 |
 | `automation/` | REST / Python / Ansible / Terraform |
-| `topologies/` `diagrams/` | 画大图时 |
+| `diagrams/` | 画大图时 |
 | `migration/` | 从 v6 升上来时 |
 | `images/` | 新截图按课存放 |
 

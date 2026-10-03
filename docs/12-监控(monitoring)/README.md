@@ -1,19 +1,15 @@
-# 12 监控
+# 12-监控(monitoring)
 
-日志和 Torch 排障常用；平台后做。
-
-对应 Lab：16
-
-课文状态：**可跟做** = 第一周能照着做；**提纲** = 已建文件、正文待写。首页只推荐「可跟做」。
+本章可跟做的实战课文（WinBox 逐步 + CLI）。
 
 | 课文 | 状态 |
 | --- | --- |
-| [logging](00-logging.md) | 提纲 |
-| [torch](01-torch.md) | 提纲 |
-| [netwatch](02-netwatch.md) | 提纲 |
-| [snmp](03-snmp.md) | 提纲 |
-| [profiler](04-profiler.md) | 提纲 |
-| [traffic-flow](05-traffic-flow.md) | 提纲 |
-| [monitoring-platform](06-monitoring-platform.md) | 提纲 |
+| [Ping](01-Ping/01-Ping.md) | 可跟做 |
+| [Traceroute](02-Traceroute/02-Traceroute.md) | 可跟做 |
+| [Torch](03-Torch/03-Torch.md) | 可跟做 |
+| [抓包](04-抓包/04-抓包.md) | 可跟做 |
+| [查看连接](05-查看连接/05-查看连接.md) | 可跟做 |
+| [查看 CPU 内存](06-查看CPU内存/06-查看CPU内存.md) | 可跟做 |
+| [查看日志](07-查看日志/07-查看日志.md) | 可跟做 |
 
-完整地图见仓库根 [COURSE-TREE.md](../../COURSE-TREE.md)。
+实战总表：[实战课表.md](../实战课表.md)

@@ -30,4 +30,4 @@
 | [19 MPLS](<19-MPLS(mpls)/README.md>) | 跳过 |
 | [20 高级](<20-高级(advanced)/README.md>) | 企业/ISP |
 
-全文文件名与难度：[COURSE-TREE.md](../COURSE-TREE.md)。
+已完成课文清单：[COURSE-TREE.md](../COURSE-TREE.md) · [实战课表.md](实战课表.md)。

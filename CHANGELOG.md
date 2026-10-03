@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 删除全部「待写」14 节原理提纲（163 篇）及空壳 topologies/glossary/labs troubleshooting；只保留可跟做实战课文；同步各章 README 与 COURSE-TREE。
 - 实战课文复检清零：72 课结构/CLI/配图齐全，高优先级问题 0；每课配图唯一戳记，Identity 用真机对话框，NAT/Routes/Filter 等用已验证真窗。
 - cookbook 对照课（双 WAN/WG 远程/排错/两地 IPsec、pppoe-dial）补齐两步并脱敏。
 - 在 x86/901 实配验证实战课表：Identity=R1、bridge/LAN/DHCP/DNS、NAT、Filter、WireGuard、VLAN、备份与服务收紧；课文按实配重写并换真机图。

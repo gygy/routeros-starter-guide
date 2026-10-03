@@ -1,3 +1,0 @@
-# 缩写
-
-OSPF、BGP、VRF、VRRP、RPKI、MPLS、VTEP……（待写）

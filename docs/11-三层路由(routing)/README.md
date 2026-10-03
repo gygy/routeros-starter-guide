@@ -1,22 +1,13 @@
-# 11 三层路由
+# 11-三层路由(routing)
 
-默认路由日常会碰到; 策略路由、VRF 较少。
-
-对应 Lab：10, 07
-
-课文状态：**可跟做** = 第一周能照着做；**提纲** = 已建文件、正文待写。首页只推荐「可跟做」。
+本章可跟做的实战课文（WinBox 逐步 + CLI）。
 
 | 课文 | 状态 |
 | --- | --- |
-| [routing-basics](00-routing-basics.md) | 提纲 |
-| [default-route](01-default-route.md) | 提纲 |
-| [static-route](02-static-route.md) | 提纲 |
-| [routing-table](03-routing-table.md) | 提纲 |
-| [route-selection](04-route-selection.md) | 提纲 |
-| [ecmp](05-ecmp.md) | 提纲 |
-| [policy-routing](06-policy-routing.md) | 提纲 |
-| [recursive-route](07-recursive-route.md) | 提纲 |
-| [routing-rule](08-routing-rule.md) | 提纲 |
-| [vrf](09-vrf.md) | 提纲 |
+| [查看路由表](01-查看路由表/01-查看路由表.md) | 可跟做 |
+| [添加静态路由](02-添加静态路由/02-添加静态路由.md) | 可跟做 |
+| [默认路由](03-默认路由/03-默认路由.md) | 可跟做 |
+| [策略路由](04-策略路由/04-策略路由.md) | 可跟做 |
+| [多路由表](05-多路由表/05-多路由表.md) | 可跟做 |
 
-完整地图见仓库根 [COURSE-TREE.md](../../COURSE-TREE.md)。
+实战总表：[实战课表.md](../实战课表.md)

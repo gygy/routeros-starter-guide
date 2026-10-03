@@ -1,143 +1,124 @@
 ---
 name: ros-beginner-tutorial
 description: >-
-  为 MikroTik RouterOS 写「照着 WinBox 就能做完」的实战课文（简体中文，v7）。
-  固定七段：目的、网络、逐步 WinBox（每步一张截图）、对应命令、检查、排错。
-  不是参数百科。Use when the user asks for RouterOS/WinBox 新手教程、实战配置、
-  操作步骤配图, or /ros-beginner-tutorial.
+  为 MikroTik RouterOS 写简短实战课文（简体中文，v7）。输出到课程仓。
+  每步：真机 WinBox 截图 → 操作 → 本步 CLI → 验证。禁止 AI 生成图、禁止把实验机密码写入教程。
+  Use when RouterOS/WinBox 新手教程、实战配置、操作配图, or /ros-beginner-tutorial.
 ---
 
 # RouterOS 实战配置教程
 
-写 **照着操作就能完成配置** 的 RouterOS 课文。不是 MikroTik 官方手册那种参数百科。
+写 **短、直说步骤、照着就能配完** 的课文。不是参数百科。
 
-默认：**RouterOS 7.x** + **WinBox 3**（界面英文，说明用中文）。  
-官方说明 WinBox 操作与 CLI 基本对应，因此固定顺序是 **WinBox → 截图 → 动作 → 文末完整命令 → 验证**。依据：[WinBox](https://help.mikrotik.com/docs/spaces/ROS/pages/328129/WinBox)。
+默认：**RouterOS 7.x** + **WinBox 3**（界面英文，说明中文）。  
+结构固定：**WinBox 截图 → 操作 → 本步命令 → 验证**。依据：[WinBox](https://help.mikrotik.com/docs/spaces/ROS/pages/328129/WinBox)。
+
+## 输出目录
+
+只写到：`G:\gitea\RouterOS入门与精通\`  
+一课一个子目录，见 [reference.md](reference.md)。禁止仓库根再建 `RouterOS教程/`。
+
+## 实验机（只给 Agent 连，禁止写入教程）
+
+连接信息只读本机 **`lab-env.local.md`**（与本技能同目录，已 gitignore）。没有该文件则先按 `lab-env.example.md` 复制再填。
+
+- 环境：PVE 上的 x86 虚拟机 **VMID 901**（RouterOS x86）
+- 教程里登录账号写 `admin`；**真实密码、真实管理 IP、个人昵称一律不准出现在 md / 图 / .rsc**
+- 教程密码位只写 `********`，并写「填你自己的管理员密码」
+- 登录类截图：密码框必须是空的或圆点，不得露出明文
+
+终端：用 SSH/`New Terminal` 对 **901** 执行本步命令，核对与 WinBox 一致。
 
 ## 硬性要求
 
-1. 先查 [help.mikrotik.com](https://help.mikrotik.com/docs/spaces/ROS/overview)，禁止凭记忆编菜单名/参数。Wiki 只作补充。
-2. **一步一个明确动作**；**每一步一张 WinBox 截图**。不要「如图」却不写路径。
-3. **WinBox 与 CLI 必须同一结果**。禁止 WinBox 讲一套、命令另一套。
-4. 课文固定 **7 块**（步骤块内部可以有第 1…N 步，不要再加原理/Packet Flow/企业案例等章节）。
-5. 适用版本写死：`适用版本：RouterOS 7.x` · `管理工具：WinBox`。Routing / Firewall / NAT / IPsec / WireGuard / Policy Routing 一律按 v7。
-6. 隐私：账号密码用 `admin` / `ISP_USER` / `ISP_PASS`；MAC 用 `00:11:22:33:44:55`；公网 IP 用 TEST-NET；禁止个人昵称。截图脱敏 + 水印规则见课程仓 `CONTRIBUTING.md`。
-
-菜单对照、课表映射、截图 prompt 见 [reference.md](reference.md)。成品骨架见 [examples.md](examples.md)。
+1. 菜单/参数先查 [help.mikrotik.com](https://help.mikrotik.com/docs/spaces/ROS/overview)，禁止瞎编。
+2. **每一步**：一张 **真机 WinBox 截图** + 点击/填写 + **这一步的 CLI**。不许「如图」不写路径。
+3. WinBox 与 CLI 同一结果。
+4. 课文短：只有目的、网络、逐步操作、检查。不要原理、Packet Flow、企业案例。
+5. 文首：`适用版本：RouterOS 7.x` · `管理工具：WinBox`。路由/防火墙/NAT/IPsec/WireGuard 按 v7。
+6. 脱敏：MAC `00:11:22:33:44:55`；公网 TEST-NET；身份示例 `R1`。截图打水印，见课程仓 `CONTRIBUTING.md`、`automation/protect-media.ps1`。
 
 ## 何时使用
 
-用户提到：RouterOS / ROS / MikroTik / WinBox 新手教程、实战配置、操作步骤、对照命令、要配截图，或调用 `/ros-beginner-tutorial`。
+RouterOS / WinBox 新手教程、实战配置、要配图，或 `/ros-beginner-tutorial`。
 
 ## 工作流程
 
 ```
-- [ ] 1. 锁定一课一个功能（例如「DHCP 服务器」）；默认 ROS 7、家用网关
-- [ ] 2. WebSearch + WebFetch 官方文档；记下准确 URL
-- [ ] 3. 拆成可单独执行的 WinBox 步骤（建议 3～8 步，最多 12）
-- [ ] 4. 每步写出：路径、点击、填写字段（与官方核对）
-- [ ] 5. 每步生成 1 张 WinBox 截图（真机优先，否则 GenerateImage）
-- [ ] 6. 文末写与上述步骤一一对应的完整 CLI + 检查命令
-- [ ] 7. 按七段模板落盘；自检
+- [ ] 1. 一课一个功能；读 lab-env.local.md，连上 901 的 WinBox 和终端
+- [ ] 2. WebFetch 官方文档，记下 URL
+- [ ] 3. 拆成 3～8 步（最多 12），一步一个动作
+- [ ] 4. 在真机 WinBox 做出该步 → 截 WinBox 窗口（禁止 GenerateImage 充数）
+- [ ] 5. 脱敏 + 水印，存入本课 images/
+- [ ] 6. 写下 WinBox 路径、动作、本步 CLI
+- [ ] 7. 终端执行检查命令，写入「检查」
 ```
 
-未指定主题时，按 [reference.md](reference.md) 课表从前往后写，一次只写用户点名的一课。
+连不上 901 或截不到真机 WinBox：**停写课文**，说明缺什么。禁止用 AI 假界面凑图。
 
-## 课文固定 7 块（不要写多）
+未点名主题时，按 reference 课表一次只写一课。
 
-```text
-1. 目的
-2. 网络（参数）
-3. 第 1 步 … 第 N 步（每步：WinBox 路径 + 动作 + 一张截图）
-4. 对应命令（整段可复制，与上面每步对应）
-5. 检查（WinBox 看哪里 + 等价 print）
-6. 测试（如 ping；可并入检查，但必须有）
-7. 常见问题（排错命令，针对做不成的情况）
-```
-
-文首另加一行官方依据（不算第 8 块科普）。
-
-每课开头：
+## 课文结构（短）
 
 ```markdown
 # {功能名}
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[页面标题](完整URL)
+> 官方依据：[标题](URL)
+
+## 目的
+（一句话）
+
+## 网络
+- 地址/接口（示例网段，不是实验机真实公网）
+
+## 第N步：{动词}
+WinBox：`菜单 → 窗口`
+动作：点什么、填什么
+![第N步](images/01-….png)
+命令：
+\`\`\`routeros
+/ip/address/add ...
+\`\`\`
+
+## 检查
+WinBox 看哪里。
+\`\`\`routeros
+/ip/address/print
+\`\`\`
 ```
 
-## 每一步（只做一件事）
+「检查」里可含 ping。常见失败最多 3 条命令，不要展开成手册。
 
-```markdown
-## 第N步：{动词 + 对象}
+## 截图（必须真机）
 
-WinBox：
+- 截 **本机已打开、已登录 901** 的 WinBox 窗口（computer-use / 系统截图 / 用户提供的真机图）。
+- **禁止** `GenerateImage`、禁止网图、禁止用 WebFig 顶替（除非用户点名 WebFig 课）。
+- 文件名：`images/01-打开DHCP.png`（basename 两位序号 + 短中文）。
+- 图上不能出现：真实密码、个人昵称、真实公网 IP、真实 MAC。出现了先打码再入库。
 
-`{左侧树} → {窗口} → {按钮/页签}`
+## 命令
 
-点击 / 填写：
+- RouterOS 7 路径式：`/ip/address/add ...`
+- 未指定网段用 `192.168.88.0/24`；`ether1`=WAN，`bridge`=LAN，注明改成读者自己的口。
+- 危险操作（reset、drop all）单独成步并写恢复办法。
 
-- `{字段}`：`{值}`
+## 落盘后
 
-![第N步](images/{两位序号}-{短中文}.png)
-```
+- 更新该章 `README.md`（可跟做）
+- **不要**把 `lab-env.local.md` 拷进课程仓
+- 不要擅自 commit / 不要把密码写进 git-sync 日志
 
-禁止：一步里堆互不相关的配置；只给命令不给 WinBox；WinBox 与文末 CLI 字段不一致。
+不要在对话里贴大图；课文用相对路径引用即可。
 
-## 对应命令
-
-全部步骤做完后，用 **一个** `routeros` 代码块给出等价配置（RouterOS 7 路径式，如 `/ip/address/add`）。  
-检查用 `print` / `monitor`，不要把检查命令混进「对应命令」里冒充配置。
-
-## 截图
-
-- **每步 1 张 WinBox 图**，不可省。不要用代码块代替截图。
-- 默认不给逐步 CLI 截图（命令集中在文末）。用户明确要求逐步 CLI 图时再补。
-- 必须调用 `GenerateImage`（无真机时）。`filename` 只用 basename。
-- 真机：用户要求且已开 WinBox 时，优先实机截取。
-
-落盘（一课一个目录，图不堆在总 images 里）：
-
-```text
-docs/{章目录}/{课号}-{课名}/
-  ├─ {课号}-{课名}.md
-  └─ images/
-      ├─ 01-{本步动作}.png
-      ├─ 02-{本步动作}.png
-      └─ …
-```
-
-章目录必须落在课程仓已有章节里（见 reference 映射表）。**禁止**在仓库根再建 `RouterOS教程/` 或九段研发目录。
-
-比例 `16:9`。画面能读清菜单和字段。英文 WinBox，图下中文说明。红框只标 1～2 处点击目标。Prompt 见 [reference.md](reference.md)。
-
-## 命令规范
-
-- RouterOS 7 路径式 CLI。可附等效短命令，不得只写 v6 路由语法。
-- 未指定网段时用官方默认思路 `192.168.88.0/24`；用户指定则用用户的（如 `192.168.80.0/24`）。
-- 接口示例：`ether1` = WAN，`bridge` = LAN，文中写「改成你的接口名」。
-- 危险操作（reset、drop all、Netinstall）单独成步，并写恢复方法。
-
-## 交付物
-
-课程仓：`G:\gitea\RouterOS入门与精通\`
-
-- 按上一节目录写入 `.md` + `images/`
-- 更新该章 `README.md` 与仓库根需要指向「可跟做」的链接
-- 写完一课再执行 `scripts\git-sync.ps1`（仅当用户要同步远程时；默认先落盘，**不要擅自 commit**，除非用户明确要求）
-
-不要在对话里只丢命令。不要在聊天里再用 Markdown 贴一遍生成的原图；**课文里必须引用相对路径**。
-
-技能正本：`C:\gitea\AIsync\skills\ros-beginner-tutorial`（本机 Cursor/Codex/Agents 技能目录指向它）。
+技能正本：`C:\gitea\AIsync\skills\ros-beginner-tutorial`
 
 ## 自检
 
-- [ ] 只有七块结构，没有参数百科章节
-- [ ] 每步一张 WinBox 图，路径可点击复现
-- [ ] 文末 CLI 与 WinBox 字段一一对应
-- [ ] 有检查 / 测试 / 常见问题
-- [ ] 文首有 help.mikrotik.com 链接
-- [ ] 未把 Wiki 当唯一依据
-- [ ] 未跳过截图「以后再补」
-- [ ] 未在仓库根新建平行教程树
+- [ ] 输出只在课程仓对应章目录
+- [ ] 每步真机 WinBox 图 + 操作 + 本步命令
+- [ ] 教程/图中无实验机密码、无个人昵称、无真实公网/MAC
+- [ ] 短：无百科章节
+- [ ] 文首有官方链接
+- [ ] 未用 AI 生成图凑数

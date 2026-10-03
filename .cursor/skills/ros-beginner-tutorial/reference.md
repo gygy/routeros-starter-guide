@@ -103,33 +103,21 @@ docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
 
 对话框：添加用工具栏 `+`，保存 `Apply`/`OK`。
 
-## WinBox 截图 Prompt
+## 真机 WinBox 截图
 
-`GenerateImage`，`aspect_ratio`: `16:9`，`filename`: `{两位}-{短中文}.png`（不要路径）。
+禁止 AI 生成图。流程：
 
-```
-Photorealistic screenshot of MikroTik WinBox 3 on Windows desktop.
-Classic WinBox UI: dark gray title bar "Winbox ... 192.168.88.1 (admin)",
-left navigation tree (Neighbors, Interfaces, Bridge, IP, Routing, System).
-Highlighted left-tree item: {tree-path}.
-Right pane English labels. Visible fields exactly: {fields-and-values}.
-A red rectangle highlighting {click-target} only (one or two controls).
-No real public IP, no personal nicknames, MAC if shown is 00:11:22:33:44:55.
-Sharp UI text, 16:9, authentic WinBox 3 (not WinBox 4 fluent, not WebFig unless requested).
-```
+1. 读 `lab-env.local.md`，用 WinBox 登录 VM 901（密码不进教程）。
+2. 做到该步画面，截 **WinBox 窗口**。
+3. 检查图中无明文密码、个人昵称、真实公网 IP、真实 MAC；有则打码。
+4. `automation/protect-media.ps1` 打水印。
+5. 存到本课 `images/01-短中文.png`。
 
-`{tree-path}` 示例：`IP > DHCP Server`。  
-`{fields-and-values}` 必须是本步真实值。
-
-生成后拷到该课 `images/`，Markdown 用 `images/01-打开DHCP.png`。
-
-## 真机截图
-
-用户明确要求且本机/SSH 已开：优先实机。仍按 `01-….png` 命名写入该课 `images/`。打学习用水印，脱敏。
+截不到真机就停，不要用 GenerateImage 顶替。
 
 ## 文风
 
-- 称呼「你」。术语中英并列一次。
+- 直说步骤，少解释。
 - 步骤标题用动词。
 - 不写「众所周知」「轻松掌握」。
-- 不把一课写成全部参数列表。
+- 不把一课写成参数列表。

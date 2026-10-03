@@ -1,3 +1,4 @@
+> 已迁入 cookbook（家庭场景）。后续将按 docs 14 节模板改写，并与 Lab 06 NAT 对齐。
 # PPPoE 拨号上网
 
 > 官方依据（RouterOS 7）：

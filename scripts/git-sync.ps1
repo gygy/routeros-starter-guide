@@ -43,16 +43,23 @@ if ($status) {
 Invoke-Git push -u origin $Branch
 Write-Host "Pushed to origin/$Branch"
 
-# GitHub 用本机默认 SSH（gygy），不要沿用 Gitea 的 8022 密钥
+# GitHub：只推送课程目录 RouterOS入门与精通/（工作区 docs/AGENTS/scripts 禁止上 GitHub）
 $github = & $git @GitConfig remote get-url github 2>$null
 if ($github) {
     $prevSsh = $env:GIT_SSH_COMMAND
     Remove-Item Env:GIT_SSH_COMMAND -ErrorAction SilentlyContinue
+    $prefix = "RouterOS入门与精通"
     try {
-        Invoke-Git push -u github $Branch
-        Write-Host "Pushed to github/$Branch"
+        if (-not (Test-Path (Join-Path $Root $prefix))) {
+            throw "missing course prefix $prefix"
+        }
+        $split = & $git @GitConfig subtree split --prefix=$prefix $Branch
+        if ($LASTEXITCODE -ne 0 -or -not $split) { throw "git subtree split failed" }
+        Invoke-Git push github "${split}:refs/heads/$Branch"
+        Write-Host "Pushed course prefix '$prefix' to github/$Branch"
     } catch {
-        Write-Host "GitHub push skipped. Create empty repo gygy/routeros-from-zero-to-pro then retry."
+        Write-Host "GitHub push skipped: $($_.Exception.Message)"
+        Write-Host "Create empty GitHub repo then retry. Do not push the workspace root."
     } finally {
         if ($prevSsh) { $env:GIT_SSH_COMMAND = $prevSsh }
     }

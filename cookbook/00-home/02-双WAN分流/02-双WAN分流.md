@@ -24,8 +24,19 @@ WinBox：`IP → Routes`
 ![第1步](images/01-分流.png)
 
 ```routeros
-/ip/route/add dst-address=0.0.0.0/0 gateway=pppoe-out1 distance=1
-/ip/route/add dst-address=0.0.0.0/0 gateway=ether2 distance=2
+/ip/route/print where dst-address=0.0.0.0/0
+```
+
+## 第2步：核对 Active
+
+WinBox：`IP → Routes`
+
+动作：主线带 A；断主线后备线应升为 Active。
+
+![第2步](images/02-核对.png)
+
+```routeros
+/ip/route/add dst-address=0.0.0.0/0 gateway=ether2 distance=2 check-gateway=ping
 ```
 
 ## 检查
@@ -38,4 +49,4 @@ WinBox：主线 Active
 
 ## 常见问题
 
-每条 WAN 都要 NAT。
+两条线各自要有 NAT。

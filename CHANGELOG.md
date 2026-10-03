@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- 实战课文复检清零：72 课结构/CLI/配图齐全，高优先级问题 0；每课配图唯一戳记，Identity 用真机对话框，NAT/Routes/Filter 等用已验证真窗。
+- cookbook 对照课（双 WAN/WG 远程/排错/两地 IPsec、pppoe-dial）补齐两步并脱敏。
 - 在 x86/901 实配验证实战课表：Identity=R1、bridge/LAN/DHCP/DNS、NAT、Filter、WireGuard、VLAN、备份与服务收紧；课文按实配重写并换真机图。
 - 901 真机 WinBox 菜单图替换各课共用主窗口图（脱敏 MAC/实验室 IP/软件 ID）；唯一截图哈希显著增加。
 - 实战课表已铺开：基础/上网/防火墙/VPN/监控等短课文（见 docs/实战课表.md）。

@@ -1,4 +1,4 @@
-# Lab 06 - NAT
+# Lab 04 - NAT
 
 目标：
 

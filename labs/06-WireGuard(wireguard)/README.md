@@ -1,4 +1,4 @@
-# Lab 08 - WireGuard
+# Lab 06 - WireGuard
 
 目标：
 

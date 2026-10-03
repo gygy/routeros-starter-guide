@@ -1,4 +1,4 @@
-# Lab 10 - BGP
+# Lab 12 - BGP
 
 目标：
 

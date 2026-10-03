@@ -1,4 +1,4 @@
-# Lab 04 - Inter-VLAN Routing
+# Lab 10 - Inter-VLAN Routing
 
 目标：
 

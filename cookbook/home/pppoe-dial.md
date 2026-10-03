@@ -1,4 +1,4 @@
-> 已迁入 cookbook（家庭场景）。后续将按 docs 14 节模板改写，并与 Lab 06 NAT 对齐。
+> 已迁入 cookbook（家庭场景）。对应实验：[Lab 02-PPPoE](<../../labs/02-PPPoE拨号(pppoe)/README.md>)。NAT 见 Lab 06。
 # PPPoE 拨号上网
 
 > 官方依据（RouterOS 7）：

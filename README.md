@@ -1,143 +1,104 @@
 # RouterOS 入门与精通
 
-> 从网络基础到 RouterOS v7，从家庭网络到企业/ISP 网络。
+> 从网络基础到 RouterOS v7，从家庭网络到企业/ISP 网络。主线 **v7**。
 
-**Learn Networking → Learn RouterOS → Build Labs → Troubleshoot → Automate → Design Production Networks**
+**第一周先动手，再读长文。** 首页只推荐已经能跟着做的材料；其余课文仍是提纲，见 [COURSE-TREE.md](COURSE-TREE.md)。
 
-主线：**RouterOS v7**。不要把本仓库当成命令大全，路径是：网络原理 → RouterOS 实现 → 实验 → 故障 → 生产设计。
+## 本周只看这些
 
-文稿与截图禁止真实账户、密码、MAC、公网 IP 和个人昵称；截图右上角有学习用水印。见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+1. [环境准备](<docs/00-入门(introduction)/环境准备.md>)（WinBox、默认 `192.168.88.1`、插哪根网线）  
+2. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)  
+3. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)  
+4. [本周必读：地址、网关、DNS](<docs/01-网络基础(networking-basics)/本周必读.md>)  
+5. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)  
+6. 家里是 **账号拨号** → [Lab PPPoE](<labs/02-PPPoE拨号(pppoe)/README.md>)（步骤和截图在 [这篇课文](<cookbook/home/pppoe-dial.md>)）  
+7. 然后 [Lab 05 防火墙](<labs/05-防火墙(firewall)/README.md>)、[Lab 06 NAT](<labs/06-NAT(nat)/README.md>)
+
+不要一上来 `/import` 企业配置。家里最多先看 `configs/baseline/`，并改接口名。
 
 ```text
-                RouterOS 入门与精通
-                         │
-       ┌─────────────────┼─────────────────┐
-       ↓                 ↓                 ↓
-    学理论             学 RouterOS        做实验
-       │                 │                 │
- Networking          CLI / WinBox        Labs
- TCP/IP              Interface           Topology
- VLAN                 Bridge              Packet
- Routing              Firewall            Troubleshooting
-       │                 │                 │
-       └─────────────────┼─────────────────┘
-                         ↓
-                      实战（cookbook / configs）
-                         ↓
-                       精通（Automation / Production / ISP）
+环境准备 → Lab 00/01 → 地址/网关/DNS → Lab 02
+         →（可选）PPPoE → 防火墙 → NAT → 能上网
 ```
 
-## 🎯 学习路线
+## 课文 ↔ Lab 对照
 
-### 🟢 Level 0 · 网络基础
+| 你要做的事 | 先读 | 再做 |
+| --- | --- | --- |
+| 安装、登录 | [环境准备](<docs/00-入门(introduction)/环境准备.md>) | Lab 00、Lab 01 |
+| 电脑自动拿地址 | [本周必读](<docs/01-网络基础(networking-basics)/本周必读.md>)、[02 章索引](<docs/02-RouterOS基础(routeros-basics)/README.md>) | Lab 02 |
+| 运营商账号上网 | [PPPoE 课文](<cookbook/home/pppoe-dial.md>) | Lab 02-PPPoE |
+| VLAN / 跨网段 | [03 章](<docs/03-二层交换(switching)/README.md>)、[04 章](<docs/04-三层路由(routing)/README.md>) | Lab 03、04 |
+| 防火墙 | [05 章](<docs/05-防火墙(firewall)/README.md>) | Lab 05 |
+| NAT / 共享上网 | [06 章](<docs/06-NAT(nat)/README.md>) | Lab 06 |
+| 双线路 | [12 章](<docs/12-高可用(high-availability)/README.md>) | Lab 07 |
+| WireGuard | [09 章](<docs/09-VPN(vpn)/README.md>) | Lab 08 |
+| OSPF / BGP | [10 章](<docs/10-动态路由(dynamic-routing)/README.md>) | Lab 09、10 |
+| VRF / QoS / VRRP / MPLS / 脚本 | 对应章 README | Lab 11–15 |
 
-- [TCP/IP](<docs/01-网络基础(networking-basics)/osi-tcpip.md>)
-- [IPv4](<docs/01-网络基础(networking-basics)/ipv4.md>)
-- [子网划分](<docs/01-网络基础(networking-basics)/subnetting.md>)
-- [VLAN](<docs/01-网络基础(networking-basics)/vlan.md>)
-- [ARP](<docs/01-网络基础(networking-basics)/arp.md>)
+QoS 课文在 **第 11 章**，实验是 **Lab 12**；自动化课文第 14 章，实验 **Lab 15**。按上表走，不要只按数字猜。
 
-### 🟢 Level 1 · RouterOS 入门
+## 课程与实验目录
 
-- [RouterOS 是什么](<docs/00-入门(introduction)/what-is-routeros.md>)
-- [CLI](<docs/00-入门(introduction)/cli-basics.md>)
-- [Interface](<docs/02-RouterOS基础(routeros-basics)/interfaces.md>)
-- [Bridge](<docs/02-RouterOS基础(routeros-basics)/bridge.md>)
-- [DHCP](<docs/02-RouterOS基础(routeros-basics)/dhcp-server.md>)
-- [DNS](<docs/02-RouterOS基础(routeros-basics)/dns.md>)
-
-### 🟡 Level 2 · 网络工程
-
-- [VLAN Filtering](<docs/03-二层交换(switching)/vlan-filtering.md>)
-- [Static Routing](<docs/04-三层路由(routing)/static-route.md>)
-- [Firewall](<docs/05-防火墙(firewall)/firewall-concepts.md>)
-- [NAT](<docs/06-NAT(nat)/nat.md>)
-- [QoS](<docs/11-QoS(qos)/qos-concepts.md>)
-
-### 🟠 Level 3 · 高级网络
-
-- [Policy Routing](<docs/04-三层路由(routing)/policy-routing.md>)
-- [VRF](<docs/04-三层路由(routing)/vrf.md>)
-- [WireGuard](<docs/09-VPN(vpn)/wireguard.md>)
-- [OSPF](<docs/10-动态路由(dynamic-routing)/ospf.md>)
-- [BGP](<docs/10-动态路由(dynamic-routing)/bgp.md>)
-- [BFD](<docs/10-动态路由(dynamic-routing)/bfd.md>)
-
-### 🔴 Level 4 · 专家
-
-- [MPLS](<docs/13-MPLS(mpls)/mpls-basics.md>)
-- [BGP Policy](<docs/10-动态路由(dynamic-routing)/bgp-policy.md>)
-- [RPKI](<docs/10-动态路由(dynamic-routing)/rpki.md>)
-- [VRRP](<docs/12-高可用(high-availability)/vrrp.md>)
-- [Automation](<docs/14-自动化(automation)/automation-design.md>)
-- [ISP Architecture](<docs/20-高级(advanced)/isp-design.md>)
-
-完整文件名、前置知识和 Lab 编号见 [COURSE-TREE.md](COURSE-TREE.md)。文章模板见 [docs/_template.md](docs/_template.md)。
+- 课程索引：[docs/README.md](docs/README.md)（每章有「先读哪篇」）  
+- 实验索引：[labs/README.md](labs/README.md)  
+- 术语：[glossary/networking.md](glossary/networking.md)
 
 ---
 
-## 🧪 Labs
+## 后面再用（先不必点）
+
+| 目录 | 什么时候看 |
+| --- | --- |
+| `configs/` | 会手改接口之后，再导入完整配置 |
+| `scripts/` | 备份、切换等功能脚本，不是开局包 |
+| `cookbook/` | 家庭/办公室场景；PPPoE 步骤已链到本周路径 |
+| `cheatsheets/` | 做过实验，需要查命令时 |
+| `automation/` | REST / Python / Ansible / Terraform |
+| `topologies/` `diagrams/` | 画大图、讲架构时 |
+| `migration/` | 从 v6 升上来时 |
+| `images/` | 新截图按课存放；跟做 PPPoE 用 cookbook 里的图 |
+
+专家向课文（MPLS、RPKI、ISP 设计）在 [Level 4 提纲](<docs/20-高级(advanced)/README.md>)，做完 Lab 01–08 再说。
+
+---
+
+## 学习路线（全书地图，多数仍是提纲）
+
+### 已建议第一周完成的
+
+见文首「本周只看这些」。
+
+### 全书 Level（点进去先看该章 README 的状态）
+
+- Level 0：[网络基础](<docs/01-网络基础(networking-basics)/README.md>)  
+- Level 1：[入门](<docs/00-入门(introduction)/README.md>) · [RouterOS 基础](<docs/02-RouterOS基础(routeros-basics)/README.md>)  
+- Level 2：[交换](<docs/03-二层交换(switching)/README.md>) · [路由](<docs/04-三层路由(routing)/README.md>) · [防火墙](<docs/05-防火墙(firewall)/README.md>) · [NAT](<docs/06-NAT(nat)/README.md>) · [QoS](<docs/11-QoS(qos)/README.md>)  
+- Level 3：[VPN](<docs/09-VPN(vpn)/README.md>) · [动态路由](<docs/10-动态路由(dynamic-routing)/README.md>) · [高可用](<docs/12-高可用(high-availability)/README.md>)  
+- Level 4：[MPLS](<docs/13-MPLS(mpls)/README.md>) · [自动化](<docs/14-自动化(automation)/README.md>) · [高级](<docs/20-高级(advanced)/README.md>)
+
+---
+
+## Labs 一览
 
 | Lab | 内容 |
 |---|---|
-| [Lab 01](<labs/01-第一台路由器(first-router)/README.md>) | 第一台 RouterOS |
-| [Lab 02](<labs/02-LAN与DHCP(lan-dhcp)/README.md>) | DHCP + DNS |
-| [Lab 03](<labs/03-VLAN(vlan)/README.md>) | VLAN |
-| [Lab 04](<labs/04-跨VLAN路由(inter-vlan-routing)/README.md>) | Inter-VLAN Routing |
-| [Lab 05](<labs/05-防火墙(firewall)/README.md>) | Firewall |
-| [Lab 06](<labs/06-NAT(nat)/README.md>) | NAT |
-| [Lab 07](<labs/07-双WAN(dual-wan)/README.md>) | Dual WAN |
-| [Lab 08](<labs/08-WireGuard(wireguard)/README.md>) | WireGuard |
-| [Lab 09](<labs/09-OSPF(ospf)/README.md>) | OSPF（v7 instance / area / interface-template） |
-| [Lab 10](<labs/10-BGP(bgp)/README.md>) | BGP |
-| [Lab 11](<labs/11-VRF(vrf)/README.md>) | VRF |
-| [Lab 12](<labs/12-QoS(qos)/README.md>) | QoS |
-| [Lab 13](<labs/13-VRRP(vrrp)/README.md>) | VRRP |
-| [Lab 14](<labs/14-MPLS(mpls)/README.md>) | MPLS |
-| [Lab 15](<labs/15-自动化(automation)/README.md>) | Automation |
+| [00](<labs/00-环境准备(getting-started)/README.md>) | 环境准备 |
+| [01](<labs/01-第一台路由器(first-router)/README.md>) | 第一台 RouterOS |
+| [02](<labs/02-LAN与DHCP(lan-dhcp)/README.md>) | DHCP + DNS |
+| [02-PPPoE](<labs/02-PPPoE拨号(pppoe)/README.md>) | 家庭拨号（可选） |
+| [03](<labs/03-VLAN(vlan)/README.md>) | VLAN |
+| [04](<labs/04-跨VLAN路由(inter-vlan-routing)/README.md>) | 跨 VLAN 路由 |
+| [05](<labs/05-防火墙(firewall)/README.md>) | Firewall |
+| [06](<labs/06-NAT(nat)/README.md>) | NAT |
+| [07](<labs/07-双WAN(dual-wan)/README.md>) | Dual WAN |
+| [08](<labs/08-WireGuard(wireguard)/README.md>) | WireGuard |
+| [09](<labs/09-OSPF(ospf)/README.md>) | OSPF v7 |
+| [10](<labs/10-BGP(bgp)/README.md>) | BGP |
+| [11](<labs/11-VRF(vrf)/README.md>) | VRF |
+| [12](<labs/12-QoS(qos)/README.md>) | QoS |
+| [13](<labs/13-VRRP(vrrp)/README.md>) | VRRP |
+| [14](<labs/14-MPLS(mpls)/README.md>) | MPLS |
+| [15](<labs/15-自动化(automation)/README.md>) | Automation |
 
----
-
-## ⚙️ Configuration
-
-[configs/](configs/) 提供可导入 RouterOS 的**完整配置**（基线、防火墙、VLAN、路由、VPN 等）。导入前改接口名和网段。
-
-## 🤖 Automation
-
-- [RouterOS Script](scripts/)：功能脚本（备份、切换、监控），与完整配置分开
-- [REST API](automation/rest-api/)
-- [Python](automation/python/)
-- [Ansible](automation/ansible/)
-- [Terraform](automation/terraform/)
-
-## 📚 Reference
-
-- [CLI](cheatsheets/cli.md)
-- [Firewall](cheatsheets/firewall.md)
-- [Routing](cheatsheets/routing.md)
-- [Troubleshooting](cheatsheets/troubleshooting.md)
-
-## 目录闭环
-
-| 目录 | 作用 |
-| --- | --- |
-| `docs/` | 系统课程 |
-| `labs/` | 动手实验 |
-| `configs/` | 完整配置 |
-| `scripts/` | 功能脚本 |
-| `automation/` | 外部自动化 |
-| `topologies/` | 场景拓扑说明 |
-| `diagrams/` | 拓扑图源文件 |
-| `images/` | 截图（WinBox / CLI / Lab） |
-| `cheatsheets/` | 速查 |
-| `cookbook/` | 场景方案 |
-| `migration/` | v6→v7 与过时做法 |
-| `glossary/` | 术语 |
-
-## 官方依据
-
-配置与行为以 [MikroTik RouterOS 文档](https://help.mikrotik.com/docs/spaces/ROS/overview) 最新稳定 v7 为准。
-
-## 许可
-
-见 [LICENSE](LICENSE)。RouterOS / MikroTik 为各自权利人的商标。
+官方依据：[MikroTik RouterOS 文档](https://help.mikrotik.com/docs/spaces/ROS/overview)。许可见 [LICENSE](LICENSE)。截图脱敏见 [CONTRIBUTING.md](CONTRIBUTING.md)。

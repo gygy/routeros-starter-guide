@@ -25,3 +25,5 @@ RouterOS 7.x
 4. 看邻居发现
 
 拓扑图：将 `topology.drawio` 导出为 `topology.png` 后放在本目录。
+
+上一课：[Lab 00 环境准备](<../00-环境准备(getting-started)/README.md>)。下一课：[Lab 02](<../02-LAN与DHCP(lan-dhcp)/README.md>)。

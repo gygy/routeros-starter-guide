@@ -2,8 +2,11 @@
 
 主线 RouterOS v7。学习目标、前置知识写在各课文文首。
 
+第一周不要按本表从上到下读。先走仓库根 README 的「本周只看这些」。本表是全书文件清单，多数仍是提纲。
+
 | 文件 | 标题 | 难度 | Lab |
 | --- | --- | --- | --- |
+| `00-入门(introduction)/环境准备.md` | 环境准备（可跟做） | Level 1 · 入门 | 00-环境准备(getting-started) |
 | `00-入门(introduction)/cli-basics.md` | CLI 基础 | Level 1 · 入门 | 01-第一台路由器(first-router) |
 | `00-入门(introduction)/routeros-architecture.md` | RouterOS 体系结构 | Level 1 · 入门 | 01-第一台路由器(first-router) |
 | `00-入门(introduction)/routeros-menu.md` | RouterOS 菜单体系 | Level 1 · 入门 | 01-第一台路由器(first-router) |
@@ -11,6 +14,7 @@
 | `00-入门(introduction)/webfig.md` | WebFig | Level 1 · 入门 | 01-第一台路由器(first-router) |
 | `00-入门(introduction)/what-is-routeros.md` | RouterOS 是什么 | Level 1 · 入门 | 01-第一台路由器(first-router) |
 | `00-入门(introduction)/winbox.md` | WinBox | Level 1 · 入门 | 01-第一台路由器(first-router) |
+| `01-网络基础(networking-basics)/本周必读.md` | 地址、网关、DNS（可跟做） | Level 0 · 网络基础 | 02-LAN与DHCP(lan-dhcp) |
 | `01-网络基础(networking-basics)/arp.md` | ARP | Level 0 · 网络基础 | 01-第一台路由器(first-router) |
 | `01-网络基础(networking-basics)/dns.md` | DNS 原理 | Level 0 · 网络基础 | 02-LAN与DHCP(lan-dhcp) |
 | `01-网络基础(networking-basics)/ethernet.md` | 以太网 | Level 0 · 网络基础 | 01-第一台路由器(first-router) |

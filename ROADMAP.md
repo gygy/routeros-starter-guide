@@ -4,10 +4,11 @@
 
 - 0→100 课程树与文件名已齐，正文多为模板待写。
 - Lab 目录、配置与脚本占位已齐。
+- 第一周路径已钉在根 README：环境准备、Lab 00/01/02、PPPoE、防火墙/NAT。
 
 ## 下一阶段
 
-1. 写完 Level 0–1 课文，并完成 Lab 01–02（含 WinBox 对照截图）。
+1. 把「可跟做」从提纲扩成完整 14 节课文；Lab 01–02 补 WinBox 对照截图。
 2. Level 2：VLAN filtering、Firewall、NAT、Lab 03–06。
 3. Level 3：Dual WAN、WireGuard、OSPF v7、Lab 07–09。
 4. Level 4：BGP / Filter / RPKI、VRF、VRRP、MPLS、Automation。

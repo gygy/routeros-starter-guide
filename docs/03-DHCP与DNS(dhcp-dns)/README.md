@@ -8,6 +8,9 @@
 
 | 课文 | 状态 |
 | --- | --- |
+| [DHCP 服务器](01-DHCP服务器/01-DHCP服务器.md) | 可跟做 |
+| [DHCP 客户端](02-DHCP客户端/02-DHCP客户端.md) | 可跟做 |
+| [DNS](03-DNS/03-DNS.md) | 可跟做 |
 | [dhcp-server](00-dhcp-server.md) | 提纲 |
 | [dhcp-client](01-dhcp-client.md) | 提纲 |
 | [static-lease](02-static-lease.md) | 提纲 |

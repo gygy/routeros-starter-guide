@@ -8,6 +8,13 @@
 
 | 课文 | 状态 |
 | --- | --- |
+| [基本概念](01-防火墙基本概念/01-防火墙基本概念.md) | 可跟做 |
+| [保护路由器](02-保护路由器Input/02-保护路由器Input.md) | 可跟做 |
+| [保护内网](03-保护内网Forward/03-保护内网Forward.md) | 可跟做 |
+| [Address-List](04-Address-List/04-Address-List.md) | 可跟做 |
+| [端口放行](05-端口放行/05-端口放行.md) | 可跟做 |
+| [端口封锁](06-端口封锁/06-端口封锁.md) | 可跟做 |
+| [防火墙日志](07-查看防火墙日志/07-查看防火墙日志.md) | 可跟做 |
 | [firewall-concepts](00-firewall-concepts.md) | 提纲 |
 | [filter](01-filter.md) | 提纲 |
 | [connection-tracking](02-connection-tracking.md) | 提纲 |

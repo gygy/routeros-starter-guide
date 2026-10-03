@@ -44,6 +44,7 @@
 ## 课程与实验目录
 
 - 课程索引：[docs/README.md](docs/README.md)
+- **实战短课文总表：** [docs/实战课表.md](docs/实战课表.md)
 - 实验索引：[labs/README.md](labs/README.md)
 - 术语：[glossary/networking.md](glossary/networking.md)
 

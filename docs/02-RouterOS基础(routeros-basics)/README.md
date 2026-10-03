@@ -8,6 +8,9 @@
 
 | 课文 | 状态 |
 | --- | --- |
+| [接口](01-接口/01-接口.md) | 可跟做 |
+| [Bridge](02-Bridge/02-Bridge.md) | 可跟做 |
+| [IP 地址](03-IP地址/03-IP地址.md) | 可跟做 |
 | [interfaces](00-interfaces.md) | 提纲 |
 | [ip-address](01-ip-address.md) | 提纲 |
 | [bridge](02-bridge.md) | 提纲 |

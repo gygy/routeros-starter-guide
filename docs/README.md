@@ -4,6 +4,8 @@
 
 第一周请走仓库根 [README.md](../README.md) 的「本周只看这些」。
 
+**实战短课文总表：** [实战课表.md](实战课表.md)（连接、DHCP、NAT、防火墙、WireGuard 等，照着 WinBox 做）。
+
 | 章 | 家庭场景 |
 | --- | --- |
 | [00 入门](<00-入门(introduction)/README.md>) | 登录 WinBox |

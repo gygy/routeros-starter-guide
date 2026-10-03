@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Address Lists](https://help.mikrotik.com/docs/spaces/ROS/pages/328122/Filter)
+> 官方依据：[Address Lists](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
 
 ## 目的
 
-把网段收进列表，规则更好维护。
+用地址列表复用源/目的网段。
 
 ## 网络
 
@@ -15,13 +15,25 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：添加列表
+## 第1步：打开 Address Lists
+
+WinBox：`IP → Firewall → Address Lists`
+
+动作：查看已有列表。901 有 mgmt=192.168.88.0/24。
+
+![第1步](images/01-alist.png)
+
+```routeros
+/ip/firewall/address-list/print
+```
+
+## 第2步：添加条目
 
 WinBox：`IP → Firewall → Address Lists → +`
 
-动作：List=mgmt，Address=192.168.88.0/24。901 已实配。
+动作：List=mgmt，Address=192.168.88.0/24，Comment=lab。
 
-![第1步](images/01-alist.png)
+![第2步](images/02-添加.png)
 
 ```routeros
 /ip/firewall/address-list/add list=mgmt address=192.168.88.0/24 comment=lab
@@ -29,12 +41,12 @@ WinBox：`IP → Firewall → Address Lists → +`
 
 ## 检查
 
-WinBox：Address Lists 有 mgmt
+WinBox：列表中有 mgmt
 
 ```routeros
-/ip/firewall/address-list/print
+/ip/firewall/address-list/print where list=mgmt
 ```
 
 ## 常见问题
 
-规则里用 Address List 引用。
+Filter 里用 Src./Dst. Address List 引用。

@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Bridge](https://help.mikrotik.com/docs/spaces/ROS/pages/328198/Bridge)
+> 官方依据：[Bridge](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
 
 ## 目的
 
-建一个叫 bridge 的 LAN 桥。
+把多个口接到同一二层网桥。
 
 ## 网络
 
@@ -19,7 +19,7 @@
 
 WinBox：`Bridge → +`
 
-动作：Name=bridge，Comment=lab-demo，OK。901 已实配。
+动作：Name=bridge，Comment=lab-demo。901 已有 Running 的 bridge。
 
 ![第1步](images/01-建桥.png)
 
@@ -27,11 +27,11 @@ WinBox：`Bridge → +`
 /interface/bridge/add name=bridge comment=lab-demo
 ```
 
-## 第2步：加端口（可选）
+## 第2步：加端口
 
 WinBox：`Bridge → Ports → +`
 
-动作：把 LAN 口（如 ether2）挂到 bridge。不要挂正在拨号的 WAN。
+动作：Interface 选 LAN 口，Bridge=bridge。
 
 ![第2步](images/02-端口.png)
 
@@ -41,12 +41,13 @@ WinBox：`Bridge → Ports → +`
 
 ## 检查
 
-WinBox：Bridge 列表有 R 的 bridge
+WinBox：Bridge 为 R；Ports 有成员
 
 ```routeros
 /interface/bridge/print
+/interface/bridge/port/print
 ```
 
 ## 常见问题
 
-误把 WAN 加进桥会掉线。
+WAN 口不要误加入 bridge。

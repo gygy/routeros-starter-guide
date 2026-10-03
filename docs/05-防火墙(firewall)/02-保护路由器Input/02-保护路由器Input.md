@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328122/Filter)
+> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
 
 ## 目的
 
-先放行 ICMP 与 LAN，再考虑收紧。
+保护路由器自身（input 链）。
 
 ## 网络
 
@@ -17,55 +17,55 @@
 
 ## 第1步：放行 ICMP
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=input，Protocol=icmp，Action=accept，Comment=lab-icmp。
 
-![第1步](images/01-icmp.png)
+![第1步](images/01-established.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=icmp action=accept comment=lab-icmp
 ```
 
-## 第2步：放行 LAN
+## 第2步：放行 LAN 管理
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
-动作：Chain=input，In.Interface=bridge，Action=accept，Comment=lab-lan-in。
+动作：Chain=input，Src. Address=192.168.88.0/24，Action=accept，Comment=lab-lan-in。
 
-![第2步](images/02-lan.png)
-
-```routeros
-/ip/firewall/filter/add chain=input in-interface=bridge action=accept comment=lab-lan-in
-```
-
-## 第3步：放行 established
-
-WinBox：`Filter Rules → +`
-
-动作：Chain=input，Connection State=established,related，Action=accept。
-
-![第3步](images/03-est.png)
+![第2步](images/02-icmp.png)
 
 ```routeros
-/ip/firewall/filter/add chain=input connection-state=established,related action=accept comment=lab-est
+/ip/firewall/filter/add chain=input src-address=192.168.88.0/24 action=accept comment=lab-lan-in
 ```
 
-## 第4步：可选丢弃其余
+## 第3步：放行已建立
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
-动作：Chain=input，Action=drop，先 Disabled 观察。
+动作：可再加 connection-state=established,related（按你环境）。
+
+![第3步](images/03-lan.png)
+
+```routeros
+/ip/firewall/filter/print where chain=input
+```
+
+## 第4步：看整体
+
+WinBox：`IP → Firewall → Filter Rules`
+
+动作：确认 input 规则顺序合理。
 
 ![第4步](images/04-drop.png)
 
 ```routeros
-/ip/firewall/filter/add chain=input action=drop comment=lab-drop-wan disabled=yes
+/ip/firewall/filter/print where chain=input
 ```
 
 ## 检查
 
-WinBox：LAN 仍能 WinBox
+WinBox：input 有 lab-icmp / lab-lan-in
 
 ```routeros
 /ip/firewall/filter/print where chain=input
@@ -73,4 +73,4 @@ WinBox：LAN 仍能 WinBox
 
 ## 常见问题
 
-最后一条 drop 慎用。
+最后再考虑 drop，防把自己锁死。

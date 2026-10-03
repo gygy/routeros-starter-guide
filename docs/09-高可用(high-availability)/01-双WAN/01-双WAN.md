@@ -10,28 +10,28 @@
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：主默认路由
+## 第1步：看路由表
 
 WinBox：`IP → Routes`
 
-动作：主线 Gateway 的 distance 更小（如 1）。
+动作：主线 distance 更小。
 
 ![第1步](images/01-双路由.png)
 
 ```routeros
-/ip/route/add dst-address=0.0.0.0/0 gateway=pppoe-out1 distance=1
+/ip/route/print where dst-address=0.0.0.0/0
 ```
 
-## 第2步：备默认路由
+## 第2步：备线 distance
 
 WinBox：`IP → Routes → +`
 
-动作：备线 distance=2；可再加 check-gateway=ping。
+动作：备线 distance=2；可加 check-gateway=ping。
 
 ![第2步](images/02-备路由.png)
 

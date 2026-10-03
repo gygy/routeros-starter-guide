@@ -6,7 +6,7 @@
 
 ## 目的
 
-出网失败先查 NAT 计数和出接口。
+看计数器和连接跟踪。
 
 ## 网络
 
@@ -15,11 +15,11 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：看 NAT
+## 第1步：看 NAT 计数
 
 WinBox：`IP → Firewall → NAT`
 
-动作：看 Bytes 是否增长；核对 out-interface。
+动作：Bytes/Packets 是否在涨。
 
 ![第1步](images/01-计数.png)
 
@@ -27,15 +27,27 @@ WinBox：`IP → Firewall → NAT`
 /ip/firewall/nat/print stats
 ```
 
+## 第2步：看 Connections
+
+WinBox：`IP → Firewall → Connections`
+
+动作：确认会话经过 srcnat/dstnat。
+
+![第2步](images/02-连接.png)
+
+```routeros
+/ip/firewall/connection/print
+```
+
 ## 检查
 
-WinBox：masquerade 计数在涨
+WinBox：有活跃连接且 NAT 计数增加
 
 ```routeros
 /ip/firewall/nat/print stats
-/ip/route/print where dst-address=0.0.0.0/0
+/ip/firewall/connection/print
 ```
 
 ## 常见问题
 
-能 ping IP 不能开网页多半是 DNS。
+先确认 WAN 能上网再查 NAT。

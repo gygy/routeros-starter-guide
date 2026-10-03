@@ -10,18 +10,30 @@
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：设置 Trunk
+## 第1步：打开 Bridge VLANs
 
 WinBox：`Bridge → VLANs`
 
-动作：tagged 加入上联口。
+动作：准备 tagged 上联口。
 
 ![第1步](images/01-trunk.png)
+
+```routeros
+/interface/bridge/vlan/print
+```
+
+## 第2步：设置 Trunk
+
+WinBox：`Bridge → VLANs → +`
+
+动作：vlan-ids=10,20，tagged=ether2（示例）。
+
+![第2步](images/02-tagged.png)
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10,20 tagged=ether2

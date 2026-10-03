@@ -15,21 +15,33 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：添加 dstnat
+## 第1步：打开 NAT 列表
 
-WinBox：`IP → Firewall → NAT → +`
+WinBox：`IP → Firewall → NAT`
 
-动作：Chain=dstnat，tcp/8080，In.Interface=pppoe-out1，Action=dst-nat，To=192.168.88.10:80，Comment=lab-portfwd。901 已实配。
+动作：先看到现有 NAT 规则。
 
 ![第1步](images/01-dstnat.png)
 
 ```routeros
-/ip/firewall/nat/add chain=dstnat protocol=tcp dst-port=8080 in-interface=pppoe-out1 action=dst-nat to-addresses=192.168.88.10 to-ports=80 comment=lab-portfwd
+/ip/firewall/nat/print
+```
+
+## 第2步：添加 dst-nat
+
+WinBox：`IP → Firewall → NAT → +`
+
+动作：Chain=dstnat，Protocol=tcp，Dst. Port=8080，In. Interface=pppoe-out1，Action=dst-nat，To Addresses=192.168.88.10，Comment=lab-portfwd。
+
+![第2步](images/02-规则.png)
+
+```routeros
+/ip/firewall/nat/add chain=dstnat protocol=tcp dst-port=8080 in-interface=pppoe-out1 action=dst-nat to-addresses=192.168.88.10 comment=lab-portfwd
 ```
 
 ## 检查
 
-WinBox：规则存在且计数可增
+WinBox：NAT 有 lab-portfwd
 
 ```routeros
 /ip/firewall/nat/print where comment=lab-portfwd
@@ -37,4 +49,4 @@ WinBox：规则存在且计数可增
 
 ## 常见问题
 
-Filter 也要放行对应端口。
+还要放行 forward，内网主机要监听该端口。

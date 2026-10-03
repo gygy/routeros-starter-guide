@@ -10,9 +10,9 @@
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
 ## 第1步：新建 WireGuard
@@ -39,21 +39,21 @@ WinBox：`IP → Addresses → +`
 /ip/address/add address=10.10.10.1/24 interface=wg-demo
 ```
 
-## 第3步：加 Peer（手机/电脑）
+## 第3步：打开 Peers
 
-WinBox：`WireGuard → Peers → +`
+WinBox：`WireGuard → Peers`
 
-动作：填对端 Public Key、Allowed Address；本机 Public Key 给对端。
+动作：准备添加手机/电脑 Peer；公钥用占位符，勿把真实私钥写进文档。
 
 ![第3步](images/03-peer.png)
 
 ```routeros
-/interface/wireguard/peers/add interface=wg-demo public-key="PEER_PUBLIC_KEY" allowed-address=10.10.10.2/32
+/interface/wireguard/peers/print
 ```
 
 ## 检查
 
-WinBox：wg-demo 为 R；Peers 有握手
+WinBox：wg-demo 为 R
 
 ```routeros
 /interface/wireguard/print
@@ -62,4 +62,4 @@ WinBox：wg-demo 为 R；Peers 有握手
 
 ## 常见问题
 
-光猫要转发 UDP 13231。
+光猫要转发 UDP 13231；Peer 公钥各自生成。

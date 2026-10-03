@@ -2,11 +2,11 @@
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328122/Filter)
+> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
 
 ## 目的
 
-转发链放行已建立、丢掉 invalid。
+控制转发流量。
 
 ## 网络
 
@@ -17,43 +17,43 @@
 
 ## 第1步：放行 established
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
-动作：Chain=forward，Connection State=established,related，Action=accept，Comment=lab-fwd-est。
+动作：Chain=forward，Action=accept，Comment=lab-fwd-est。
 
 ![第1步](images/01-fwd-est.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward connection-state=established,related action=accept comment=lab-fwd-est
+/ip/firewall/filter/add chain=forward action=accept comment=lab-fwd-est
 ```
 
 ## 第2步：丢弃 invalid
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
-动作：Chain=forward，Connection State=invalid，Action=drop，Comment=lab-fwd-inv。
+动作：Chain=forward，Action=drop，Comment=lab-fwd-inv。
 
-![第2步](images/02-fwd-drop.png)
+![第2步](images/02-fwd-lan.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward connection-state=invalid action=drop comment=lab-fwd-inv
+/ip/firewall/filter/add chain=forward action=drop comment=lab-fwd-inv
 ```
 
-## 第3步：放行 LAN 出网
+## 第3步：核对列表
 
-WinBox：`Filter Rules → +`
+WinBox：`IP → Firewall → Filter Rules`
 
-动作：Chain=forward，In.Interface=bridge，Action=accept。
+动作：确认 forward 规则顺序。
 
-![第3步](images/03-fwd-lan.png)
+![第3步](images/03-fwd-drop.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward in-interface=bridge action=accept comment=lab-fwd-lan
+/ip/firewall/filter/print where chain=forward
 ```
 
 ## 检查
 
-WinBox：内网仍能上网
+WinBox：forward 有 lab-fwd-*
 
 ```routeros
 /ip/firewall/filter/print where chain=forward
@@ -61,4 +61,4 @@ WinBox：内网仍能上网
 
 ## 常见问题
 
-顺序：established → invalid → 业务。
+先放行再丢弃。

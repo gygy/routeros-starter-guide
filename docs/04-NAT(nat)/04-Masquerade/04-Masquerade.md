@@ -15,13 +15,25 @@
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：添加 srcnat
+## 第1步：打开 NAT
+
+WinBox：`IP → Firewall → NAT`
+
+动作：确认在 NAT 页签（不是 Filter Rules）。
+
+![第1步](images/01-NAT.png)
+
+```routeros
+/ip/firewall/nat/print
+```
+
+## 第2步：添加 masquerade
 
 WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。901 已实配。
 
-![第1步](images/01-NAT.png)
+![第2步](images/02-添加.png)
 
 ```routeros
 /ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade comment=lab-masq
@@ -29,7 +41,7 @@ WinBox：`IP → Firewall → NAT → +`
 
 ## 检查
 
-WinBox：NAT 有 masquerade
+WinBox：NAT 有 lab-masq
 
 ```routeros
 /ip/firewall/nat/print where comment=lab-masq

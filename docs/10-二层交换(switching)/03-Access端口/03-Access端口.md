@@ -10,18 +10,30 @@
 
 ## 网络
 
-- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
 - WAN 示例：`pppoe-out1` 或 `ether1`
-- 密码示例：`********`（填你自己的）
+- 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
 
-## 第1步：设置 Access
+## 第1步：打开 Bridge VLANs
 
-WinBox：`Bridge → VLANs / Ports`
+WinBox：`Bridge → VLANs`
 
-动作：端口 PVID=10，untagged 含该口。
+动作：准备添加 vlan-ids 与 untagged 端口。
 
 ![第1步](images/01-access.png)
+
+```routeros
+/interface/bridge/vlan/print
+```
+
+## 第2步：设置 Access
+
+WinBox：`Bridge → VLANs → +`
+
+动作：vlan-ids=10，untagged=ether3（示例）。
+
+![第2步](images/02-设置.png)
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10 untagged=ether3
@@ -29,7 +41,7 @@ WinBox：`Bridge → VLANs / Ports`
 
 ## 检查
 
-WinBox：终端拿对应网段地址
+WinBox：VLAN 表有对应条目
 
 ```routeros
 /interface/bridge/vlan/print

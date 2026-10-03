@@ -1,24 +1,25 @@
-﻿# Torch
+# Torch
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Torch](https://help.mikrotik.com/docs/spaces/ROS/pages/328189/Torch)
+> 官方依据：[Torch](https://help.mikrotik.com/docs/spaces/ROS/pages/328151/Torch)
 
 ## 目的
 
-看某个口此刻是谁在传。
+实时看谁在占带宽。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的）
+- 身份示例：`R1`
 
-## 第1步：Torch
+## 第1步：打开 Torch
 
 WinBox：`Tools → Torch`
 
-Interface 选 `bridge` 或 `pppoe-out1`，Start。
+动作：Interface 选 bridge 或 WAN，Start。
 
 ![第1步](images/01-torch.png)
 
@@ -28,7 +29,7 @@ Interface 选 `bridge` 或 `pppoe-out1`，Start。
 
 ## 检查
 
-WinBox：`Tools → Torch`
+WinBox：能看到会话
 
 ```routeros
 /tool/torch interface=bridge
@@ -36,5 +37,4 @@ WinBox：`Tools → Torch`
 
 ## 常见问题
 
-流量很大时 CPU 会升高。
-
+短时用，别长期开。

@@ -1,24 +1,25 @@
-﻿# IKEv2证书
+# IKEv2 证书
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/40992867/Certificates)
+> 官方依据：[Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/2555947/Certificates)
 
 ## 目的
 
-做 CA 和服务器证。
+IKEv2 常用证书认证。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的）
+- 身份示例：`R1`
 
-## 第1步：Certificates
+## 第1步：打开证书
 
 WinBox：`System → Certificates`
 
-按官方 IPsec 文档生成 CA、server 证并 Sign。
+动作：导入或自签 CA/服务器证书（名称勿含个人信息）。
 
 ![第1步](images/01-证书.png)
 
@@ -28,7 +29,7 @@ WinBox：`System → Certificates`
 
 ## 检查
 
-WinBox：`System → Certificates`
+WinBox：Certificates 有可用证书
 
 ```routeros
 /certificate/print
@@ -36,5 +37,4 @@ WinBox：`System → Certificates`
 
 ## 常见问题
 
-证书名不要用个人姓名。
-
+手机要信任你的 CA。

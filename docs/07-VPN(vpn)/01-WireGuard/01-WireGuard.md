@@ -1,4 +1,4 @@
-﻿# WireGuard
+# WireGuard
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
@@ -6,58 +6,60 @@
 
 ## 目的
 
-家里做 WG 服务端，出门能连回家。
+建 wg-demo 接口，做回家 VPN 底座。
 
 ## 网络
 
-- 隧道网段示例 `10.10.10.1/24`（路由器）
-- Peer 的 Allowed Address 填对方隧道 IP
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的）
+- 身份示例：`R1`
 
-## 第1步：加 WG 接口
+## 第1步：新建 WireGuard
 
-WinBox：`WireGuard → WireGuard → +`
+WinBox：`WireGuard → +`
 
-Name `wg1`，Listen Port `13231`，OK。复制公钥给手机。
+动作：Name=wg-demo，Listen Port=13231。901 已实配且 Running。
 
 ![第1步](images/01-wg.png)
 
 ```routeros
-/interface/wireguard/add name=wg1 listen-port=13231
+/interface/wireguard/add name=wg-demo listen-port=13231
 ```
 
-## 第2步：隧道地址
+## 第2步：加地址
 
 WinBox：`IP → Addresses → +`
 
-`10.10.10.1/24` 接口 `wg1`。
+动作：Address=10.10.10.1/24，Interface=wg-demo。
 
 ![第2步](images/02-wgip.png)
 
 ```routeros
-/ip/address/add address=10.10.10.1/24 interface=wg1
+/ip/address/add address=10.10.10.1/24 interface=wg-demo
 ```
 
-## 第3步：加 Peer
+## 第3步：加 Peer（手机/电脑）
 
 WinBox：`WireGuard → Peers → +`
 
-Interface `wg1`，Public Key 填手机公钥，Allowed Address `10.10.10.2/32`。
+动作：填对端 Public Key、Allowed Address；本机 Public Key 给对端。
 
 ![第3步](images/03-peer.png)
 
 ```routeros
-/interface/wireguard/peers/add interface=wg1 public-key="PEER_PUBLIC_KEY" allowed-address=10.10.10.2/32
+/interface/wireguard/peers/add interface=wg-demo public-key="PEER_PUBLIC_KEY" allowed-address=10.10.10.2/32
 ```
 
 ## 检查
 
-WinBox：`WireGuard → Peers`
+WinBox：wg-demo 为 R；Peers 有握手
 
 ```routeros
+/interface/wireguard/print
 /interface/wireguard/peers/print
 ```
 
 ## 常见问题
 
-防火墙放行 13231/udp。密钥不要进 git。
-
+光猫要转发 UDP 13231。

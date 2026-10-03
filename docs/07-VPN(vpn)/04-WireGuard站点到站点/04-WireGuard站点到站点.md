@@ -1,4 +1,4 @@
-﻿# WireGuard站点到站点
+# WireGuard 站点到站点
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
@@ -6,33 +6,35 @@
 
 ## 目的
 
-两个站点互加 Peer，Allowed Address 填对端局域网。
+两台 RouterOS 互连内网。
 
 ## 网络
 
-- 站点 A LAN `192.168.88.0/24` 站点 B `192.168.89.0/24`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的）
+- 身份示例：`R1`
 
-## 第1步：Allowed 填对端网段
+## 第1步：对端 Peer
 
-WinBox：`WireGuard → Peers`
+WinBox：`WireGuard → Peers → +`
 
-Allowed Address 含 `192.168.89.0/24`，并加静态路由走 wg1。
+动作：Allowed Address 填对端 LAN；两边对称配置。
 
 ![第1步](images/01-s2s.png)
 
 ```routeros
-/ip/route/add dst-address=192.168.89.0/24 gateway=wg1
+/interface/wireguard/peers/add interface=wg-demo public-key="SITE_B_KEY" allowed-address=192.168.89.0/24 endpoint-address=203.0.113.20 endpoint-port=13231
 ```
 
 ## 检查
 
-WinBox：`IP → Routes`
+WinBox：两边能互 ping 内网
 
 ```routeros
-/ip/route/print
+/interface/wireguard/peers/print
 ```
 
 ## 常见问题
 
-两边公钥交叉填写。
-
+记得加对方网段路由。

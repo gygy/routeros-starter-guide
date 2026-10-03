@@ -1,59 +1,59 @@
-﻿# 保护内网 Forward
+# 保护内网 Forward
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328020/Filter)
+> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328122/Filter)
 
 ## 目的
 
-LAN 可以上网，WAN 不能随便进 LAN。
+转发链放行已建立、丢掉 invalid。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
-- 密码示例：`********`（填你自己的）
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的管理员密码）
+- 身份示例：`R1`
 
-## 第1步：允许回程
+## 第1步：放行 established
 
-WinBox：`IP → Firewall → Filter Rules → +`
+WinBox：`Filter Rules → +`
 
-Chain `forward`，established,related，accept。
+动作：Chain=forward，Connection State=established,related，Action=accept，Comment=lab-fwd-est。
 
 ![第1步](images/01-fwd-est.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward connection-state=established,related action=accept
+/ip/firewall/filter/add chain=forward connection-state=established,related action=accept comment=lab-fwd-est
 ```
 
-## 第2步：允许 LAN 出去
+## 第2步：丢弃 invalid
 
-WinBox：`同上 +`
+WinBox：`Filter Rules → +`
 
-Chain forward，In. Interface `bridge`，accept。
+动作：Chain=forward，Connection State=invalid，Action=drop，Comment=lab-fwd-inv。
 
-![第2步](images/02-fwd-lan.png)
+![第2步](images/02-fwd-drop.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward in-interface=bridge action=accept
+/ip/firewall/filter/add chain=forward connection-state=invalid action=drop comment=lab-fwd-inv
 ```
 
-## 第3步：丢无效/其余
+## 第3步：放行 LAN 出网
 
-WinBox：`同上 +`
+WinBox：`Filter Rules → +`
 
-可加 invalid drop，再 forward drop。
+动作：Chain=forward，In.Interface=bridge，Action=accept。
 
-![第3步](images/03-fwd-drop.png)
+![第3步](images/03-fwd-lan.png)
 
 ```routeros
-/ip/firewall/filter/add chain=forward connection-state=invalid action=drop
-/ip/firewall/filter/add chain=forward action=drop
+/ip/firewall/filter/add chain=forward in-interface=bridge action=accept comment=lab-fwd-lan
 ```
 
 ## 检查
 
-WinBox：`IP → Firewall → Filter Rules`
+WinBox：内网仍能上网
 
 ```routeros
 /ip/firewall/filter/print where chain=forward
@@ -61,5 +61,4 @@ WinBox：`IP → Firewall → Filter Rules`
 
 ## 常见问题
 
-端口转发要在 drop 前放行 dstnat 流量。
-
+顺序：established → invalid → 业务。

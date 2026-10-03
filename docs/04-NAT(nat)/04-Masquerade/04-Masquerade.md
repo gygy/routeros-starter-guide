@@ -1,40 +1,40 @@
-﻿# Masquerade
+# Masquerade
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/3211299/NAT)
+> 官方依据：[NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/8978531/NAT)
 
 ## 目的
 
-LAN 共用 WAN 地址出门。
+内网共享上网。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
-- 密码示例：`********`（填你自己的）
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的管理员密码）
+- 身份示例：`R1`
 
-## 第1步：加 masquerade
+## 第1步：添加 srcnat
 
 WinBox：`IP → Firewall → NAT → +`
 
-Chain：`srcnat`；Out. Interface：有网的那个（`pppoe-out1` 或 `ether1`）；Action：`masquerade`；OK。
+动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。901 已实配。
 
 ![第1步](images/01-NAT.png)
 
 ```routeros
-/ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade
+/ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade comment=lab-masq
 ```
 
 ## 检查
 
-WinBox：`IP → Firewall → NAT`
+WinBox：NAT 有 masquerade
 
 ```routeros
-/ip/firewall/nat/print
+/ip/firewall/nat/print where comment=lab-masq
 ```
 
 ## 常见问题
 
-拨号时出接口必须是 pppoe-out1。
-
+出接口必须是真实 WAN。

@@ -1,24 +1,25 @@
-﻿# 查看CPU内存
+# 查看 CPU 内存
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[First Time Configuration](https://help.mikrotik.com/docs/spaces/ROS/pages/328151/First+Time+Configuration)
+> 官方依据：[System Resource](https://help.mikrotik.com/docs/spaces/ROS/pages/328084/System+Resource)
 
 ## 目的
 
-CPU 长期 100% 要减规则或关 Torch。
+判断设备是否扛得住。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`
+- WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的）
+- 身份示例：`R1`
 
 ## 第1步：Resources
 
 WinBox：`System → Resources`
 
-看 CPU、Memory。
+动作：看 CPU Load、Free Memory。
 
 ![第1步](images/01-cpu.png)
 
@@ -28,7 +29,7 @@ WinBox：`System → Resources`
 
 ## 检查
 
-WinBox：`System → Resources`
+WinBox：CPU/内存正常
 
 ```routeros
 /system/resource/print
@@ -36,5 +37,4 @@ WinBox：`System → Resources`
 
 ## 常见问题
 
-FastTrack 能降低 CPU（防火墙课之后）。
-
+内存长期很低要减功能或升级硬件。

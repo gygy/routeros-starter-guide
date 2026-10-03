@@ -1,24 +1,25 @@
-﻿# DHCP客户端
+# DHCP 客户端
 
 > 适用版本：RouterOS 7.x  
 > 管理工具：WinBox  
-> 官方依据：[DHCP](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
+> 官方依据：[DHCP Client](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
 
 ## 目的
 
-WAN 口从上级自动拿地址（光猫已拨号时常用）。
+WAN 口用 DHCP 拿地址时用。
 
 ## 网络
 
-- 示例 LAN：`192.168.88.1/24`，接口 `bridge`（改成你的口）
-- WAN 示例口：`ether1`
-- 密码示例：`********`（填你自己的）
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的管理员密码）
+- 身份示例：`R1`
 
-## 第1步：加 DHCP Client
+## 第1步：添加 DHCP Client
 
 WinBox：`IP → DHCP Client → +`
 
-Interface：`ether1`；勾选 Add Default Route；OK。
+动作：Interface 选 WAN（示例 ether1），Add Default Route=yes。已拨 PPPoE 时不必再开。
 
 ![第1步](images/01-DHCPClient.png)
 
@@ -28,7 +29,7 @@ Interface：`ether1`；勾选 Add Default Route；OK。
 
 ## 检查
 
-WinBox：`IP → DHCP Client`
+WinBox：状态 bound
 
 ```routeros
 /ip/dhcp-client/print
@@ -36,5 +37,4 @@ WinBox：`IP → DHCP Client`
 
 ## 常见问题
 
-账号拨号不要用这一课，用 PPPoE。
-
+不要和同口 PPPoE 冲突。

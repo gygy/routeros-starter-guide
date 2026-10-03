@@ -13,7 +13,7 @@
 | [保护内网](03-保护内网Forward/03-保护内网Forward.md) | 可跟做 |
 | [Address-List](04-Address-List/04-Address-List.md) | 可跟做 |
 | [端口放行](05-端口放行/05-端口放行.md) | 可跟做 |
-| [端口封锁](06-端口封锁/06-端口封锁.md) | 可跟做 |
+| [端口封禁](06-端口封禁/06-端口封禁.md) | 可跟做 |
 | [防火墙日志](07-查看防火墙日志/07-查看防火墙日志.md) | 可跟做 |
 | [firewall-concepts](00-firewall-concepts.md) | 提纲 |
 | [filter](01-filter.md) | 提纲 |

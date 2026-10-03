@@ -12,7 +12,7 @@
 | [WG 手机](02-WireGuard手机/02-WireGuard手机.md) | 可跟做 |
 | [WG 电脑](03-WireGuard电脑/03-WireGuard电脑.md) | 可跟做 |
 | [WG 站到站](04-WireGuard站点到站点/04-WireGuard站点到站点.md) | 可跟做 |
-| [IKEv2 预共享](05-IKEv2预共享/05-IKEv2预共享.md) | 可跟做 |
+| [IKEv2 服务器](05-IKEv2服务器/05-IKEv2服务器.md) | 可跟做 |
 | [IKEv2 证书](06-IKEv2证书/06-IKEv2证书.md) | 可跟做 |
 | [IKEv2 手机](07-IKEv2手机/07-IKEv2手机.md) | 可跟做 |
 | [IKEv2 Windows](08-IKEv2-Windows/08-IKEv2-Windows.md) | 可跟做 |

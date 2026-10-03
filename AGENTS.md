@@ -71,7 +71,7 @@ AI 不应仅根据一句指令直接生成结果，应优先理解已有项目�
 
 必须遵守：
 
-* `docs/` **只放课程课文**（`00-introduction` … `20-advanced`）。**禁止**创建九段需求分析目录（`01-规划 Planning`、`05-需求 Requirement`、`99-收件 Inbox` 等）。
+* `docs/` **只放课程课文**（`00-入门(introduction)` … `20-高级(advanced)`）。**禁止**创建九段需求分析目录（`01-规划 Planning`、`05-需求 Requirement`、`99-收件 Inbox` 等）。
 * 目录结构以 `docs/.workspace-rules.md` 为唯一来源。
 * 不得自行创建新的一级「研发/需求」目录。
 * **GitHub**：不要再建根下嵌套的 `RouterOS入门与精通/` 子目录。仓库根就是课程仓。

@@ -42,3 +42,18 @@ if ($status) {
 }
 Invoke-Git push -u origin $Branch
 Write-Host "Pushed to origin/$Branch"
+
+# GitHub 用本机默认 SSH（gygy），不要沿用 Gitea 的 8022 密钥
+$github = & $git @GitConfig remote get-url github 2>$null
+if ($github) {
+    $prevSsh = $env:GIT_SSH_COMMAND
+    Remove-Item Env:GIT_SSH_COMMAND -ErrorAction SilentlyContinue
+    try {
+        Invoke-Git push -u github $Branch
+        Write-Host "Pushed to github/$Branch"
+    } catch {
+        Write-Host "GitHub push skipped. Create empty repo gygy/routeros-from-zero-to-pro then retry."
+    } finally {
+        if ($prevSsh) { $env:GIT_SSH_COMMAND = $prevSsh }
+    }
+}

@@ -76,6 +76,7 @@ AI 不应仅根据一句指令直接生成结果，应优先理解已有项目�
 * 目录结构、归档表、命名、旧目录别名以 `docs/.workspace-rules.md` 为唯一来源。
 * 不得在本文件、技能或其他文件再写一套完整目录。
 * 不得自行创建新的一级研发目录。现有目录能承载的，不新建平行目录。
+* **GitHub 发布边界**：只有根目录下的 `RouterOS入门与精通/` 允许发布到 GitHub。`docs/`、`AGENTS.md`、根目录 `scripts/` 及其它研发资料禁止推到 GitHub。不得把课程仓迁入 `docs/` 九段目录。详情以 `docs/.workspace-rules.md` §7 为准。
 * 创建或修改研发文档前，先读 `docs/.workspace-rules.md`，按其中的归档表落盘。
 * 已有资料不因规范存在就自动搬迁。检查、归类、迁移只按 `ai-workspace-governance` 做；移动和删除按其安全级别执行。
 

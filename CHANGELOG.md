@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- 实战课文：真机 WinBox 逐步截图+本步命令；实验机凭据不入库。
+- 真机完成「连接路由器」：无管理 IP 时用 WinBox Neighbors 点 MAC。
 - 实战课文改为七段模板（WinBox 一步一图 + 文末 CLI）；技能 `ros-beginner-tutorial` 同步。
 - 目录按家庭/个人常用功能重排：DHCP/NAT/防火墙/无线/VPN 在前；课文与 Lab 文件加序号。
 - 面向初学者：README 改为「本周路径」；补环境准备课文、Lab 00、PPPoE 实验；每章/Labs 增加索引与课文对照表。

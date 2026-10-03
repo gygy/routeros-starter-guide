@@ -8,13 +8,13 @@
 
 1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)  
 2. [连接路由器（WinBox / MAC）](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)  
-3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)
-3. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)
-4. [本周必读：地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)
-5. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)
-6. 家里是 **账号拨号** → [Lab 03 PPPoE](<labs/03-PPPoE拨号(pppoe)/README.md>)（步骤和截图在 [这篇课文](<cookbook/00-home/pppoe-dial.md>)）
-7. [Lab 04 NAT](<labs/04-NAT(nat)/README.md>)（共享上网）
-8. [Lab 05 防火墙](<labs/05-防火墙(firewall)/README.md>)
+3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)  
+4. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)  
+5. [本周必读：地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)  
+6. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)  
+7. 家里是 **账号拨号** → [Lab 03 PPPoE](<labs/03-PPPoE拨号(pppoe)/README.md>)（步骤和截图在 [这篇课文](<cookbook/00-home/pppoe-dial.md>)）  
+8. [Lab 04 NAT](<labs/04-NAT(nat)/README.md>)（共享上网）  
+9. [Lab 05 防火墙](<labs/05-防火墙(firewall)/README.md>)
 
 不要一上来 `/import` 企业配置。家里最多先看 `configs/00-baseline/`，并改接口名。
 

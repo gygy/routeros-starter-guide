@@ -103,17 +103,16 @@ function Protect-One([string]$file) {
             Fill-Box $g $bmp 248 292 470 108 $white
         }
         "pppoe-dial-s3-winbox.jpg" {
-            Fill-Box $g $bmp 972 468 160 42 $white
-            Write-Label $g "203.0.113.10" 980 478 16 $grayText "Segoe UI"
-            Fill-Box $g $bmp 972 508 160 40 $white
-            Write-Label $g "192.0.2.1" 980 516 16 $grayText "Segoe UI"
+            Fill-Box $g $bmp 930 458 250 95 $white
+            Write-Label $g "203.0.113.10" 990 478 16 $grayText "Segoe UI"
+            Write-Label $g "192.0.2.1" 990 518 16 $grayText "Segoe UI"
         }
         "pppoe-dial-s3-cli.jpg" {
-            Fill-Box $g $bmp 28 318 410 72 $black
-            Write-Label $g "local-address: 203.0.113.10" 36 322 16 $green
-            Write-Label $g "remote-address: 192.0.2.1" 36 352 16 $green
-            Fill-Box $g $bmp 28 498 410 32 $black
-            Write-Label $g "service-name: ISP-ACCESS" 36 502 16 $green
+            Fill-Box $g $bmp 16 305 470 95 $black
+            Write-Label $g "local-address: 203.0.113.10" 28 318 16 $green
+            Write-Label $g "remote-address: 192.0.2.1" 28 350 16 $green
+            Fill-Box $g $bmp 16 488 470 42 $black
+            Write-Label $g "service-name: ISP-ACCESS" 28 496 16 $green
         }
         "pppoe-dial-s4-cli.jpg" {
             Fill-Box $g $bmp 268 328 310 36 $black
@@ -127,8 +126,8 @@ function Protect-One([string]$file) {
         "pppoe-dial-s5-cli.jpg" {
             Fill-Box $g $bmp 488 276 410 40 $black
             Write-Label $g "192.0.2.53,192.0.2.54     no" 500 284 16 $green
-            Fill-Box $g $bmp 488 526 410 40 $black
-            Write-Label $g "192.0.2.53,192.0.2.54     yes" 500 534 16 $green
+            Fill-Box $g $bmp 488 548 420 42 $black
+            Write-Label $g "192.0.2.53,192.0.2.54     yes" 500 556 16 $green
         }
         default { }
     }

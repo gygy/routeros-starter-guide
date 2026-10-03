@@ -7,7 +7,8 @@
 > [DNS](https://help.mikrotik.com/docs/spaces/ROS/pages/37748767/DNS) ·
 > [NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/3211299/NAT)
 >
-> 对照环境：Winbox 3 · 命令行 New Terminal / SSH
+> 对照环境：Winbox 3 · 命令行 New Terminal / SSH  
+> 截图中的公网地址、MAC 已换成文档示例（TEST-NET / `00:11:22:33:44:55`），并打学习用水印。
 
 运营商给的是 **用户名 + 密码**（光纤/部分 DSL），而不是 DHCP 自动拿地址时，用本课。
 
@@ -85,7 +86,7 @@
 
 **怎么确认成功：** `print` 有一行 `name="pppoe-out1"`，且不是 `X`（disabled）。
 
-**常见失败：** 用户名密码抄错（含后缀 `@163.gd` 一类要整串填）；`Interface` 选成了 `bridge`；忘了点 `OK`。
+**常见失败：** 用户名密码抄错（含后缀 `@isp.example` 一类要整串填）；`Interface` 选成了 `bridge`；忘了点 `OK`。
 
 ---
 

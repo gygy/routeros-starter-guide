@@ -6,6 +6,8 @@
 
 主线：**RouterOS v7**。不要把本仓库当成命令大全，路径是：网络原理 → RouterOS 实现 → 实验 → 故障 → 生产设计。
 
+文稿与截图禁止真实账户、密码、MAC、公网 IP 和个人昵称；截图右上角有学习用水印。见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ```text
                 RouterOS 入门与精通
                          │

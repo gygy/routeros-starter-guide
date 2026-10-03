@@ -6,7 +6,7 @@
 > 对应 Lab：……  
 > 学习目标：……
 
-所有 `docs/` 课文按下列 14 节写，避免只贴 `/ip firewall filter add ...`。
+所有 `docs/` 课文按下列 14 节写，避免只贴 `/ip firewall filter add ...`。截图须脱敏并加水印，见仓库 `CONTRIBUTING.md`。
 
 ## 1. 是什么？
 

@@ -1,0 +1,15 @@
+# 本地/编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 调试截图与中间文件
+*.ppm
+*.bmp
+
+# 密钥
+.env
+.env.*
+hub.credentials
+*.key

@@ -61,8 +61,8 @@ docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
 
 默认生成顺序（未点名主题时，一次一课）：
 
-1. 连接路由器  
-2. 查看信息 / 改名称 / 改管理员密码  
+5. 连接路由器（WinBox；无 IP 用 MAC）  
+6. 查看信息 / 改名称 / 改管理员密码  
 3. 接口、Bridge、IP 地址  
 4. DHCP 服务器、DHCP 客户端、DNS  
 5. WAN：PPPoE 或 DHCP 或固定 IP  

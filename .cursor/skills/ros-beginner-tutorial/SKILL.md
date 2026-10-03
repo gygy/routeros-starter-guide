@@ -23,6 +23,8 @@ description: >-
 连接信息只读本机 **`lab-env.local.md`**（与本技能同目录，已 gitignore）。没有该文件则先按 `lab-env.example.md` 复制再填。
 
 - 环境：PVE 上的 x86 虚拟机 **VMID 901**（RouterOS x86）
+- 无管理 IP 时：WinBox **Neighbors → 点 MAC** 连接（真实 MAC 只写 `lab-env.local.md`，教程用 `00:11:22:33:44:55`）
+- 本机可用 WinBox 3 或 WinBox 4；课文写 WinBox，截图以真机为准
 - 教程里登录账号写 `admin`；**真实密码、真实管理 IP、个人昵称一律不准出现在 md / 图 / .rsc**
 - 教程密码位只写 `********`，并写「填你自己的管理员密码」
 - 登录类截图：密码框必须是空的或圆点，不得露出明文

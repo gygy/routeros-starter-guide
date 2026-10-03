@@ -9,6 +9,7 @@
 | 课文 | 状态 |
 | --- | --- |
 | [环境准备](00-环境准备.md) | 可跟做 |
+| [连接路由器](01-连接路由器/01-连接路由器.md) | 可跟做 |
 | [winbox](01-winbox.md) | 提纲 |
 | [what-is-routeros](02-what-is-routeros.md) | 提纲 |
 | [cli-basics](03-cli-basics.md) | 提纲 |

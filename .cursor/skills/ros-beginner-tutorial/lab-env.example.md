@@ -8,7 +8,8 @@ platform: PVE x86 VM
 os: RouterOS 7.x
 user: admin
 password: （只写在 lab-env.local.md）
-winbox: 本机 WinBox 3 连接到管理地址
+mac: （只写在 lab-env.local.md，教程用 00:11:22:33:44:55）
+winbox: 无 IP 时 Neighbors 点 MAC；有 IP 后改用 IP
 ssh: admin@<管理IP>
 identity_in_tutorial: R1
 ```

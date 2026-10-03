@@ -6,8 +6,9 @@
 
 ## 本周只看这些
 
-1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)（WinBox、默认 `192.168.88.1`、插哪根网线）
-2. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)
+1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)  
+2. [连接路由器（WinBox / MAC）](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)  
+3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)
 3. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)
 4. [本周必读：地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)
 5. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)

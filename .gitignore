@@ -17,6 +17,7 @@ hub.credentials
 id_rsa*
 lab-env.local.md
 **/lab-env.local.md
+docs/_shots/
 
 # RouterOS 备份
 *.backup

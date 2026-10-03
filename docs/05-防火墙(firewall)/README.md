@@ -1,6 +1,6 @@
 # 05 防火墙
 
-先 input/forward 心智，再 FastTrack。
+能上网之后收紧 input/forward。
 
 对应 Lab：05
 
@@ -8,15 +8,15 @@
 
 | 课文 | 状态 |
 | --- | --- |
-| [address-list](address-list.md) | 提纲 |
-| [advanced-firewall](advanced-firewall.md) | 提纲 |
-| [connection-tracking](connection-tracking.md) | 提纲 |
-| [fasttrack](fasttrack.md) | 提纲 |
-| [filter](filter.md) | 提纲 |
-| [firewall-concepts](firewall-concepts.md) | 提纲 |
-| [layer7](layer7.md) | 提纲 |
-| [mangle](mangle.md) | 提纲 |
-| [nat](nat.md) | 提纲 |
-| [raw](raw.md) | 提纲 |
+| [firewall-concepts](00-firewall-concepts.md) | 提纲 |
+| [filter](01-filter.md) | 提纲 |
+| [connection-tracking](02-connection-tracking.md) | 提纲 |
+| [fasttrack](03-fasttrack.md) | 提纲 |
+| [address-list](04-address-list.md) | 提纲 |
+| [nat](05-nat.md) | 提纲 |
+| [mangle](06-mangle.md) | 提纲 |
+| [raw](07-raw.md) | 提纲 |
+| [layer7](08-layer7.md) | 提纲 |
+| [advanced-firewall](09-advanced-firewall.md) | 提纲 |
 
 完整地图见仓库根 [COURSE-TREE.md](../../COURSE-TREE.md)。

@@ -1,4 +1,4 @@
-﻿# 处理教程截图：脱敏（公网 IP / MAC / 账号痕迹）+ 单处水印（内容区右上角）
+# 处理教程截图：脱敏（公网 IP / MAC / 账号痕迹）+ 单处水印（内容区右上角）
 # 用法：powershell -File protect-media.ps1 [-Path <jpg/png>]
 param(
     [string]$Path = ""
@@ -10,7 +10,7 @@ Add-Type -AssemblyName System.Drawing
 $Utf8Bom = New-Object System.Text.UTF8Encoding $true
 $WatermarkText = "RouterOS 入门与精通"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$DefaultDir = Join-Path (Split-Path -Parent $ScriptDir) "cookbook\home\images"
+$DefaultDir = Join-Path (Split-Path -Parent $ScriptDir) "cookbook\00-home\images"
 
 function Get-Luma([System.Drawing.Color]$c) {
     return (0.299 * $c.R + 0.587 * $c.G + 0.114 * $c.B)

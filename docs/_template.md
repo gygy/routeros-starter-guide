@@ -1,37 +1,74 @@
-# 文章标题（统一模板）
+# 文章标题（实战课文模板）
 
-> 主线：**RouterOS v7**  
-> 难度：Level 0–4  
-> 前置：……  
-> 对应 Lab：……  
-> 学习目标：……
+> 适用版本：RouterOS 7.x  
+> 管理工具：WinBox  
+> 官方依据：[页面标题](https://help.mikrotik.com/docs/spaces/ROS/overview)
 
-所有 `docs/` 课文按下列 14 节写，避免只贴 `/ip firewall filter add ...`。截图须脱敏并加水印，见仓库 `CONTRIBUTING.md`。
+**实战课文只用下面 7 块**，不要写成参数百科（不要「是什么 / Packet Flow / 企业案例」长文）。  
+配图：每步一张 WinBox 截图，放在本课目录的 `images/`。脱敏与水印见 `CONTRIBUTING.md`。
 
-## 1. 是什么？
+## 目的
 
-## 2. 为什么需要它？
+一句话：做完后设备上出现什么结果。
 
-## 3. 工作原理
+## 网络
 
-## 4. Packet Flow
+- 路由器：`192.168.88.1`
+- 内网：`192.168.88.0/24`
+- 接口：`ether1` = WAN，`bridge` = LAN（改成你的口名）
 
-## 5. RouterOS 配置
+---
 
-## 6. 基础案例
+## 第1步：…
 
-## 7. 企业案例
+WinBox：
 
-## 8. 常见错误
+`菜单 → 窗口`
 
-## 9. 故障排查
+点击 / 填写：
 
-## 10. 性能影响
+- `字段`：`值`
 
-## 11. 安全注意事项
+![第1步](images/01-….png)
 
-## 12. Lab
+---
 
-## 13. 常用命令
+## 第2步：…
 
-## 14. 延伸阅读
+（一步一个动作，一张图。需要几步就写几步。）
+
+---
+
+## 对应命令
+
+```routeros
+/ip/address/add address=192.168.88.1/24 interface=bridge
+```
+
+须与上面 WinBox 字段一致。
+
+---
+
+## 检查
+
+WinBox：`IP → Addresses`
+
+```routeros
+/ip/address/print
+```
+
+## 测试
+
+```routeros
+/ping 192.168.88.1
+```
+
+---
+
+## 常见问题
+
+### 失败时看什么
+
+```routeros
+/interface/print
+```

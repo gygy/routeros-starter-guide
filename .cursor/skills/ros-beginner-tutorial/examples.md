@@ -1,84 +1,160 @@
 # 成品结构示例
 
-用户：「写一课 RouterOS 新手教程：给网桥添加 LAN 地址」
+用户：「写一课 RouterOS 实战：DHCP 服务器」
 
-交付：`docs/tutorials/ros-add-bridge-address.md` + 每步两张图。
+落盘：
+
+```text
+docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/04-DHCP服务器.md
+docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
+…
+```
+
+（网段按用户指定；未指定时改用 `192.168.88.0/24`。）
 
 ---
 
-# 给网桥添加 LAN 地址
+# DHCP服务器
 
-> 官方依据（RouterOS 7）：[IP Addressing](https://help.mikrotik.com/docs/spaces/ROS/pages/328068/IP+Addressing)  
-> 对照环境：Winbox 3 · New Terminal  
-> 假设：已有网桥 `bridge`，LAN 用官方默认网段 `192.168.88.0/24`（按你的环境改）。
+> 适用版本：RouterOS 7.x  
+> 管理工具：WinBox  
+> 官方依据：[DHCP](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
 
-## 本课会做到
+## 目的
 
-让 `bridge` 拥有 `192.168.88.1/24`，电脑连 LAN 后能访问路由器这个地址。
+让内网电脑自动获取 IP 地址。
 
-## 步骤 1：确认网桥存在
+## 网络
 
-**官方依据：** [Bridge](https://help.mikrotik.com/docs/spaces/ROS/pages/328081/Bridging+and+Switching)
+- 路由器：`192.168.80.1`
+- 内网：`192.168.80.0/24`
+- DHCP 范围：`192.168.80.100-192.168.80.200`
+- LAN 接口：`bridge`（改成你的接口名）
 
-**这一步要完成：** 列表里能看到名为 `bridge` 的接口。
+---
 
-**命令行**
+## 第1步：打开 DHCP Server
 
-```routeros
-/interface/bridge/print
+WinBox：
+
+`IP → DHCP Server → DHCP`
+
+![第1步](images/01-打开DHCP.png)
+
+---
+
+## 第2步：创建 DHCP
+
+点击：
+
+`DHCP Setup`
+
+![第2步](images/02-DHCP-Setup.png)
+
+---
+
+## 第3步：选择接口
+
+选择：
+
+`bridge`
+
+点击：
+
+`Next`
+
+![第3步](images/03-选择接口.png)
+
+---
+
+## 第4步：设置网段
+
+填写：
+
+```text
+192.168.80.0/24
 ```
 
-![步骤1 命令行](images/add-bridge-address-s1-cli.png)
+点击：
 
-**Winbox**
+`Next`
 
-路径：`Bridge` → 主表
+![第4步](images/04-设置网段.png)
 
-看 `Name` 列是否有 `bridge`。没有则不要继续加地址，先做网桥课。
+---
 
-![步骤1 Winbox](images/add-bridge-address-s1-winbox.png)
+## 第5步：设置地址池
 
-**怎么确认成功：** `print` 至少一行，`NAME` 为 `bridge`。  
-**常见失败：** 接口实际叫 `bridge1`，后面地址加错口。
+填写：
 
-## 步骤 2：添加地址
-
-**官方依据：** [IP Addressing](https://help.mikrotik.com/docs/spaces/ROS/pages/328068/IP+Addressing)
-
-**这一步要完成：** `bridge` 上出现 `192.168.88.1/24`。
-
-**命令行**
-
-```routeros
-/ip/address/add address=192.168.88.1/24 interface=bridge comment=LAN
-/ip/address/print
+```text
+192.168.80.100-192.168.80.200
 ```
 
-![步骤2 命令行](images/add-bridge-address-s2-cli.png)
+点击：
 
-**Winbox**
+`Next`
 
-路径：`IP` → `Addresses` → 工具栏 `+`
+![第5步](images/05-地址池.png)
 
-- `Address`：`192.168.88.1/24`
-- `Interface`：`bridge`
-- `Comment`：`LAN`
-- 点 `OK`
+---
 
-![步骤2 Winbox](images/add-bridge-address-s2-winbox.png)
+## 第6步：完成向导
 
-**怎么确认成功：** 表格出现该行，`Network` 一般为 `192.168.88.0`。  
-**常见失败：** `Interface` 选成 `ether1`（WAN）；只填 `192.168.88.1` 忘了 `/24`。
+点击：
 
-## 本课命令合集
+`Next` → 直到结束 → `OK`
+
+（网关、DNS 向导里填 `192.168.80.1`，与「网络」一致。）
+
+![第6步](images/06-完成.png)
+
+---
+
+## 对应命令
 
 ```routeros
-/interface/bridge/print
-/ip/address/add address=192.168.88.1/24 interface=bridge comment=LAN
-/ip/address/print
+/ip/pool/add name=dhcp_pool ranges=192.168.80.100-192.168.80.200
+/ip/dhcp-server/add address-pool=dhcp_pool interface=bridge name=dhcp1
+/ip/dhcp-server/network/add address=192.168.80.0/24 gateway=192.168.80.1 dns-server=192.168.80.1
 ```
 
-## 官方链接
+---
 
-- IP Addressing
-- Bridging and Switching
+## 检查
+
+WinBox：
+
+`IP → DHCP Server → Leases`
+
+电脑连上 LAN 后应看到租约地址。
+
+命令：
+
+```routeros
+/ip/dhcp-server/print
+/ip/dhcp-server/lease/print
+```
+
+## 测试
+
+电脑设自动获取地址，应能 ping 通 `192.168.80.1`。
+
+```routeros
+/ping 192.168.80.1
+```
+
+---
+
+## 常见问题
+
+### 电脑没有获取 IP
+
+```routeros
+/ip/dhcp-server/print
+/ip/dhcp-server/network/print
+/ip/pool/print
+/interface/bridge/port/print
+```
+
+确认 DHCP 绑的是 `bridge`，且电脑插在网桥端口上，而不是 WAN `ether1`。

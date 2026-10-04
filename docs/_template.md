@@ -1,10 +1,8 @@
 # 文章标题
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[页面标题](https://help.mikrotik.com/docs/spaces/ROS/overview)
+> 适用版本：RouterOS 7.x
 
-只写步骤。每步：真机 WinBox 图 + 操作 + 本步命令。
+只写步骤。每步：真机 WinBox 图 + 操作 + 本步命令。图底居中标注 `图(N) 短说明`。
 
 ## 目的
 
@@ -21,7 +19,7 @@ WinBox：`菜单 → 窗口`
 
 点 / 填：
 
-![第1步](images/01-….png)
+![图(1) 短说明](images/01-….png)
 
 ```routeros
 /ip/address/add address=192.168.88.1/24 interface=bridge
@@ -33,10 +31,4 @@ WinBox：`IP → Addresses`
 
 ```routeros
 /ip/address/print
-```
-
-## 常见问题
-
-```routeros
-/interface/print
 ```

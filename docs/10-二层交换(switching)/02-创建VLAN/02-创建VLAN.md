@@ -17,9 +17,9 @@
 
 先有 bridge vlan-filtering，再加 VID。
 
-![图(0) 创建VLAN](images/00-原理.svg)
+![图(1) 创建VLAN](images/00-原理.svg)
 
-<p align="center">图(0) 创建VLAN</p>
+<p align="center">图(1) 创建VLAN</p>
 
 ## 第1步：打开 Bridge VLANs
 
@@ -27,9 +27,9 @@ WinBox：`Bridge → VLANs`
 
 动作：准备添加条目。
 
-![图(1) 打开BridgeVLANs](images/01-filtering.png)
+![图(2) 打开BridgeVLANs](images/01-filtering.png)
 
-<p align="center">图(1) 打开BridgeVLANs</p>
+<p align="center">图(2) 打开BridgeVLANs</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`Bridge → VLANs → +`
 
 动作：vlan-ids=10，tagged/untagged 按拓扑填。
 
-![图(2) 添加VLAN](images/02-加vlan.png)
+![图(3) 添加VLAN](images/02-加vlan.png)
 
-<p align="center">图(2) 添加VLAN</p>
+<p align="center">图(3) 添加VLAN</p>
 
 
 ```routeros

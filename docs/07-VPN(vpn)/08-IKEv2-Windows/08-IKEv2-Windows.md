@@ -19,9 +19,9 @@
 
 先把 CA 放进「受信任的根」，再新建 IKEv2 连接。
 
-![图(0) IKEv2 Windows](images/00-原理.svg)
+![图(1) IKEv2 Windows](images/00-原理.svg)
 
-<p align="center">图(0) IKEv2 Windows</p>
+<p align="center">图(1) IKEv2 Windows</p>
 
 ## 第1步：打开 IPsec
 
@@ -29,9 +29,9 @@ WinBox：`IP → IPsec`
 
 动作：看 Peers/Policies。
 
-![图(1) 打开IPsec](images/01-ike-win.png)
+![图(2) 打开IPsec](images/01-ike-win.png)
 
-<p align="center">图(1) 打开IPsec</p>
+<p align="center">图(2) 打开IPsec</p>
 
 
 ```routeros
@@ -44,9 +44,9 @@ WinBox：`IP → IPsec → Active Peers`
 
 动作：连上后这里会有 SA。
 
-![图(2) 看ActivePeers/SA](images/02-sa.png)
+![图(3) 看ActivePeers/SA](images/02-sa.png)
 
-<p align="center">图(2) 看ActivePeers/SA</p>
+<p align="center">图(3) 看ActivePeers/SA</p>
 
 
 ```routeros

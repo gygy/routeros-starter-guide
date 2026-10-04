@@ -17,9 +17,9 @@
 
 CA 签发 server，CN/SAN 必须等于手机里填的服务器地址。
 
-![图(0) IKEv2证书](images/00-原理.svg)
+![图(1) IKEv2证书](images/00-原理.svg)
 
-<p align="center">图(0) IKEv2证书</p>
+<p align="center">图(1) IKEv2证书</p>
 
 ## 第1步：打开 Certificates
 
@@ -27,9 +27,9 @@ WinBox：`System → Certificates`
 
 动作：查看已有证书列表。
 
-![图(1) 打开Certificates](images/01-证书.png)
+![图(2) 打开Certificates](images/01-证书.png)
 
-<p align="center">图(1) 打开Certificates</p>
+<p align="center">图(2) 打开Certificates</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`System → Certificates`
 
 动作：CA/服务器证书用途正确后再配 IPsec Identity。
 
-![图(2) 核对用途](images/02-用途.png)
+![图(3) 核对用途](images/02-用途.png)
 
-<p align="center">图(2) 核对用途</p>
+<p align="center">图(3) 核对用途</p>
 
 
 ```routeros

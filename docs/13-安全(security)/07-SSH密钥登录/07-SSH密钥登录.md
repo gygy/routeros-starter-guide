@@ -18,9 +18,9 @@
 
 电脑保存私钥，R1 只收公钥。
 
-![图(0) SSH密钥](images/00-原理.svg)
+![图(1) SSH密钥](images/00-原理.svg)
 
-<p align="center">图(0) SSH密钥</p>
+<p align="center">图(1) SSH密钥</p>
 
 ## 第1步：上传公钥文件
 
@@ -28,9 +28,9 @@ WinBox：`Files`
 
 动作：把电脑上的 .pub 拖进 Files，例如 id_rsa.pub。
 
-![图(1) 上传公钥文件](images/01-文件.png)
+![图(2) 上传公钥文件](images/01-文件.png)
 
-<p align="center">图(1) 上传公钥文件</p>
+<p align="center">图(2) 上传公钥文件</p>
 
 
 ```routeros
@@ -43,9 +43,9 @@ WinBox：`New Terminal`
 
 动作：官方：/user ssh-keys import。User=admin。
 
-![图(2) 导入给admin](images/02-导入.png)
+![图(3) 导入给admin](images/02-导入.png)
 
-<p align="center">图(2) 导入给admin</p>
+<p align="center">图(3) 导入给admin</p>
 
 
 ```routeros
@@ -59,9 +59,9 @@ WinBox：`电脑终端`
 
 动作：ssh admin@192.168.88.1 应不再问密码（或只问密钥口令）。
 
-![图(3) 电脑试连](images/03-服务.png)
+![图(4) 电脑试连](images/03-服务.png)
 
-<p align="center">图(3) 电脑试连</p>
+<p align="center">图(4) 电脑试连</p>
 
 
 ```routeros
@@ -74,9 +74,9 @@ WinBox：`IP → SSH`
 
 动作：确认密钥能登录后，再设 password-authentication=no。官方默认 yes-if-no-key。设错会锁死，先留 MAC 登录退路。
 
-![图(4) （可选）关闭密码登录](images/04-关密码.png)
+![图(5) （可选）关闭密码登录](images/04-关密码.png)
 
-<p align="center">图(4) （可选）关闭密码登录</p>
+<p align="center">图(5) （可选）关闭密码登录</p>
 
 
 ```routeros

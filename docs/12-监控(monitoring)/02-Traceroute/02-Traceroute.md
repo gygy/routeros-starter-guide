@@ -17,9 +17,9 @@
 
 TTL 一跳加一，看卡在哪。
 
-![图(0) Traceroute](images/00-原理.svg)
+![图(1) Traceroute](images/00-原理.svg)
 
-<p align="center">图(0) Traceroute</p>
+<p align="center">图(1) Traceroute</p>
 
 ## 第1步：打开 Traceroute
 
@@ -27,9 +27,9 @@ WinBox：`Tools → Traceroute`
 
 动作：Address 填目标后 Start。
 
-![图(1) 打开Traceroute](images/01-tr.png)
+![图(2) 打开Traceroute](images/01-tr.png)
 
-<p align="center">图(1) 打开Traceroute</p>
+<p align="center">图(2) 打开Traceroute</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`New Terminal`
 
 动作：执行 traceroute。
 
-![图(2) 终端核对](images/02-cli.png)
+![图(3) 终端核对](images/02-cli.png)
 
-<p align="center">图(2) 终端核对</p>
+<p align="center">图(3) 终端核对</p>
 
 
 ```routeros

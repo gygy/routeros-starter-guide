@@ -17,9 +17,9 @@
 
 先把网段放进列表，防火墙只写「来自这份名单」。
 
-![图(0) Address-List](images/00-原理.svg)
+![图(1) Address-List](images/00-原理.svg)
 
-<p align="center">图(0) Address-List</p>
+<p align="center">图(1) Address-List</p>
 
 ## 第1步：打开 Address Lists
 
@@ -27,9 +27,9 @@ WinBox：`IP → Firewall → Address Lists`
 
 动作：查看已有列表。901 有 mgmt=192.168.88.0/24。
 
-![图(1) 打开AddressLists](images/01-alist.png)
+![图(2) 打开AddressLists](images/01-alist.png)
 
-<p align="center">图(1) 打开AddressLists</p>
+<p align="center">图(2) 打开AddressLists</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`IP → Firewall → Address Lists → +`
 
 动作：List=mgmt，Address=192.168.88.0/24，Comment=lab。
 
-![图(2) 添加条目](images/02-添加.png)
+![图(3) 添加条目](images/02-添加.png)
 
-<p align="center">图(2) 添加条目</p>
+<p align="center">图(3) 添加条目</p>
 
 
 ```routeros

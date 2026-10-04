@@ -19,9 +19,9 @@
 
 电脑用账号连 TCP 1194，R1 从池里发 192.168.77.x。
 
-![图(0) OpenVPN回家](images/00-原理.svg)
+![图(1) OpenVPN回家](images/00-原理.svg)
 
-<p align="center">图(0) OpenVPN回家</p>
+<p align="center">图(1) OpenVPN回家</p>
 
 ```mermaid
 flowchart LR
@@ -47,9 +47,9 @@ WinBox：`System → Certificates`
 
 动作：CA + server（tls-server）。最简只需服务器证书。
 
-![图(1) 签服务器证书](images/01-证书.png)
+![图(2) 签服务器证书](images/01-证书.png)
 
-<p align="center">图(1) 签服务器证书</p>
+<p align="center">图(2) 签服务器证书</p>
 
 
 ```routeros
@@ -65,9 +65,9 @@ WinBox：`IP → Pool / PPP → Profiles`
 
 动作：Pool=ovpn-pool。Profile 名 ovpn：Local Address=192.168.77.1，Remote Address=ovpn-pool。
 
-![图(2) 地址池和PPPProfile](images/02-池.png)
+![图(3) 地址池和PPPProfile](images/02-池.png)
 
-<p align="center">图(2) 地址池和PPPProfile</p>
+<p align="center">图(3) 地址池和PPPProfile</p>
 
 
 ```routeros
@@ -81,9 +81,9 @@ WinBox：`PPP → Secrets → +`
 
 动作：Name=ovpnuser，Password=********，Service=ovpn，Profile=ovpn。
 
-![图(3) PPP账号](images/03-用户.png)
+![图(4) PPP账号](images/03-用户.png)
 
-<p align="center">图(3) PPP账号</p>
+<p align="center">图(4) PPP账号</p>
 
 
 ```routeros
@@ -96,9 +96,9 @@ WinBox：`PPP / Interfaces → OVPN Server`
 
 动作：v7 用 /interface/ovpn-server/server add：certificate=ovpn-server，disabled=no，port=1194。
 
-![图(4) 启用OVPN服务器](images/04-服务器.png)
+![图(5) 启用OVPN服务器](images/04-服务器.png)
 
-<p align="center">图(4) 启用OVPN服务器</p>
+<p align="center">图(5) 启用OVPN服务器</p>
 
 
 ```routeros
@@ -111,9 +111,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input TCP（或 UDP）1194 accept。
 
-![图(5) 防火墙放行1194](images/05-防火墙.png)
+![图(6) 防火墙放行1194](images/05-防火墙.png)
 
-<p align="center">图(5) 防火墙放行1194</p>
+<p align="center">图(6) 防火墙放行1194</p>
 
 
 ```routeros

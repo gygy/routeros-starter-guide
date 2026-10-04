@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- 示意图按 `network-v1-diagram` / `packet-flow-diagram`：本课 `00-原理.png`（及需要时的 `00-包变形.png`），不再手搓另一套扁平 SVG 当主图。
+- 图注从 **图(1)** 起编，禁止图(0)；原理图文件名仍可为 `00-原理.png`。
 - 图注改为课文里图片下一行居中文字，去掉画进 PNG/SVG 的同色底栏。
 - 技能与全文：课文去掉「管理工具 / 官方依据」；图底居中「图(N) 说明」；红框标菜单与字段并带标签；禁止白块打码；常见问题只保留容易忽略的具体坑。
 - 技能改为「一个完整功能及配置过程 = 一份教程」；补齐 IKEv2/SSTP/OpenVPN/L2TP/ZeroTier/WireGuard 回家、端口敲门、安全加固、IPv6、HTTPS、DHCP Option 分流、端口映射与回流、SSH 密钥登录。ZeroTier 官方仅 ARM/ARM64，x86 实验机不可实配。

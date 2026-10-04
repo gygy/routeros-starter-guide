@@ -19,9 +19,9 @@
 
 Windows 走 TCP 443，像上网一样穿过多数防火墙。
 
-![图(0) SSTP回家](images/00-原理.svg)
+![图(1) SSTP回家](images/00-原理.svg)
 
-<p align="center">图(0) SSTP回家</p>
+<p align="center">图(1) SSTP回家</p>
 
 ```mermaid
 flowchart LR
@@ -47,9 +47,9 @@ WinBox：`System → Certificates`
 
 动作：签 CA + server（tls-server）。Windows 要用自签时，必须把 CA 装进「受信任的根」。
 
-![图(1) 准备服务器证书](images/01-证书.png)
+![图(2) 准备服务器证书](images/01-证书.png)
 
-<p align="center">图(1) 准备服务器证书</p>
+<p align="center">图(2) 准备服务器证书</p>
 
 
 ```routeros
@@ -65,9 +65,9 @@ WinBox：`PPP → Secrets → +`
 
 动作：Name=vpnuser，Password=********，Service=sstp，Local Address=10.20.20.1，Remote Address=10.20.20.2。
 
-![图(2) 建PPP用户](images/02-用户.png)
+![图(3) 建PPP用户](images/02-用户.png)
 
-<p align="center">图(2) 建PPP用户</p>
+<p align="center">图(3) 建PPP用户</p>
 
 
 ```routeros
@@ -80,9 +80,9 @@ WinBox：`PPP → Interface → SSTP Server`
 
 动作：Enabled=yes，Certificate=sstp-server，Authentication 建议只留 mschap2，Default Profile=default-encryption。
 
-![图(3) 启用SSTP服务器](images/03-服务器.png)
+![图(4) 启用SSTP服务器](images/03-服务器.png)
 
-<p align="center">图(3) 启用SSTP服务器</p>
+<p align="center">图(4) 启用SSTP服务器</p>
 
 
 ```routeros
@@ -95,9 +95,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input TCP 443 accept（若 443 已给 www-ssl，改 SSTP port）。
 
-![图(4) 防火墙放行443](images/04-防火墙.png)
+![图(5) 防火墙放行443](images/04-防火墙.png)
 
-<p align="center">图(4) 防火墙放行443</p>
+<p align="center">图(5) 防火墙放行443</p>
 
 
 ```routeros

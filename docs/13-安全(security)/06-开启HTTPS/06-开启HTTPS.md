@@ -18,9 +18,9 @@
 
 证书给 www-ssl，浏览器用 https://192.168.88.1。
 
-![图(0) 开启HTTPS](images/00-原理.svg)
+![图(1) 开启HTTPS](images/00-原理.svg)
 
-<p align="center">图(0) 开启HTTPS</p>
+<p align="center">图(1) 开启HTTPS</p>
 
 ## 第1步：签一张 www 证书
 
@@ -28,9 +28,9 @@ WinBox：`System → Certificates → + / Sign`
 
 动作：Name=www-cert，common-name=R1 或你的域名，Sign（可用自签）。
 
-![图(1) 签一张www证书](images/01-证书.png)
+![图(2) 签一张www证书](images/01-证书.png)
 
-<p align="center">图(1) 签一张www证书</p>
+<p align="center">图(2) 签一张www证书</p>
 
 
 ```routeros
@@ -44,9 +44,9 @@ WinBox：`IP → Services → www-ssl`
 
 动作：Certificate 选 www-cert，Disabled=no，Port=443。
 
-![图(2) 启用www-ssl](images/02-wwwssl.png)
+![图(3) 启用www-ssl](images/02-wwwssl.png)
 
-<p align="center">图(2) 启用www-ssl</p>
+<p align="center">图(3) 启用www-ssl</p>
 
 
 ```routeros
@@ -60,9 +60,9 @@ WinBox：`IP → Services → www`
 
 动作：不用 HTTP 就 Disable www。
 
-![图(3) 关掉明文www（可选）](images/03-关http.png)
+![图(4) 关掉明文www（可选）](images/03-关http.png)
 
-<p align="center">图(3) 关掉明文www（可选）</p>
+<p align="center">图(4) 关掉明文www（可选）</p>
 
 
 ```routeros
@@ -75,9 +75,9 @@ WinBox：`IP → Services → www-ssl`
 
 动作：Available From=192.168.88.0/24。
 
-![图(4) 限制来源](images/04-限制.png)
+![图(5) 限制来源](images/04-限制.png)
 
-<p align="center">图(4) 限制来源</p>
+<p align="center">图(5) 限制来源</p>
 
 
 ```routeros

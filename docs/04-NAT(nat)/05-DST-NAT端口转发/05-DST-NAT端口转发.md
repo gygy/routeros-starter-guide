@@ -17,9 +17,9 @@
 
 别人访问你的 WAN:8080，R1 改成 192.168.88.10:80。
 
-![图(0) 端口转发](images/00-原理.svg)
+![图(1) 端口转发](images/00-原理.svg)
 
-<p align="center">图(0) 端口转发</p>
+<p align="center">图(1) 端口转发</p>
 
 ```mermaid
 flowchart LR
@@ -45,9 +45,9 @@ WinBox：`IP → Firewall → NAT`
 
 动作：先看到现有 NAT 规则。
 
-![图(1) 打开NAT列表](images/01-dstnat.png)
+![图(2) 打开NAT列表](images/01-dstnat.png)
 
-<p align="center">图(1) 打开NAT列表</p>
+<p align="center">图(2) 打开NAT列表</p>
 
 
 ```routeros
@@ -60,9 +60,9 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=dstnat，Protocol=tcp，Dst. Port=8080，In. Interface=pppoe-out1，Action=dst-nat，To Addresses=192.168.88.10，Comment=lab-portfwd。
 
-![图(2) 添加dst-nat](images/02-规则.png)
+![图(3) 添加dst-nat](images/02-规则.png)
 
-<p align="center">图(2) 添加dst-nat</p>
+<p align="center">图(3) 添加dst-nat</p>
 
 
 ```routeros

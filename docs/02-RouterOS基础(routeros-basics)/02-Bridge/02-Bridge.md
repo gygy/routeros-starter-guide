@@ -17,9 +17,9 @@
 
 LAN 口丢进同一座桥，电脑互相二层直通。
 
-![图(0) Bridge](images/00-原理.svg)
+![图(1) Bridge](images/00-原理.svg)
 
-<p align="center">图(0) Bridge</p>
+<p align="center">图(1) Bridge</p>
 
 ## 第1步：新建 Bridge
 
@@ -27,9 +27,9 @@ WinBox：`Bridge → +`
 
 动作：Name=bridge，Comment=lab-demo。
 
-![图(1) 新建Bridge](images/01-建桥.png)
+![图(2) 新建Bridge](images/01-建桥.png)
 
-<p align="center">图(1) 新建Bridge</p>
+<p align="center">图(2) 新建Bridge</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`Bridge → Ports → +`
 
 动作：Interface 选 LAN 口，Bridge=bridge。
 
-![图(2) 加端口](images/02-端口.png)
+![图(3) 加端口](images/02-端口.png)
 
-<p align="center">图(2) 加端口</p>
+<p align="center">图(3) 加端口</p>
 
 
 ```routeros

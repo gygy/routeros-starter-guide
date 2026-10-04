@@ -17,9 +17,9 @@
 
 家里私网地址不能上公网，R1 把源地址换成 WAN 口。
 
-![图(0) Masquerade](images/00-原理.svg)
+![图(1) Masquerade](images/00-原理.svg)
 
-<p align="center">图(0) Masquerade</p>
+<p align="center">图(1) Masquerade</p>
 
 ```mermaid
 flowchart LR
@@ -45,9 +45,9 @@ WinBox：`IP → Firewall → NAT`
 
 动作：确认在 NAT 页签（不是 Filter Rules）。
 
-![图(1) 打开NAT](images/01-NAT.png)
+![图(2) 打开NAT](images/01-NAT.png)
 
-<p align="center">图(1) 打开NAT</p>
+<p align="center">图(2) 打开NAT</p>
 
 
 ```routeros
@@ -60,9 +60,9 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。
 
-![图(2) 添加masquerade](images/02-添加.png)
+![图(3) 添加masquerade](images/02-添加.png)
 
-<p align="center">图(2) 添加masquerade</p>
+<p align="center">图(3) 添加masquerade</p>
 
 
 ```routeros

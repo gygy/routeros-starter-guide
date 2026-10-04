@@ -19,9 +19,9 @@
 
 服务器地址、CA、用户/证书三者对上才会亮。
 
-![图(0) IKEv2手机](images/00-原理.svg)
+![图(1) IKEv2手机](images/00-原理.svg)
 
-<p align="center">图(0) IKEv2手机</p>
+<p align="center">图(1) IKEv2手机</p>
 
 ## 第1步：打开 IPsec
 
@@ -29,9 +29,9 @@ WinBox：`IP → IPsec`
 
 动作：看 Peers/Policies。
 
-![图(1) 打开IPsec](images/01-sa.png)
+![图(2) 打开IPsec](images/01-sa.png)
 
-<p align="center">图(1) 打开IPsec</p>
+<p align="center">图(2) 打开IPsec</p>
 
 
 ```routeros
@@ -44,9 +44,9 @@ WinBox：`IP → IPsec → Active Peers`
 
 动作：连上后这里会有 SA。
 
-![图(2) 看ActivePeers/SA](images/02-sa.png)
+![图(3) 看ActivePeers/SA](images/02-sa.png)
 
-<p align="center">图(2) 看ActivePeers/SA</p>
+<p align="center">图(3) 看ActivePeers/SA</p>
 
 
 ```routeros

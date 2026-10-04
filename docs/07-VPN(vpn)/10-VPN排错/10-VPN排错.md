@@ -17,9 +17,9 @@
 
 握手、防火墙端口、路由/AllowedIPs，缺一不可。
 
-![图(0) VPN排错](images/00-原理.svg)
+![图(1) VPN排错](images/00-原理.svg)
 
-<p align="center">图(0) VPN排错</p>
+<p align="center">图(1) VPN排错</p>
 
 ## 第1步：看 WireGuard
 
@@ -27,9 +27,9 @@ WinBox：`WireGuard`
 
 动作：接口是否 Running，端口是否监听。
 
-![图(1) 看WireGuard](images/01-握手.png)
+![图(2) 看WireGuard](images/01-握手.png)
 
-<p align="center">图(1) 看WireGuard</p>
+<p align="center">图(2) 看WireGuard</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`WireGuard → Peers`
 
 动作：Last Handshake 是否更新。
 
-![图(2) 看Peer握手](images/02-peer.png)
+![图(3) 看Peer握手](images/02-peer.png)
 
-<p align="center">图(2) 看Peer握手</p>
+<p align="center">图(3) 看Peer握手</p>
 
 
 ```routeros

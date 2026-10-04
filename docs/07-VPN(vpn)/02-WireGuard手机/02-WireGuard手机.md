@@ -20,9 +20,9 @@
 
 手机填：家里公钥、Endpoint、AllowedIPs。
 
-![图(0) 手机Peer](images/00-原理.svg)
+![图(1) 手机Peer](images/00-原理.svg)
 
-<p align="center">图(0) 手机Peer</p>
+<p align="center">图(1) 手机Peer</p>
 
 ## 第1步：核对服务端
 
@@ -30,9 +30,9 @@ WinBox：`WireGuard`
 
 动作：wg-demo Running，有 Listen Port。
 
-![图(1) 核对服务端](images/01-手机.png)
+![图(2) 核对服务端](images/01-手机.png)
 
-<p align="center">图(1) 核对服务端</p>
+<p align="center">图(2) 核对服务端</p>
 
 
 ```routeros
@@ -45,9 +45,9 @@ WinBox：`WireGuard → Peers`
 
 动作：Public Key、Allowed Address、Endpoint 按对端填写（勿写真实私钥）。
 
-![图(2) 添加/核对Peer](images/02-peer.png)
+![图(3) 添加/核对Peer](images/02-peer.png)
 
-<p align="center">图(2) 添加/核对Peer</p>
+<p align="center">图(3) 添加/核对Peer</p>
 
 
 ```routeros

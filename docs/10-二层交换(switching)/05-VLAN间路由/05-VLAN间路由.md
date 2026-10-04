@@ -17,9 +17,9 @@
 
 每个 VLAN 一个 SVI 地址，forward 决定谁能互访。
 
-![图(0) VLAN间路由](images/00-原理.svg)
+![图(1) VLAN间路由](images/00-原理.svg)
 
-<p align="center">图(0) VLAN间路由</p>
+<p align="center">图(1) VLAN间路由</p>
 
 ## 第1步：确认 VLAN 接口
 
@@ -27,9 +27,9 @@ WinBox：`Interfaces`
 
 动作：应有 vlan10（或你建的 VLAN 接口）。
 
-![图(1) 确认VLAN接口](images/01-svi.png)
+![图(2) 确认VLAN接口](images/01-svi.png)
 
-<p align="center">图(1) 确认VLAN接口</p>
+<p align="center">图(2) 确认VLAN接口</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`IP → Addresses → +`
 
 动作：Address=192.168.10.1/24，Interface=vlan10。
 
-![图(2) 加地址](images/02-地址.png)
+![图(3) 加地址](images/02-地址.png)
 
-<p align="center">图(2) 加地址</p>
+<p align="center">图(3) 加地址</p>
 
 
 ```routeros

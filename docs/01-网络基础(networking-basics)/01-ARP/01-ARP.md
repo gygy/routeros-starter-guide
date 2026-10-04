@@ -17,9 +17,9 @@
 
 同一网段通信前，先广播：谁是 192.168.88.1？
 
-![图(0) ARP](images/00-原理.svg)
+![图(1) ARP](images/00-原理.svg)
 
-<p align="center">图(0) ARP</p>
+<p align="center">图(1) ARP</p>
 
 ## 第1步：打开 ARP
 
@@ -27,9 +27,9 @@ WinBox：`IP → ARP`
 
 动作：查看 IP Address / MAC Address / Interface。
 
-![图(1) 打开ARP](images/01-ARP.png)
+![图(2) 打开ARP](images/01-ARP.png)
 
-<p align="center">图(1) 打开ARP</p>
+<p align="center">图(2) 打开ARP</p>
 
 
 ```routeros
@@ -42,9 +42,9 @@ WinBox：`IP → ARP`
 
 动作：内网通信后会出现动态条目。
 
-![图(2) 刷新观察](images/02-刷新.png)
+![图(3) 刷新观察](images/02-刷新.png)
 
-<p align="center">图(2) 刷新观察</p>
+<p align="center">图(3) 刷新观察</p>
 
 
 ```routeros

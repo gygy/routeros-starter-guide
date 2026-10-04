@@ -38,13 +38,13 @@ RouterOS 7。按场景分组见 [docs/实战课表.md](docs/实战课表.md)。
 | `08-QoS(qos)/02-QueueTree限网段/02-QueueTree限网段.md` | Queue Tree 限网段  |
 | `09-高可用(high-availability)/01-双WAN/01-双WAN.md` | 双 WAN  |
 | `10-二层交换(switching)/05-VLAN间路由/05-VLAN间路由.md` | 家里 VLAN  |
-| `11-三层路由(routing)/02-添加静态路由/02-添加静态路由.md` | 添加静态路由  |
+| `11-三层路由(routing)/02-添加静态路由/02-添加静态路由.md` | 去某网段怎么走  |
 | `11-三层路由(routing)/04-策略路由/04-策略路由.md` | 策略路由  |
 | `11-三层路由(routing)/05-多路由表/05-多路由表.md` | 多路由表  |
 | `13-安全(security)/05-安全加固/05-安全加固.md` | RouterOS 安全加固  |
 | `13-安全(security)/06-开启HTTPS/06-开启HTTPS.md` | 开启 HTTPS  |
 | `13-安全(security)/07-SSH密钥登录/07-SSH密钥登录.md` | SSH 密钥登录  |
-| `14-故障排查(troubleshooting)/01-网络故障排查流程/01-网络故障排查流程.md` | 网络故障排查流程  |
+| `14-故障排查(troubleshooting)/01-网络故障排查流程/01-网络故障排查流程.md` | 网络不通  |
 | `15-性能优化(performance)/01-FastTrack/01-FastTrack.md` | FastTrack  |
 | `16-自动化(automation)/01-定时备份/01-定时备份.md` | 定时备份  |
 | `16-自动化(automation)/02-Netwatch探测/02-Netwatch探测.md` | Netwatch 探测  |
@@ -57,5 +57,3 @@ RouterOS 7。按场景分组见 [docs/实战课表.md](docs/实战课表.md)。
 | `19-MPLS(mpls)/01-LDP互通/01-LDP互通.md` | LDP 互通  |
 | `20-高级(advanced)/01-RoMON/01-RoMON.md` | RoMON  |
 | `20-高级(advanced)/02-VRF隔离/02-VRF隔离.md` | VRF 隔离  |
-| `_audit-实战课文.md` | 实战课文体检报告  |
-| `_template.md` | 文章标题  |

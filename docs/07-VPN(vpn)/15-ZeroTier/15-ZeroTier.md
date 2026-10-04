@@ -1,8 +1,8 @@
 # ZeroTier
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[ZeroTier](https://help.mikrotik.com/docs/spaces/ROS/pages/83755083/ZeroTier) · [Packages](https://help.mikrotik.com/docs/spaces/ROS/pages/228655136/Packages)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`System → Resources / Packages`
 
 动作：Architecture 必须是 arm 或 arm64。Extra packages 里上传 zerotier-*.npk 后重启。x86 到此停止。
 
-![第1步](images/01-软件包.png)
+![图(1) 确认架构并安装包](images/01-软件包.png)
 
 ```routeros
 /system/resource/print
@@ -36,7 +36,7 @@ WinBox：`ZeroTier`
 
 动作：/zerotier/enable zt1。Interface → +，Network=你的 16 位 Network ID，Instance=zt1。
 
-![第2步](images/02-加入.png)
+![图(2) 启用实例并加入网络](images/02-加入.png)
 
 ```routeros
 /zerotier/enable zt1
@@ -50,7 +50,7 @@ WinBox：`浏览器 my.zerotier.com 或 RouterOS Controller`
 
 动作：Private 网络必须在网页勾选 Authorize。Status 应变为 OK。
 
-![第3步](images/03-状态.png)
+![图(3) 控制台授权节点](images/03-状态.png)
 
 ```routeros
 /zerotier/interface/print
@@ -63,7 +63,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input/forward 对 zerotier1 accept（按官方示例放在前面）。
 
-![第4步](images/04-防火墙.png)
+![图(4) 防火墙放行ZeroTier口](images/04-防火墙.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input in-interface=zerotier1 action=accept comment=lab-zt-in place-before=0
@@ -81,4 +81,4 @@ WinBox：zerotier1 为 R，有动态地址；能 ping 对端 ZeroTier IP
 
 ## 常见问题
 
-device-mode 可能关掉 ZeroTier，要本机按键才能改。UDP 9993 出站不要拦。LAN 路由在 ZeroTier 控制台里推送。
+容易忽略：device-mode 可能关掉 ZeroTier，要本机按键才能改。UDP 9993 出站不要拦。LAN 路由在 ZeroTier 控制台里推送。

@@ -1,8 +1,8 @@
 # DHCP 获取公网 IP
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[DHCP Client](https://help.mikrotik.com/docs/spaces/ROS/pages/24805389/DHCP)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → DHCP Client`
 
 动作：Interface 选 WAN 口。
 
-![第1步](images/01-WANDHCP.png)
+![图(1) 打开DHCPClient](images/01-WANDHCP.png)
 
 ```routeros
 /ip/dhcp-client/print
@@ -33,7 +33,7 @@ WinBox：`IP → Addresses / Routes`
 
 动作：动态地址出现，且有默认路由。
 
-![第2步](images/02-路由.png)
+![图(2) 确认地址与路由](images/02-路由.png)
 
 ```routeros
 /ip/dhcp-client/print
@@ -48,7 +48,3 @@ WinBox：Client bound 且有默认路由
 /ip/dhcp-client/print
 /ip/route/print where dst-address=0.0.0.0/0
 ```
-
-## 常见问题
-
-与静态 WAN / PPPoE 不要叠三套。

@@ -1,8 +1,8 @@
 # IKEv2 服务器
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[IPsec](https://help.mikrotik.com/docs/spaces/ROS/pages/121012236/IPsec)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → IPsec`
 
 动作：认 Peers / Identities / Policies 页签。
 
-![第1步](images/01-ipsec.png)
+![图(1) 打开IPsec](images/01-ipsec.png)
 
 ```routeros
 /ip/ipsec/peer/print
@@ -33,7 +33,7 @@ WinBox：`IP → IPsec → Profiles`
 
 动作：确认加密提案存在。
 
-![第2步](images/02-profile.png)
+![图(2) 看Profiles](images/02-profile.png)
 
 ```routeros
 /ip/ipsec/profile/print
@@ -50,4 +50,4 @@ WinBox：能打开 IPsec 窗口
 
 ## 常见问题
 
-完整 IKEv2 还需证书与 Identity。
+容易忽略：完整 IKEv2 还需证书与 Identity。

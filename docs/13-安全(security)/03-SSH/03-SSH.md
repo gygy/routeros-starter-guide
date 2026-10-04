@@ -1,8 +1,8 @@
 # SSH
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Services](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Services)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Services`
 
 动作：确认 ssh 启用。
 
-![第1步](images/01-ssh.png)
+![图(1) 打开Services](images/01-ssh.png)
 
 ```routeros
 /ip/service/print where name=ssh
@@ -33,7 +33,7 @@ WinBox：`IP → Services → ssh`
 
 动作：Available From 填管理网段。
 
-![第2步](images/02-限制.png)
+![图(2) 限制来源](images/02-限制.png)
 
 ```routeros
 /ip/service/set ssh address=192.168.88.0/24
@@ -49,4 +49,4 @@ WinBox：SSH 可登录且来源受限
 
 ## 常见问题
 
-生产建议密钥登录。
+容易忽略：生产建议密钥登录。

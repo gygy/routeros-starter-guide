@@ -1,8 +1,8 @@
 # Masquerade
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/8978531/NAT)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → NAT`
 
 动作：确认在 NAT 页签（不是 Filter Rules）。
 
-![第1步](images/01-NAT.png)
+![图(1) 打开NAT](images/01-NAT.png)
 
 ```routeros
 /ip/firewall/nat/print
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。
 
-![第2步](images/02-添加.png)
+![图(2) 添加masquerade](images/02-添加.png)
 
 ```routeros
 /ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade comment=lab-masq
@@ -46,7 +46,3 @@ WinBox：NAT 有 lab-masq
 ```routeros
 /ip/firewall/nat/print where comment=lab-masq
 ```
-
-## 常见问题
-
-出接口必须是真实 WAN。

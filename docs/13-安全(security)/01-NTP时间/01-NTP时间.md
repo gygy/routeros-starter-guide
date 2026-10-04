@@ -1,8 +1,8 @@
 # NTP 时间
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Clock](https://help.mikrotik.com/docs/spaces/ROS/pages/24805287/Clock)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`System → Clock`
 
 动作：看当前时间与时区。
 
-![第1步](images/01-ntp.png)
+![图(1) 打开Clock](images/01-ntp.png)
 
 ```routeros
 /system/clock/print
@@ -33,7 +33,7 @@ WinBox：`System → NTP Client`
 
 动作：Servers 填 pool.ntp.org（或运营商 NTP）。
 
-![第2步](images/02-client.png)
+![图(2) 开NTPclient](images/02-client.png)
 
 ```routeros
 /system/ntp/client/set enabled=yes servers=pool.ntp.org
@@ -47,7 +47,3 @@ WinBox：时间接近正确
 /system/clock/print
 /system/ntp/client/print
 ```
-
-## 常见问题
-
-时区选对。

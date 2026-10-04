@@ -1,8 +1,8 @@
 # ARP
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[ARP](https://help.mikrotik.com/docs/spaces/ROS/pages/159903761/ARP)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → ARP`
 
 动作：查看 IP Address / MAC Address / Interface。
 
-![第1步](images/01-ARP.png)
+![图(1) 打开ARP](images/01-ARP.png)
 
 ```routeros
 /ip/arp/print
@@ -33,7 +33,7 @@ WinBox：`IP → ARP`
 
 动作：内网通信后会出现动态条目。
 
-![第2步](images/02-刷新.png)
+![图(2) 刷新观察](images/02-刷新.png)
 
 ```routeros
 /ip/arp/print where dynamic
@@ -46,7 +46,3 @@ WinBox：能看到邻居或为空（刚开机）
 ```routeros
 /ip/arp/print
 ```
-
-## 常见问题
-
-动态条目会随通信出现。

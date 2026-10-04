@@ -1,8 +1,8 @@
 # Import 恢复
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Import](https://help.mikrotik.com/docs/spaces/ROS/pages/8978443/Configuration+Management)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Files`
 
 动作：把 lab-export.rsc 拖进 Files。
 
-![第1步](images/01-rst.png)
+![图(1) 上传rsc](images/01-rst.png)
 
 ```routeros
 /file/print where name~"rsc"
@@ -33,7 +33,7 @@ WinBox：`New Terminal`
 
 动作：/import file-name=lab-export.rsc
 
-![第2步](images/02-import.png)
+![图(2) Import](images/02-import.png)
 
 ```routeros
 /import file-name=lab-export.rsc
@@ -46,7 +46,3 @@ WinBox：配置按脚本恢复
 ```routeros
 /import file-name=lab-export.rsc
 ```
-
-## 常见问题
-
-导入前先备份当前状态。

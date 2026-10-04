@@ -1,8 +1,8 @@
 # Torch
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Tools](https://help.mikrotik.com/docs/spaces/ROS/pages/24952854/Tools)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Tools → Torch`
 
 动作：Interface 选 bridge 后 Start。
 
-![第1步](images/01-torch.png)
+![图(1) 打开Torch](images/01-torch.png)
 
 ```routeros
 /tool/torch interface=bridge
@@ -33,7 +33,7 @@ WinBox：`Interfaces`
 
 动作：流量大的口再 Torch。
 
-![第2步](images/02-cli.png)
+![图(2) 对照接口](images/02-cli.png)
 
 ```routeros
 /interface/print stats
@@ -49,4 +49,4 @@ WinBox：有实时会话/速率
 
 ## 常见问题
 
-别在生产高峰长时间跑。
+容易忽略：别在生产高峰长时间跑。

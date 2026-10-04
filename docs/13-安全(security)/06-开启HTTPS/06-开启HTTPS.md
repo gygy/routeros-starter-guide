@@ -1,8 +1,8 @@
 # 开启 HTTPS
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Services](https://help.mikrotik.com/docs/spaces/ROS/pages/103841820/Services) · [Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -22,7 +22,7 @@ WinBox：`System → Certificates → + / Sign`
 
 动作：Name=www-cert，common-name=R1 或你的域名，Sign（可用自签）。
 
-![第1步](images/01-证书.png)
+![图(1) 签一张www证书](images/01-证书.png)
 
 ```routeros
 /certificate/add name=www-cert common-name=R1 key-usage=tls-server
@@ -35,7 +35,7 @@ WinBox：`IP → Services → www-ssl`
 
 动作：Certificate 选 www-cert，Disabled=no，Port=443。
 
-![第2步](images/02-wwwssl.png)
+![图(2) 启用www-ssl](images/02-wwwssl.png)
 
 ```routeros
 /ip/service/set www-ssl certificate=www-cert disabled=no port=443
@@ -48,7 +48,7 @@ WinBox：`IP → Services → www`
 
 动作：不用 HTTP 就 Disable www。
 
-![第3步](images/03-关http.png)
+![图(3) 关掉明文www（可选）](images/03-关http.png)
 
 ```routeros
 /ip/service/set www disabled=yes
@@ -60,7 +60,7 @@ WinBox：`IP → Services → www-ssl`
 
 动作：Available From=192.168.88.0/24。
 
-![第4步](images/04-限制.png)
+![图(4) 限制来源](images/04-限制.png)
 
 ```routeros
 /ip/service/set www-ssl address=192.168.88.0/24
@@ -76,4 +76,4 @@ WinBox：浏览器 https://192.168.88.1 能打开（自签会警告）
 
 ## 常见问题
 
-443 已被 SSTP 占用时改 www-ssl 端口。ACME 需要域名解析到路由器且 80 可达。
+容易忽略：443 已被 SSTP 占用时改 www-ssl 端口。ACME 需要域名解析到路由器且 80 可达。

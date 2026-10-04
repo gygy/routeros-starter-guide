@@ -1,8 +1,8 @@
 # VPN 排错
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[WireGuard](https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`WireGuard`
 
 动作：接口是否 Running，端口是否监听。
 
-![第1步](images/01-握手.png)
+![图(1) 看WireGuard](images/01-握手.png)
 
 ```routeros
 /interface/wireguard/print
@@ -33,7 +33,7 @@ WinBox：`WireGuard → Peers`
 
 动作：Last Handshake 是否更新。
 
-![第2步](images/02-peer.png)
+![图(2) 看Peer握手](images/02-peer.png)
 
 ```routeros
 /interface/wireguard/peers/print
@@ -47,7 +47,3 @@ WinBox：握手时间在刷新或隧道能 ping
 /interface/wireguard/peers/print
 /ping 10.10.10.2 count=2
 ```
-
-## 常见问题
-
-先查端口转发与公钥是否配对。

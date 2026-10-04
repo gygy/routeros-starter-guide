@@ -1,8 +1,8 @@
 # 双 WAN
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Routes](https://help.mikrotik.com/docs/spaces/ROS/pages/59968792/Routes)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Routes`
 
 动作：主线 distance 更小，带 A。
 
-![第1步](images/01-双路由.png)
+![图(1) 看默认路由](images/01-双路由.png)
 
 ```routeros
 /ip/route/print where dst-address=0.0.0.0/0
@@ -33,7 +33,7 @@ WinBox：`IP → Routes → +`
 
 动作：备线 distance=2；可加 check-gateway=ping。
 
-![第2步](images/02-备路由.png)
+![图(2) 备线distance](images/02-备路由.png)
 
 ```routeros
 /ip/route/add dst-address=0.0.0.0/0 gateway=ether2 distance=2 check-gateway=ping
@@ -46,7 +46,3 @@ WinBox：主线 Active
 ```routeros
 /ip/route/print where dst-address=0.0.0.0/0
 ```
-
-## 常见问题
-
-两条线都要各自 NAT。

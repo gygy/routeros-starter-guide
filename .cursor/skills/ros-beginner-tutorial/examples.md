@@ -9,9 +9,7 @@
 
 # DHCP服务器
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[DHCP](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
+> 适用版本：RouterOS 7.x
 
 ## 目的
 

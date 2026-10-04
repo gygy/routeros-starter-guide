@@ -1,8 +1,8 @@
 # Export 导出
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Export](https://help.mikrotik.com/docs/spaces/ROS/pages/8978443/Configuration+Management)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`New Terminal`
 
 动作：/export file=lab-export
 
-![第1步](images/01-exp.png)
+![图(1) Export到文件](images/01-exp.png)
 
 ```routeros
 /export file=lab-export
@@ -33,7 +33,7 @@ WinBox：`Files`
 
 动作：确认有 lab-export.rsc
 
-![第2步](images/02-files.png)
+![图(2) 在Files查看](images/02-files.png)
 
 ```routeros
 /file/print where name~"lab-export"
@@ -46,7 +46,3 @@ WinBox：Files 有 .rsc
 ```routeros
 /file/print where name~"export"
 ```
-
-## 常见问题
-
-分享前检查无密码/真实公网 IP。

@@ -1,8 +1,8 @@
 # DNS
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[DNS](https://help.mikrotik.com/docs/spaces/ROS/pages/37748767/DNS)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → DNS`
 
 动作：Servers 填公共 DNS（示例 1.1.1.1）。
 
-![第1步](images/01-DNS.png)
+![图(1) 打开DNS](images/01-DNS.png)
 
 ```routeros
 /ip/dns/print
@@ -33,7 +33,7 @@ WinBox：`IP → DNS`
 
 动作：Allow Remote Requests=yes（仅可信网段时）。
 
-![第2步](images/02-允许.png)
+![图(2) 开远程请求](images/02-允许.png)
 
 ```routeros
 /ip/dns/set allow-remote-requests=yes servers=1.1.1.1
@@ -47,7 +47,3 @@ WinBox：能解析域名
 /ip/dns/print
 /ping www.mikrotik.com count=2
 ```
-
-## 常见问题
-
-公网不要裸开 DNS。

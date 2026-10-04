@@ -1,8 +1,8 @@
 # SSTP 回家
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[SSTP](https://help.mikrotik.com/docs/spaces/ROS/pages/2031645/SSTP) · [Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`System → Certificates`
 
 动作：签 CA + server（tls-server）。Windows 要用自签时，必须把 CA 装进「受信任的根」。
 
-![第1步](images/01-证书.png)
+![图(1) 准备服务器证书](images/01-证书.png)
 
 ```routeros
 /certificate/add name=ca-sstp common-name=sstp-ca key-usage=key-cert-sign,crl-sign
@@ -38,7 +38,7 @@ WinBox：`PPP → Secrets → +`
 
 动作：Name=vpnuser，Password=********，Service=sstp，Local Address=10.20.20.1，Remote Address=10.20.20.2。
 
-![第2步](images/02-用户.png)
+![图(2) 建PPP用户](images/02-用户.png)
 
 ```routeros
 /ppp/secret/add name=vpnuser password=******** service=sstp local-address=10.20.20.1 remote-address=10.20.20.2
@@ -50,7 +50,7 @@ WinBox：`PPP → Interface → SSTP Server`
 
 动作：Enabled=yes，Certificate=sstp-server，Authentication 建议只留 mschap2，Default Profile=default-encryption。
 
-![第3步](images/03-服务器.png)
+![图(3) 启用SSTP服务器](images/03-服务器.png)
 
 ```routeros
 /interface/sstp-server/server/set enabled=yes certificate=sstp-server authentication=mschap2 default-profile=default-encryption
@@ -62,7 +62,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input TCP 443 accept（若 443 已给 www-ssl，改 SSTP port）。
 
-![第4步](images/04-防火墙.png)
+![图(4) 防火墙放行443](images/04-防火墙.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=tcp dst-port=443 action=accept comment=lab-sstp
@@ -79,4 +79,4 @@ WinBox：PPP 出现 sstp 会话；客户端能 ping 10.20.20.1
 
 ## 常见问题
 
-Windows 不信任自签 CA 会立刻断开。两台 RouterOS 之间可以无证书，但 Windows 不行。
+容易忽略：Windows 不信任自签 CA 会立刻断开。两台 RouterOS 之间可以无证书，但 Windows 不行。

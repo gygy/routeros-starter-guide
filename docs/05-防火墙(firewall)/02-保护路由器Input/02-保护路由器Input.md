@@ -1,8 +1,8 @@
 # 保护路由器 Input
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=input，Protocol=icmp，Action=accept，Comment=lab-icmp。
 
-![第1步](images/01-established.png)
+![图(1) 放行ICMP](images/01-established.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=icmp action=accept comment=lab-icmp
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=input，Src. Address=192.168.88.0/24，Action=accept，Comment=lab-lan-in。
 
-![第2步](images/02-icmp.png)
+![图(2) 放行LAN管理](images/02-icmp.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input src-address=192.168.88.0/24 action=accept comment=lab-lan-in
@@ -45,7 +45,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：connection-state=established,related。
 
-![第3步](images/03-lan.png)
+![图(3) 放行已建立](images/03-lan.png)
 
 ```routeros
 /ip/firewall/filter/print where chain=input
@@ -57,7 +57,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：确认 input 规则顺序合理。
 
-![第4步](images/04-drop.png)
+![图(4) 看整体](images/04-drop.png)
 
 ```routeros
 /ip/firewall/filter/print where chain=input
@@ -73,4 +73,4 @@ WinBox：input 有 lab-icmp / lab-lan-in
 
 ## 常见问题
 
-最后再考虑 drop，防把自己锁死。
+容易忽略：最后再考虑 drop，防把自己锁死。

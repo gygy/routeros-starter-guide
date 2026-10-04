@@ -1,8 +1,8 @@
 # Traceroute
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Tools](https://help.mikrotik.com/docs/spaces/ROS/pages/24952854/Tools)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Tools → Traceroute`
 
 动作：Address 填目标后 Start。
 
-![第1步](images/01-tr.png)
+![图(1) 打开Traceroute](images/01-tr.png)
 
 ```routeros
 /tool/traceroute 1.1.1.1
@@ -33,7 +33,7 @@ WinBox：`New Terminal`
 
 动作：执行 traceroute。
 
-![第2步](images/02-cli.png)
+![图(2) 终端核对](images/02-cli.png)
 
 ```routeros
 /tool/traceroute 1.1.1.1
@@ -46,7 +46,3 @@ WinBox：能看到跳数
 ```routeros
 /tool/traceroute 1.1.1.1
 ```
-
-## 常见问题
-
-超时跳用 * 表示。

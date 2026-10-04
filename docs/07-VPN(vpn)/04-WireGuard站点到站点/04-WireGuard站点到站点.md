@@ -1,8 +1,8 @@
 # WireGuard 站点到站点
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[WireGuard](https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -24,7 +24,7 @@ WinBox：`WireGuard`
 
 动作：wg-demo Running，有 Listen Port。
 
-![第1步](images/01-s2s.png)
+![图(1) 核对服务端](images/01-s2s.png)
 
 ```routeros
 /interface/wireguard/print
@@ -36,7 +36,7 @@ WinBox：`WireGuard → Peers`
 
 动作：Public Key、Allowed Address、Endpoint 按对端填写（勿写真实私钥）。
 
-![第2步](images/02-peer.png)
+![图(2) 添加/核对Peer](images/02-peer.png)
 
 ```routeros
 /interface/wireguard/peers/print
@@ -52,4 +52,4 @@ WinBox：Peer 有握手或能 ping 隧道地址
 
 ## 常见问题
 
-两边 Peer 互指公网与 AllowedIPs。
+容易忽略：两边 Peer 互指公网与 AllowedIPs。

@@ -1,8 +1,8 @@
 # 创建 VLAN
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Bridge VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Bridge → VLANs`
 
 动作：准备添加条目。
 
-![第1步](images/01-filtering.png)
+![图(1) 打开BridgeVLANs](images/01-filtering.png)
 
 ```routeros
 /interface/bridge/vlan/print
@@ -33,7 +33,7 @@ WinBox：`Bridge → VLANs → +`
 
 动作：vlan-ids=10，tagged/untagged 按拓扑填。
 
-![第2步](images/02-加vlan.png)
+![图(2) 添加VLAN](images/02-加vlan.png)
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10 tagged=bridge
@@ -46,7 +46,3 @@ WinBox：VLAN 表有 10
 ```routeros
 /interface/bridge/vlan/print
 ```
-
-## 常见问题
-
-bridge 自身常要 tagged。

@@ -1,8 +1,8 @@
 # Netinstall
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Netinstall](https://help.mikrotik.com/docs/spaces/ROS/pages/24819398/Netinstall)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`System → Packages`
 
 动作：记下架构与版本，准备对应包。
 
-![第1步](images/01-netinstall.png)
+![图(1) 核对当前版本](images/01-netinstall.png)
 
 ```routeros
 /system/resource/print
@@ -34,7 +34,7 @@ WinBox：`Interfaces`
 
 动作：Netinstall 需要直连网口，先认清 ether 编号。
 
-![第2步](images/02-接口.png)
+![图(2) 确认接口](images/02-接口.png)
 
 ```routeros
 /interface/print
@@ -47,7 +47,3 @@ WinBox：知道架构与直连口
 ```routeros
 /system/resource/print
 ```
-
-## 常见问题
-
-Netinstall 在电脑上操作，保持二层直连。

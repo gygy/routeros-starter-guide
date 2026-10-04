@@ -1,8 +1,8 @@
 # WireGuard 回家
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[WireGuard](https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -24,7 +24,7 @@ WinBox：`WireGuard → +`
 
 动作：Name=wg-home，Listen Port=13231。OK 后记下本机公钥（Private Key 不要外传）。
 
-![第1步](images/01-接口.png)
+![图(1) 新建接口](images/01-接口.png)
 
 ```routeros
 /interface/wireguard/add name=wg-home listen-port=13231
@@ -37,7 +37,7 @@ WinBox：`IP → Addresses → +`
 
 动作：Address=10.10.10.1/24，Interface=wg-home。
 
-![第2步](images/02-地址.png)
+![图(2) 给隧道加地址](images/02-地址.png)
 
 ```routeros
 /ip/address/add address=10.10.10.1/24 interface=wg-home
@@ -49,7 +49,7 @@ WinBox：`WireGuard → Peers → +`
 
 动作：Interface=wg-home，Public Key=手机公钥，Allowed Address=10.10.10.2/32，Persistent Keepalive=25s。
 
-![第3步](images/03-peer.png)
+![图(3) 添加手机Peer](images/03-peer.png)
 
 ```routeros
 /interface/wireguard/peers/add interface=wg-home public-key="BASE64PUBLICKEY=======" allowed-address=10.10.10.2/32 persistent-keepalive=25s comment=phone
@@ -61,7 +61,7 @@ WinBox：`IP → Firewall → Filter Rules → +`
 
 动作：input：UDP 13231 accept；forward：进/出 wg-home 放行 LAN。
 
-![第4步](images/04-防火墙.png)
+![图(4) 放行UDP与隧道](images/04-防火墙.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=udp dst-port=13231 action=accept comment=lab-wg-in
@@ -74,7 +74,7 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：若手机要经路由器上网：Chain=srcnat，Out. Interface=pppoe-out1，Src. Address=10.10.10.0/24，Action=masquerade。只进 LAN 可跳过。
 
-![第5步](images/05-nat.png)
+![图(5) 需要时给隧道做NAT](images/05-nat.png)
 
 ```routeros
 /ip/firewall/nat/add chain=srcnat src-address=10.10.10.0/24 out-interface=pppoe-out1 action=masquerade comment=lab-wg-masq
@@ -92,4 +92,4 @@ WinBox：wg-home 为 R；Peer 有 Last Handshake
 
 ## 常见问题
 
-光猫转发 UDP 13231。手机 AllowedIPs 至少含 10.10.10.0/24 和 192.168.88.0/24。Endpoint 填你家公网或 DDNS。
+容易忽略：光猫转发 UDP 13231。手机 AllowedIPs 至少含 10.10.10.0/24 和 192.168.88.0/24。Endpoint 填你家公网或 DDNS。

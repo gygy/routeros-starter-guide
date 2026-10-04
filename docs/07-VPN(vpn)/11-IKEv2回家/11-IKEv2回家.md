@@ -1,8 +1,8 @@
 # IKEv2 回家
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[IPsec](https://help.mikrotik.com/docs/spaces/ROS/pages/11993097/IPsec) · [Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`System → Certificates → + / Sign`
 
 动作：先建 CA（key-usage 含 key-cert-sign），Sign。再建 server：common-name 与 SAN=你的公网 IP 或 DNS，key-usage 含 tls-server，用 CA 签发。
 
-![第1步](images/01-证书.png)
+![图(1) 签CA和服务器证书](images/01-证书.png)
 
 ```routeros
 /certificate/add name=ca common-name=home-ca key-usage=key-cert-sign,crl-sign
@@ -38,7 +38,7 @@ WinBox：`IP → Pool / IP → IPsec → Mode Configs`
 
 动作：Pool=ike2-pool。Mode Config：Name=ike2-conf，Address Pool=ike2-pool，Split Include=192.168.88.0/24。
 
-![第2步](images/02-池.png)
+![图(2) 建地址池和ModeConfig](images/02-池.png)
 
 ```routeros
 /ip/pool/add name=ike2-pool ranges=192.168.77.2-192.168.77.20
@@ -51,7 +51,7 @@ WinBox：`IP → IPsec`
 
 动作：Profile 名 ike2；Proposal 名 ike2，pfs-group=none。Policy Group=ike2-policies；模板：src=0.0.0.0/0 dst=192.168.77.0/24 template=yes。
 
-![第3步](images/03-提案.png)
+![图(3) Profile/Proposal/Policy](images/03-提案.png)
 
 ```routeros
 /ip/ipsec/profile/add name=ike2
@@ -66,7 +66,7 @@ WinBox：`IP → IPsec → Peers / Identities`
 
 动作：Peer：exchange-mode=ike2，passive=yes，profile=ike2。Identity：digital-signature，certificate=server1，generate-policy=port-strict，mode-config=ike2-conf。
 
-![第4步](images/04-peer.png)
+![图(4) Peer与Identity](images/04-peer.png)
 
 ```routeros
 /ip/ipsec/peer/add name=ike2 exchange-mode=ike2 profile=ike2 passive=yes
@@ -79,7 +79,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input 放行 UDP 500、4500 和 ipsec-esp。
 
-![第5步](images/05-防火墙.png)
+![图(5) 防火墙放行IKE](images/05-防火墙.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=udp dst-port=500,4500 action=accept comment=lab-ike
@@ -92,7 +92,7 @@ WinBox：`System → Certificates → Export`
 
 动作：导出 CA（无私钥）给客户端信任；Windows 还需导入。私钥口令只在本机填 ********，不要写进文档。
 
-![第6步](images/06-导出.png)
+![图(6) 导出证书给手机/Windows](images/06-导出.png)
 
 ```routeros
 /certificate/export-certificate ca
@@ -110,4 +110,4 @@ WinBox：IPsec Active Peers 有条目；手机能 ping 192.168.88.1
 
 ## 常见问题
 
-证书 CN/SAN 必须对得上客户端填的服务器地址。UDP 500/4500 要通。时间不准会验签失败，先配 NTP。
+容易忽略：证书 CN/SAN 必须对得上客户端填的服务器地址。UDP 500/4500 要通。时间不准会验签失败，先配 NTP。

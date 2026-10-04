@@ -1,8 +1,8 @@
 # IKEv2 证书
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/121012236/IPsec)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`System → Certificates`
 
 动作：查看已有证书列表。
 
-![第1步](images/01-证书.png)
+![图(1) 打开Certificates](images/01-证书.png)
 
 ```routeros
 /certificate/print
@@ -33,7 +33,7 @@ WinBox：`System → Certificates`
 
 动作：CA/服务器证书用途正确后再配 IPsec Identity。
 
-![第2步](images/02-用途.png)
+![图(2) 核对用途](images/02-用途.png)
 
 ```routeros
 /certificate/print detail
@@ -46,7 +46,3 @@ WinBox：证书列表可读
 ```routeros
 /certificate/print
 ```
-
-## 常见问题
-
-私钥勿导出到教程。

@@ -1,8 +1,8 @@
 # VLAN 间路由
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/328068/IP+Addressing)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Interfaces`
 
 动作：应有 vlan10（或你建的 VLAN 接口）。
 
-![第1步](images/01-svi.png)
+![图(1) 确认VLAN接口](images/01-svi.png)
 
 ```routeros
 /interface/vlan/print
@@ -33,7 +33,7 @@ WinBox：`IP → Addresses → +`
 
 动作：Address=192.168.10.1/24，Interface=vlan10。
 
-![第2步](images/02-地址.png)
+![图(2) 加地址](images/02-地址.png)
 
 ```routeros
 /ip/address/add address=192.168.10.1/24 interface=vlan10
@@ -46,7 +46,3 @@ WinBox：vlan10 有地址且可 ping
 ```routeros
 /ip/address/print where interface=vlan10
 ```
-
-## 常见问题
-
-还要放行 forward 与防火墙。

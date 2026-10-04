@@ -1,8 +1,8 @@
 # Address List
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Address Lists](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → Address Lists`
 
 动作：查看已有列表。901 有 mgmt=192.168.88.0/24。
 
-![第1步](images/01-alist.png)
+![图(1) 打开AddressLists](images/01-alist.png)
 
 ```routeros
 /ip/firewall/address-list/print
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → Address Lists → +`
 
 动作：List=mgmt，Address=192.168.88.0/24，Comment=lab。
 
-![第2步](images/02-添加.png)
+![图(2) 添加条目](images/02-添加.png)
 
 ```routeros
 /ip/firewall/address-list/add list=mgmt address=192.168.88.0/24 comment=lab
@@ -46,7 +46,3 @@ WinBox：列表中有 mgmt
 ```routeros
 /ip/firewall/address-list/print where list=mgmt
 ```
-
-## 常见问题
-
-Filter 里用 Src./Dst. Address List 引用。

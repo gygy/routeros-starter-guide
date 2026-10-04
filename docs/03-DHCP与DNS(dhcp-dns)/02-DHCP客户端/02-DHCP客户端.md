@@ -1,8 +1,8 @@
 # DHCP 客户端
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[DHCP Client](https://help.mikrotik.com/docs/spaces/ROS/pages/24805389/DHCP)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → DHCP Client`
 
 动作：看 Interface、Status。
 
-![第1步](images/01-DHCPClient.png)
+![图(1) 打开DHCPClient](images/01-DHCPClient.png)
 
 ```routeros
 /ip/dhcp-client/print
@@ -33,7 +33,7 @@ WinBox：`IP → DHCP Client → +`
 
 动作：Interface=ether1（示例），Add Default Route=yes。
 
-![第2步](images/02-添加.png)
+![图(2) 添加客户端](images/02-添加.png)
 
 ```routeros
 /ip/dhcp-client/add interface=ether1 add-default-route=yes
@@ -47,7 +47,3 @@ WinBox：Status=bound 或已有动态地址
 /ip/dhcp-client/print
 /ip/address/print where dynamic
 ```
-
-## 常见问题
-
-与 PPPoE 二选一，别重复默认路由。

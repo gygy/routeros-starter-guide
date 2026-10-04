@@ -1,8 +1,8 @@
 # 保护内网 Forward
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Filter](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Filter)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=forward，Action=accept，Comment=lab-fwd-est。
 
-![第1步](images/01-fwd-est.png)
+![图(1) 放行established](images/01-fwd-est.png)
 
 ```routeros
 /ip/firewall/filter/add chain=forward action=accept comment=lab-fwd-est
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=forward，Action=drop，Comment=lab-fwd-inv。
 
-![第2步](images/02-fwd-lan.png)
+![图(2) 丢弃invalid](images/02-fwd-lan.png)
 
 ```routeros
 /ip/firewall/filter/add chain=forward action=drop comment=lab-fwd-inv
@@ -45,7 +45,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：确认 forward 规则顺序。
 
-![第3步](images/03-fwd-drop.png)
+![图(3) 核对列表](images/03-fwd-drop.png)
 
 ```routeros
 /ip/firewall/filter/print where chain=forward
@@ -58,7 +58,3 @@ WinBox：forward 有 lab-fwd-*
 ```routeros
 /ip/firewall/filter/print where chain=forward
 ```
-
-## 常见问题
-
-先放行再丢弃。

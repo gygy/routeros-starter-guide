@@ -1,8 +1,8 @@
 # 升级 RouterOS
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Packages](https://help.mikrotik.com/docs/spaces/ROS/pages/328166/Packages)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`System → Packages`
 
 动作：看当前版本与已装包。
 
-![第1步](images/01-Packages.png)
+![图(1) 打开Packages](images/01-Packages.png)
 
 ```routeros
 /system/package/print
@@ -33,7 +33,7 @@ WinBox：`System → Resources`
 
 动作：Version 与 Packages 一致。
 
-![第2步](images/02-版本.png)
+![图(2) 核对版本](images/02-版本.png)
 
 ```routeros
 /system/resource/print
@@ -47,7 +47,3 @@ WinBox：版本号可读
 /system/package/print
 /system/resource/print
 ```
-
-## 常见问题
-
-升级前先备份；生产选 long-term/stable。

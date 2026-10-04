@@ -1,8 +1,8 @@
 # Ping
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Tools](https://help.mikrotik.com/docs/spaces/ROS/pages/24952854/Tools)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Tools → Ping`
 
 动作：Address 填 1.1.1.1，Start。
 
-![第1步](images/01-ping.png)
+![图(1) 打开Ping](images/01-ping.png)
 
 ```routeros
 /ping 1.1.1.1 count=4
@@ -33,7 +33,7 @@ WinBox：`New Terminal`
 
 动作：执行同样 ping。
 
-![第2步](images/02-cli.png)
+![图(2) 终端核对](images/02-cli.png)
 
 ```routeros
 /ping 1.1.1.1 count=4
@@ -46,7 +46,3 @@ WinBox：有回复
 ```routeros
 /ping 1.1.1.1 count=4
 ```
-
-## 常见问题
-
-先确认自己有默认路由。

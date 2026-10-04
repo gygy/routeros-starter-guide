@@ -115,10 +115,10 @@ docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
 
 禁止 AI 生成图。流程：
 
-1. 读 `lab-env.local.md`，用 WinBox 登录 VM 901（密码不进教程）。
-2. 做到该步画面，截 **WinBox 窗口**。
-3. 检查图中无明文密码、个人昵称、真实公网 IP、真实 MAC；有则打码。
-4. `automation/protect-media.ps1` 打水印。
+1. 读 `lab-env.local.md`，把实验机改成教程占位数据后再截（R1、示例网段；密码框圆点）。
+2. 做到该步画面，截 **这一步的 WinBox 窗口**（菜单名必须对得上步骤）。
+3. 红框 + 中文标签标菜单、填写字段、关键结果；图底水平居中 `图(N) 短说明`。
+4. **不要白块打码。** 不要把文件名写进页脚。可在右上角留一处 `RouterOS 入门与精通`。
 5. 存到本课 `images/01-短中文.png`。
 
 截不到真机就停，不要用 GenerateImage 顶替。

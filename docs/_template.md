@@ -19,7 +19,7 @@ WinBox：`菜单 → 窗口`
 
 点 / 填：
 
-![图(1) 短说明](images/01-….png)
+![图(1) …](images/01-….png)
 
 ```routeros
 /ip/address/add address=192.168.88.1/24 interface=bridge

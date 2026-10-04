@@ -1,8 +1,8 @@
 # OpenVPN 回家
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[OpenVPN](https://help.mikrotik.com/docs/spaces/ROS/pages/2031655/OpenVPN) · [Certificates](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`System → Certificates`
 
 动作：CA + server（tls-server）。最简只需服务器证书。
 
-![第1步](images/01-证书.png)
+![图(1) 签服务器证书](images/01-证书.png)
 
 ```routeros
 /certificate/add name=ca-ovpn common-name=ovpn-ca key-usage=key-cert-sign,crl-sign
@@ -38,7 +38,7 @@ WinBox：`IP → Pool / PPP → Profiles`
 
 动作：Pool=ovpn-pool。Profile 名 ovpn：Local Address=192.168.77.1，Remote Address=ovpn-pool。
 
-![第2步](images/02-池.png)
+![图(2) 地址池和PPPProfile](images/02-池.png)
 
 ```routeros
 /ip/pool/add name=ovpn-pool ranges=192.168.77.2-192.168.77.20
@@ -51,7 +51,7 @@ WinBox：`PPP → Secrets → +`
 
 动作：Name=ovpnuser，Password=********，Service=ovpn，Profile=ovpn。
 
-![第3步](images/03-用户.png)
+![图(3) PPP账号](images/03-用户.png)
 
 ```routeros
 /ppp/secret/add name=ovpnuser password=******** service=ovpn profile=ovpn
@@ -63,7 +63,7 @@ WinBox：`PPP / Interfaces → OVPN Server`
 
 动作：v7 用 /interface/ovpn-server/server add：certificate=ovpn-server，disabled=no，port=1194。
 
-![第4步](images/04-服务器.png)
+![图(4) 启用OVPN服务器](images/04-服务器.png)
 
 ```routeros
 /interface/ovpn-server/server/add name=ovpn-home certificate=ovpn-server port=1194 protocol=tcp disabled=no default-profile=ovpn
@@ -75,7 +75,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input TCP（或 UDP）1194 accept。
 
-![第5步](images/05-防火墙.png)
+![图(5) 防火墙放行1194](images/05-防火墙.png)
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=tcp dst-port=1194 action=accept comment=lab-ovpn
@@ -92,4 +92,4 @@ WinBox：有 ovpn 动态接口或 PPP Active；客户端能 ping 192.168.77.1
 
 ## 常见问题
 
-客户端 .ovpn 里的 cipher 要和服务器一致。时间必须准。导出客户端配置需要 require-client-certificate。
+容易忽略：客户端 .ovpn 里的 cipher 要和服务器一致。时间必须准。导出客户端配置需要 require-client-certificate。

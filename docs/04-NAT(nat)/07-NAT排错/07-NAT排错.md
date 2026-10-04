@@ -1,8 +1,8 @@
 # NAT 排错
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/8978531/NAT)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → NAT`
 
 动作：Bytes/Packets 是否在涨。
 
-![第1步](images/01-计数.png)
+![图(1) 看NAT计数](images/01-计数.png)
 
 ```routeros
 /ip/firewall/nat/print stats
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → Connections`
 
 动作：确认会话经过 srcnat/dstnat。
 
-![第2步](images/02-连接.png)
+![图(2) 看Connections](images/02-连接.png)
 
 ```routeros
 /ip/firewall/connection/print
@@ -47,7 +47,3 @@ WinBox：有活跃连接且 NAT 计数增加
 /ip/firewall/nat/print stats
 /ip/firewall/connection/print
 ```
-
-## 常见问题
-
-先确认 WAN 能上网再查 NAT。

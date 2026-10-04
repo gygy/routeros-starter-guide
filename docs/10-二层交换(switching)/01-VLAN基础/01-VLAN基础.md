@@ -1,8 +1,8 @@
 # VLAN 基础
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Bridge VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Bridge`
 
 动作：确认有 bridge。
 
-![第1步](images/01-vlan.png)
+![图(1) 打开Bridge](images/01-vlan.png)
 
 ```routeros
 /interface/bridge/print
@@ -33,7 +33,7 @@ WinBox：`Bridge → 双击 bridge`
 
 动作：vlan-filtering 按你环境开启（改前备份）。
 
-![第2步](images/02-filtering.png)
+![图(2) 看VLANFiltering](images/02-filtering.png)
 
 ```routeros
 /interface/bridge/print detail
@@ -47,7 +47,3 @@ WinBox：知道 VLAN ID 与 filtering 开关
 /interface/bridge/print
 /interface/bridge/vlan/print
 ```
-
-## 常见问题
-
-乱开 filtering 可能断管理。

@@ -1,8 +1,8 @@
 # WAN 拨号 PPPoE
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[PPPoE](https://help.mikrotik.com/docs/spaces/ROS/pages/328147/PPPoE)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`PPP → Interface`
 
 动作：看是否已有 pppoe-out1。账号密码填你自己的，勿写入教程。
 
-![第1步](images/01-PPPoE.png)
+![图(1) 打开PPP](images/01-PPPoE.png)
 
 ```routeros
 /interface/pppoe-client/print
@@ -35,7 +35,7 @@ WinBox：`IP → Addresses`
 
 动作：pppoe-out1 上有动态地址。
 
-![第2步](images/02-地址.png)
+![图(2) 确认拿址](images/02-地址.png)
 
 ```routeros
 /ip/address/print where interface=pppoe-out1
@@ -49,7 +49,3 @@ WinBox：pppoe-out1 Running 且有地址
 /interface/pppoe-client/print
 /ip/address/print where dynamic
 ```
-
-## 常见问题
-
-账号密码只放你自己的路由器。

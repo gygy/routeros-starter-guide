@@ -1,8 +1,8 @@
 # WinBox 访问
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Services](https://help.mikrotik.com/docs/spaces/ROS/pages/328129/WinBox)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Services`
 
 动作：找到 winbox。
 
-![第1步](images/01-winbox服务.png)
+![图(1) 打开Services](images/01-winbox服务.png)
 
 ```routeros
 /ip/service/print where name=winbox
@@ -33,7 +33,7 @@ WinBox：`IP → Services → winbox`
 
 动作：Available From 填 192.168.88.0/24（示例）。
 
-![第2步](images/02-限制.png)
+![图(2) 限制网段](images/02-限制.png)
 
 ```routeros
 /ip/service/set winbox address=192.168.88.0/24
@@ -46,7 +46,3 @@ WinBox：仅可信网段可连
 ```routeros
 /ip/service/print where name=winbox
 ```
-
-## 常见问题
-
-改前保证自己还在可信网段。

@@ -1,8 +1,8 @@
 # 查看 CPU 内存
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Resources](https://help.mikrotik.com/docs/spaces/ROS/pages/328151/First+Time+Configuration)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`System → Resources`
 
 动作：看 CPU、Memory、HDD。
 
-![第1步](images/01-cpu.png)
+![图(1) 打开Resources](images/01-cpu.png)
 
 ```routeros
 /system/resource/print
@@ -33,7 +33,7 @@ WinBox：`Interfaces`
 
 动作：CPU 高时看哪个口在跑流量。
 
-![第2步](images/02-接口.png)
+![图(2) 对照接口流量](images/02-接口.png)
 
 ```routeros
 /interface/print stats
@@ -46,7 +46,3 @@ WinBox：能读出 CPU/内存
 ```routeros
 /system/resource/print
 ```
-
-## 常见问题
-
-长期 100% 查 Torch/连接数。

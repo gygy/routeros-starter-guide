@@ -1,8 +1,8 @@
 # DHCP Option 分流
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[DHCP](https://help.mikrotik.com/docs/spaces/ROS/pages/24805500/DHCP)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`IP → DHCP Server`
 
 动作：先确认已有 dhcp1 和 network 192.168.88.0/24。
 
-![第1步](images/01-DHCP.png)
+![图(1) 打开DHCPServer](images/01-DHCP.png)
 
 ```routeros
 /ip/dhcp-server/print
@@ -36,7 +36,7 @@ WinBox：`IP → DHCP Server → Options → +`
 
 动作：Name=classless，Code=121。官方示例把 160.0.0.0/24 和默认路由推给客户端。本课推 10.0.0.0/8 via 192.168.88.2：value=`0x080AC0A85802`。
 
-![第2步](images/02-option.png)
+![图(2) 添加option121](images/02-option.png)
 
 ```routeros
 /ip/dhcp-server/option/add name=classless code=121 value=0x080AC0A85802
@@ -48,7 +48,7 @@ WinBox：`IP → DHCP Server → Networks`
 
 动作：该网段的 DHCP Option 勾选 classless。Windows 会请求 121；有的客户端不请求则加 force=yes。
 
-![第3步](images/03-网络.png)
+![图(3) 挂到Network](images/03-网络.png)
 
 ```routeros
 /ip/dhcp-server/network/set [find address=192.168.88.0/24] dhcp-option=classless
@@ -60,7 +60,7 @@ WinBox：`电脑 ipconfig /renew`
 
 动作：看电脑路由表是否出现 10.0.0.0/8。路由器上 print option 的 raw-value。
 
-![第4步](images/04-核对.png)
+![图(4) 电脑重新租约](images/04-核对.png)
 
 ```routeros
 /ip/dhcp-server/option/print detail
@@ -75,7 +75,3 @@ WinBox：option 有 raw-value；电脑路由表有分流网段
 /ip/dhcp-server/option/print detail
 /ip/dhcp-server/network/print
 ```
-
-## 常见问题
-
-RFC：客户端 Parameter-List 不含 121 时服务器默认不发。v7.1rc5 起可 force=yes。编码错会导致整段 option 无效。

@@ -1,8 +1,8 @@
 # Trunk 端口
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Bridge VLAN](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Bridge → VLANs`
 
 动作：准备 tagged 上联口。
 
-![第1步](images/01-trunk.png)
+![图(1) 打开BridgeVLANs](images/01-trunk.png)
 
 ```routeros
 /interface/bridge/vlan/print
@@ -33,7 +33,7 @@ WinBox：`Bridge → VLANs → +`
 
 动作：vlan-ids=10,20，tagged=ether2（示例）。
 
-![第2步](images/02-tagged.png)
+![图(2) 设置Trunk](images/02-tagged.png)
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10,20 tagged=ether2
@@ -46,7 +46,3 @@ WinBox：对端交换机能通各 VLAN
 ```routeros
 /interface/bridge/vlan/print
 ```
-
-## 常见问题
-
-两端 VLAN ID 必须一致。

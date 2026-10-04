@@ -1,8 +1,8 @@
 # DST-NAT 端口转发
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[NAT](https://help.mikrotik.com/docs/spaces/ROS/pages/8978531/NAT)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`IP → Firewall → NAT`
 
 动作：先看到现有 NAT 规则。
 
-![第1步](images/01-dstnat.png)
+![图(1) 打开NAT列表](images/01-dstnat.png)
 
 ```routeros
 /ip/firewall/nat/print
@@ -33,7 +33,7 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=dstnat，Protocol=tcp，Dst. Port=8080，In. Interface=pppoe-out1，Action=dst-nat，To Addresses=192.168.88.10，Comment=lab-portfwd。
 
-![第2步](images/02-规则.png)
+![图(2) 添加dst-nat](images/02-规则.png)
 
 ```routeros
 /ip/firewall/nat/add chain=dstnat protocol=tcp dst-port=8080 in-interface=pppoe-out1 action=dst-nat to-addresses=192.168.88.10 comment=lab-portfwd
@@ -46,7 +46,3 @@ WinBox：NAT 有 lab-portfwd
 ```routeros
 /ip/firewall/nat/print where comment=lab-portfwd
 ```
-
-## 常见问题
-
-还要放行 forward，内网主机要监听该端口。

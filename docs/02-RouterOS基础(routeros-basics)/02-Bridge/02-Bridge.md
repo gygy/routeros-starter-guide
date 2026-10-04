@@ -1,8 +1,8 @@
 # Bridge
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[Bridge](https://help.mikrotik.com/docs/spaces/ROS/pages/18964487/Bridging+and+Switching)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -21,7 +21,7 @@ WinBox：`Bridge → +`
 
 动作：Name=bridge，Comment=lab-demo。
 
-![第1步](images/01-建桥.png)
+![图(1) 新建Bridge](images/01-建桥.png)
 
 ```routeros
 /interface/bridge/add name=bridge comment=lab-demo
@@ -33,7 +33,7 @@ WinBox：`Bridge → Ports → +`
 
 动作：Interface 选 LAN 口，Bridge=bridge。
 
-![第2步](images/02-端口.png)
+![图(2) 加端口](images/02-端口.png)
 
 ```routeros
 /interface/bridge/port/add bridge=bridge interface=ether2
@@ -47,7 +47,3 @@ WinBox：Bridge 为 R；Ports 有成员
 /interface/bridge/print
 /interface/bridge/port/print
 ```
-
-## 常见问题
-
-WAN 口不要误加入 bridge。

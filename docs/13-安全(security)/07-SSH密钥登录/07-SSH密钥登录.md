@@ -1,8 +1,8 @@
 # SSH 密钥登录
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[SSH](https://help.mikrotik.com/docs/spaces/ROS/pages/132350014/SSH) · [Services](https://help.mikrotik.com/docs/spaces/ROS/pages/103841820/Services)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -22,7 +22,7 @@ WinBox：`Files`
 
 动作：把电脑上的 .pub 拖进 Files，例如 id_rsa.pub。
 
-![第1步](images/01-文件.png)
+![图(1) 上传公钥文件](images/01-文件.png)
 
 ```routeros
 /file/print where name~"pub"
@@ -34,7 +34,7 @@ WinBox：`New Terminal`
 
 动作：官方：/user ssh-keys import。User=admin。
 
-![第2步](images/02-导入.png)
+![图(2) 导入给admin](images/02-导入.png)
 
 ```routeros
 /user/ssh-keys/import public-key-file=id_rsa.pub user=admin
@@ -47,7 +47,7 @@ WinBox：`电脑终端`
 
 动作：ssh admin@192.168.88.1 应不再问密码（或只问密钥口令）。
 
-![第3步](images/03-服务.png)
+![图(3) 电脑试连](images/03-服务.png)
 
 ```routeros
 /ip/service/print where name=ssh
@@ -59,7 +59,7 @@ WinBox：`IP → SSH`
 
 动作：确认密钥能登录后，再设 password-authentication=no。官方默认 yes-if-no-key。设错会锁死，先留 MAC 登录退路。
 
-![第4步](images/04-关密码.png)
+![图(4) （可选）关闭密码登录](images/04-关密码.png)
 
 ```routeros
 /ip/ssh/set password-authentication=no
@@ -77,4 +77,4 @@ WinBox：user ssh-keys 列表有 admin 的公钥；电脑能密钥登录
 
 ## 常见问题
 
-RouterOS 不能当 OpenSSH 那样在本机 ssh-keygen。公钥须先上传到 Files。ed25519/RSA 按官方支持列表。
+容易忽略：RouterOS 不能当 OpenSSH 那样在本机 ssh-keygen。公钥须先上传到 Files。ed25519/RSA 按官方支持列表。

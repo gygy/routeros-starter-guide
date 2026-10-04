@@ -1,8 +1,8 @@
 # IKEv2 手机
 
-> 适用版本：RouterOS 7.x  
-> 管理工具：WinBox  
-> 官方依据：[IPsec](https://help.mikrotik.com/docs/spaces/ROS/pages/121012236/IPsec)
+> 适用版本：RouterOS 7.x
+
+
 
 ## 目的
 
@@ -23,7 +23,7 @@ WinBox：`IP → IPsec`
 
 动作：看 Peers/Policies。
 
-![第1步](images/01-sa.png)
+![图(1) 打开IPsec](images/01-sa.png)
 
 ```routeros
 /ip/ipsec/peer/print
@@ -35,7 +35,7 @@ WinBox：`IP → IPsec → Active Peers`
 
 动作：连上后这里会有 SA。
 
-![第2步](images/02-sa.png)
+![图(2) 看ActivePeers/SA](images/02-sa.png)
 
 ```routeros
 /ip/ipsec/active-peers/print
@@ -53,4 +53,4 @@ WinBox：有 Peer 配置；连通后有 SA
 
 ## 常见问题
 
-证书与预共享密钥勿写入文档。
+容易忽略：证书与预共享密钥勿写入文档。

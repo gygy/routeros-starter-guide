@@ -37,6 +37,10 @@ WireGuard：<https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard>
 | 服务端口 / SSH | IP Services, SSH |
 | Ping / Torch / 抓包 | Ping, Torch, Packet Sniffer, Torch |
 | 日志 | Logging |
+| Wi-Fi / CAPsMAN | WiFi, wifi-qcom, CAPsMAN |
+| 队列 / FastTrack | Queues, Fasttrack |
+| OSPF / BGP / LDP | OSPF, BGP, LDP |
+| RoMON / VRF | RoMON, VRF |
 
 ## 课表（写作大纲）→ 课程仓落盘
 

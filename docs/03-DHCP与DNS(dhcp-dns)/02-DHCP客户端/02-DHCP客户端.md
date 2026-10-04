@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 WAN 口用 DHCP 拿地址。
@@ -14,6 +12,12 @@ WAN 口用 DHCP 拿地址。
 - WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+
+## 先看懂
+
+R1 当客户端，ether1 去问上一级 DHCP。
+
+![图(0) DHCP客户端](images/00-原理.svg)
 
 ## 第1步：打开 DHCP Client
 

@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 从建接口到手机/电脑能进家里 LAN，一次配完。
@@ -17,6 +15,30 @@
 - 隧道网段：`10.10.10.0/24`，路由器 `10.10.10.1`，手机 `10.10.10.2`
 - 监听 UDP `13231`（光猫要转发到这台路由器）
 - 公钥示例：`BASE64PUBLICKEY=======`（填双方真实公钥，勿写私钥）
+
+## 先看懂
+
+手机打 UDP 13231 到家里，进 10.10.10.0/24，再进 192.168.88.0/24。
+
+![图(0) WireGuard回家](images/00-原理.svg)
+
+```mermaid
+flowchart LR
+    subgraph C["🟣 路上"]
+      Ph["手机 / 电脑"]
+    end
+    subgraph R["🔴 R1"]
+      V["隧道口"]
+    end
+    subgraph L["🟢 家里 LAN"]
+      H["192.168.88.0/24"]
+    end
+    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
+    style C fill:#ede7f6,stroke:#7e57c2
+    style R fill:#ffebee,stroke:#e53935
+    style L fill:#e8f5e9,stroke:#43a047
+    style V fill:#fff9c4,stroke:#f9a825
+```
 
 ## 第1步：新建接口
 

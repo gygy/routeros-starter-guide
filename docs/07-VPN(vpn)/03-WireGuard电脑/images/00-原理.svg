@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+  <rect width="1100" height="520" fill="#071526"/>
+  <text x="550" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">电脑当 Peer</text>
+  <text x="550" y="70" text-anchor="middle" font-size="14" fill="#90caf9" font-family="Microsoft YaHei, PingFang SC, sans-serif">和手机同一套，只是客户端换成电脑。</text>
+  
+  <rect x="50" y="120" width="250" height="200" rx="16" fill="#0e4a55" stroke="#26c6da" stroke-width="2.5"/>
+  <text x="175" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">电脑</text>
+  <text x="175" y="178" text-anchor="middle" font-size="13" fill="#e8f4ff" font-family="Microsoft YaHei, PingFang SC, sans-serif">10.10.10.3</text>
+  
+  <rect x="380" y="120" width="250" height="200" rx="16" fill="#5d1a12" stroke="#ff7043" stroke-width="2.5"/>
+  <text x="505" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">R1</text>
+  <text x="505" y="178" text-anchor="middle" font-size="13" fill="#e8f4ff" font-family="Microsoft YaHei, PingFang SC, sans-serif">再加一条 Peer</text>
+  
+  <rect x="710" y="120" width="250" height="200" rx="16" fill="#1b4d2a" stroke="#66bb6a" stroke-width="2.5"/>
+  <text x="835" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">家里 LAN</text>
+  <text x="835" y="178" text-anchor="middle" font-size="13" fill="#e8f4ff" font-family="Microsoft YaHei, PingFang SC, sans-serif">192.168.88.0/24</text>
+  
+  <defs>
+    <marker id="ar1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#ffd54a"/>
+    </marker>
+  </defs>
+  <line x1="300" y1="220" x2="710" y2="220" stroke="#ffd54a" stroke-width="3" marker-end="url(#ar1)"/>
+  <circle cx="505" cy="198" r="11" fill="#ffd54a"/>
+  <text x="505" y="203" text-anchor="middle" font-size="12" font-weight="700" fill="#1a1200">1</text>
+  <text x="505" y="230" text-anchor="middle" font-size="12" fill="#ffe082" font-family="Microsoft YaHei, PingFang SC, sans-serif">进内网</text>
+  <text x="90" y="450" font-size="12" fill="#80deea">外网 / 远端</text>
+  <text x="490" y="450" font-size="12" fill="#ffab91">MikroTik R1</text>
+  <text x="860" y="450" font-size="12" fill="#a5d6a7">家里 / 内网</text>
+  <rect x="0" y="484" width="1100" height="36" fill="#121212"/>
+  <text x="550" y="508" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">undefined</text>
+</svg>

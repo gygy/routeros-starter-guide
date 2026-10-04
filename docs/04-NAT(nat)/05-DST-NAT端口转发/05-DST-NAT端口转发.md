@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 把公网端口转到内网主机。
@@ -14,6 +12,30 @@
 - WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+
+## 先看懂
+
+别人访问你的 WAN:8080，R1 改成 192.168.88.10:80。
+
+![图(0) 端口转发](images/00-原理.svg)
+
+```mermaid
+flowchart LR
+    subgraph W["🌐 外网"]
+      U["用户 → WAN:8080"]
+    end
+    subgraph R["🔴 R1"]
+      D["dstnat 改目标 .10:80"]
+    end
+    subgraph L["🟢 家里"]
+      S["192.168.88.10:80"]
+    end
+    U -->|① 原始包| D -->|② 转发| S
+    style W fill:#e0f7fa,stroke:#00acc1
+    style R fill:#ffebee,stroke:#e53935
+    style L fill:#e8f5e9,stroke:#43a047
+    style D fill:#fff9c4,stroke:#f9a825
+```
 
 ## 第1步：打开 NAT 列表
 

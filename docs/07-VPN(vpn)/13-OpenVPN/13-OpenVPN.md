@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 路由器开 OVPN 服务器，电脑用账号（和证书）连回家。
@@ -16,6 +14,30 @@
 - 身份示例：`R1`
 - 池：`192.168.77.2-192.168.77.20`，本端 `192.168.77.1`
 - 默认 TCP 1194（也可改 UDP）
+
+## 先看懂
+
+电脑用账号连 TCP 1194，R1 从池里发 192.168.77.x。
+
+![图(0) OpenVPN回家](images/00-原理.svg)
+
+```mermaid
+flowchart LR
+    subgraph C["🟣 路上"]
+      Ph["手机 / 电脑"]
+    end
+    subgraph R["🔴 R1"]
+      V["隧道口"]
+    end
+    subgraph L["🟢 家里 LAN"]
+      H["192.168.88.0/24"]
+    end
+    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
+    style C fill:#ede7f6,stroke:#7e57c2
+    style R fill:#ffebee,stroke:#e53935
+    style L fill:#e8f5e9,stroke:#43a047
+    style V fill:#fff9c4,stroke:#f9a825
+```
 
 ## 第1步：签服务器证书
 

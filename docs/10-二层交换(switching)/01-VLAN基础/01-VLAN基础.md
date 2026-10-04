@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 先认 VLAN ID 与 Bridge VLAN Filtering。
@@ -14,6 +12,12 @@
 - WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+
+## 先看懂
+
+标签像颜色，同色才能二层互通。
+
+![图(0) VLAN基础](images/00-原理.svg)
 
 ## 第1步：打开 Bridge
 

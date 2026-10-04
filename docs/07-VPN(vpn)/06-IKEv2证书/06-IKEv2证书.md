@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 证书用于 IKEv2 身份校验。
@@ -14,6 +12,12 @@
 - WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+
+## 先看懂
+
+CA 签发 server，CN/SAN 必须等于手机里填的服务器地址。
+
+![图(0) IKEv2证书](images/00-原理.svg)
 
 ## 第1步：打开 Certificates
 

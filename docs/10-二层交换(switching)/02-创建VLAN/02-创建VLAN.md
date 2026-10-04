@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 在 Bridge 上建 VLAN。
@@ -14,6 +12,12 @@
 - WAN 示例：`pppoe-out1` 或 `ether1`
 - 密码示例：`********`（填你自己的管理员密码）
 - 身份示例：`R1`
+
+## 先看懂
+
+先有 bridge vlan-filtering，再加 VID。
+
+![图(0) 创建VLAN](images/00-原理.svg)
 
 ## 第1步：打开 Bridge VLANs
 

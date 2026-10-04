@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 ARM/ARM64 设备加入 ZeroTier 网络，从手机直达家里 LAN。
@@ -16,6 +14,12 @@ ARM/ARM64 设备加入 ZeroTier 网络，从手机直达家里 LAN。
 - 身份示例：`R1`
 - Network ID 示例：`1d71939404912b40`（换成你在 my.zerotier.com 创建的）
 - **官方：zerotier 包只支持 ARM/ARM64。x86 / 本课实验机 901 装不了，请用 ARM 硬件跟做。**
+
+## 先看懂
+
+官方包只支持 ARM/ARM64。双方加入同一 Network ID 并授权。
+
+![图(0) ZeroTier](images/00-原理.svg)
 
 ## 第1步：确认架构并安装包
 

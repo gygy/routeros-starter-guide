@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 系统损坏时用 Netinstall 重装（电脑侧工具）。

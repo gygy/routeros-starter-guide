@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 配好路由器当 IKEv2 服务器，手机/Windows 用证书连回家。
@@ -16,6 +14,30 @@
 - 身份示例：`R1`
 - 客户端地址池：`192.168.77.2-192.168.77.20`
 - 证书 Common Name / SAN 填你的公网 IP 或域名（示例 `203.0.113.10`）
+
+## 先看懂
+
+UDP 500/4500 进 R1，分到 192.168.77.x，再访问 192.168.88.0/24。
+
+![图(0) IKEv2回家](images/00-原理.svg)
+
+```mermaid
+flowchart LR
+    subgraph C["🟣 路上"]
+      Ph["手机 / 电脑"]
+    end
+    subgraph R["🔴 R1"]
+      V["隧道口"]
+    end
+    subgraph L["🟢 家里 LAN"]
+      H["192.168.88.0/24"]
+    end
+    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
+    style C fill:#ede7f6,stroke:#7e57c2
+    style R fill:#ffebee,stroke:#e53935
+    style L fill:#e8f5e9,stroke:#43a047
+    style V fill:#fff9c4,stroke:#f9a825
+```
 
 ## 第1步：签 CA 和服务器证书
 

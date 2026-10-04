@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 两地互访。
@@ -17,6 +15,12 @@
 - Endpoint 示例：`203.0.113.50:13231`（TEST-NET）
 - 公钥示例：`BASE64PUBLICKEY=======`
 
+
+## 先看懂
+
+两边各一个 WG，把对端网段写进 allowed-address。
+
+![图(0) WG站点](images/00-原理.svg)
 
 ## 第1步：核对服务端
 

@@ -2,8 +2,6 @@
 
 > 适用版本：RouterOS 7.x
 
-
-
 ## 目的
 
 手机连回家。
@@ -17,6 +15,12 @@
 - Endpoint 示例：`203.0.113.50:13231`（TEST-NET）
 - 公钥示例：`BASE64PUBLICKEY=======`
 
+
+## 先看懂
+
+手机填：家里公钥、Endpoint、AllowedIPs。
+
+![图(0) 手机Peer](images/00-原理.svg)
 
 ## 第1步：核对服务端
 

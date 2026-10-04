@@ -35,4 +35,4 @@ RouterOS 7.x · 运营商提供 **用户名 + 密码**（不是 DHCP 自动拿�
 6. masquerade 出接口用 `pppoe-out1`  
 7. ping 公网 IP 与域名，区分路由问题和 DNS 问题
 
-前置：[Lab 00](<../00-环境准备(getting-started)/README.md>)、[Lab 01](<../01-第一台路由器(first-router)/README.md>)。NAT 细节见 [Lab 04](<../04-NAT(nat)/README.md>)。
+前置：[Lab 00](<../00-环境准备(getting-started)/00-环境准备.md>)、[Lab 01](<../01-第一台路由器(first-router)/01-第一台路由器.md>)。NAT 细节见 [Lab 04](<../04-NAT(nat)/04-NAT.md>)。

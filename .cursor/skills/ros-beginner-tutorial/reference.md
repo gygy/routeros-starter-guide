@@ -63,7 +63,10 @@ WireGuard：<https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard>
 ```text
 docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/04-DHCP服务器.md
 docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
+docs/03-DHCP与DNS(dhcp-dns)/00-目录.md
 ```
+
+**只有仓库根可以有 `README.md`。** 章索引、labs 总表用 `00-目录.md`。单个 Lab 用 `labs/00-环境准备(getting-started)/00-环境准备.md`。
 
 默认生成顺序（未点名主题时，一次一课）：
 

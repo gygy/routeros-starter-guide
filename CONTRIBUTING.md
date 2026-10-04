@@ -3,7 +3,7 @@
 ## 写什么
 
 - 课文使用 [docs/_template.md](docs/_template.md) 的实战结构（目的、网络、逐步 WinBox+命令、检查）。
-- Lab 放在 `labs/`：`README.md`、`*.rsc`、`troubleshooting.md`、拓扑图。
+- Lab 放在 `labs/`：正文 `00-环境准备.md`（与文件夹同号）、`*.rsc`、`troubleshooting.md`、拓扑图。不要写 `README.md`。
 - **完整设备配置**进 `configs/`，**功能脚本**进 `scripts/`，不要混放。
 
 ## 不要做什么

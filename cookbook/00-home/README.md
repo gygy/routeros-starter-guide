@@ -1,6 +1,0 @@
-# 家庭网络场景
-
-拨号步骤：
-
-- [PPPoE 拨号上网](pppoe-dial.md)  
-- 对应实验：[Lab 03 PPPoE](<../../labs/03-PPPoE拨号(pppoe)/README.md>)

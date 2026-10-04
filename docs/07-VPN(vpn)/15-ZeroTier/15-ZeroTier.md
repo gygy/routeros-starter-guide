@@ -13,7 +13,7 @@ ARM/ARM64 设备加入 ZeroTier 网络，从手机直达家里 LAN。
 - 公网示例用 TEST-NET：`203.0.113.10`；密码只写 `********`
 - 身份示例：`R1`
 - Network ID 示例：`1d71939404912b40`（换成你在 my.zerotier.com 创建的）
-- **官方：zerotier 包只支持 ARM/ARM64。x86 / 本课实验机 901 装不了，请用 ARM 硬件跟做。**
+- **官方：zerotier 包只支持 ARM/ARM64。普通 x86 电脑装不了，要用 ARM 板子。**
 
 ## 先看懂
 

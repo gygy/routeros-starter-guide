@@ -50,4 +50,4 @@ WinBox：Installed SA 正常
 
 ## 常见问题
 
-家庭优先 WireGuard；密钥勿写入文档。
+家里更适合用 WireGuard。预共享密钥填在两台路由器上。

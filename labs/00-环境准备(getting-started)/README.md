@@ -23,7 +23,7 @@ RouterOS 7.x · WinBox 3 或 4
 1. 对照 [环境准备](<../../docs/00-入门(introduction)/00-环境准备.md>) 选真机或 CHR
 2. 下载 WinBox（仅官方站点）
 3. 登录 `192.168.88.1`（或你的实际 LAN 地址）
-4. 改 admin 口令（不要写进仓库、不要截进图）
+4. 改 admin 口令
 5. `Interfaces` / `Bridge → Ports` 看一眼拓扑
 
 验收：

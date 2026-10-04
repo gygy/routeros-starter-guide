@@ -4,7 +4,7 @@
 
 - 确认 WAN 口不在 LAN 网桥里
 - 建立 `pppoe-out1`
-- 看到 connected 和本端地址（截图须脱敏）
+- 看到 connected 和本端地址
 - 明白出接口是 `pppoe-out1` 不是 `ether1`
 - 配合 NAT，让 LAN 共享上网
 
@@ -23,7 +23,7 @@ RouterOS 7.x · 运营商提供 **用户名 + 密码**（不是 DHCP 自动拿�
 
 **[PPPoE 拨号上网](<../../cookbook/00-home/pppoe-dial.md>)**
 
-请把课文里的 `ISP_USER` / `ISP_PASS` / `ether1` 换成你的值。不要把真实账号、公网 IP、MAC 提交进仓库。
+课文里的 `ISP_USER` / `ISP_PASS` / `ether1` 换成你的宽带账号和实际网口。
 
 学习内容：
 

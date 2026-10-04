@@ -119,7 +119,7 @@ WinBox：`IP → Firewall → Filter Rules`
 
 WinBox：`System → Certificates → Export`
 
-动作：导出 CA（无私钥）给客户端信任；Windows 还需导入。私钥口令只在本机填 ********，不要写进文档。
+动作：导出 CA（不要带私钥）给手机/电脑信任；Windows 还要再导入一次。
 
 ![图(8) 导出证书给手机/Windows](images/06-导出.png)
 

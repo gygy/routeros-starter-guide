@@ -1,9 +1,5 @@
 # Labs
 
-动手实验。编号与目录按家庭常用程度：**00 → 01 → 02 → 03 PPPoE → 04 NAT → 05 防火墙 → 06 WireGuard**。VLAN / OSPF 在后面。
-
-课文对照见仓库根 [README.md](../README.md)。
-
 | Lab | 目录 | 建议先读 |
 | --- | --- | --- |
 | 00 | [环境准备](<00-环境准备(getting-started)/README.md>) | [环境准备课文](<../docs/00-入门(introduction)/00-环境准备.md>) |

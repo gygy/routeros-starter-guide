@@ -1,73 +1,43 @@
 # RouterOS 入门与精通
 
-家里上网、回家连 VPN、公司出口，都用 **RouterOS 7**。
+家里上网、回家连 VPN、公司出口，用 **RouterOS 7**。
 
-先从下面几篇做起，做完电脑就能上网。全部课文：[docs/实战课表.md](docs/实战课表.md)。
+## 入门
 
-## 先看这些
-
-1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)  
-2. [连接路由器（WinBox / MAC）](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)  
-3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)  
-4. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)  
-5. [本周必读：地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)  
-6. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)  
-7. 家里是 **账号拨号** → [Lab 03 PPPoE](<labs/03-PPPoE拨号(pppoe)/README.md>)（步骤和截图在 [这篇课文](<cookbook/00-home/pppoe-dial.md>)）  
-8. [Lab 04 NAT](<labs/04-NAT(nat)/README.md>)（共享上网）  
+1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)
+2. [连接路由器](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)
+3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/README.md>)
+4. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/README.md>)
+5. [地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)
+6. [Lab 02 LAN + DHCP](<labs/02-LAN与DHCP(lan-dhcp)/README.md>)
+7. [Lab 03 PPPoE](<labs/03-PPPoE拨号(pppoe)/README.md>) · [拨号课文](<cookbook/00-home/pppoe-dial.md>)
+8. [Lab 04 NAT](<labs/04-NAT(nat)/README.md>)
 9. [Lab 05 防火墙](<labs/05-防火墙(firewall)/README.md>)
 
-不要一上来 `/import` 企业配置。家里最多先看 `configs/00-baseline/`，并改接口名。
+## 按需求找课文
 
-```text
-环境准备 → Lab 00/01 → 地址/网关/DNS → Lab 02
-         →（可选）PPPoE → NAT → 防火墙 → 能上网
-```
-
-## 课文 ↔ Lab 对照
-
-| 你要做的事 | 先读 | 再做 |
+| 要做的事 | 课文 | 实验 |
 | --- | --- | --- |
 | 安装、登录 | [环境准备](<docs/00-入门(introduction)/00-环境准备.md>) | Lab 00、01 |
-| 电脑自动拿地址 | [本周必读](<docs/01-网络基础(networking-basics)/00-本周必读.md>)、[02 章](<docs/02-RouterOS基础(routeros-basics)/README.md>) | Lab 02 |
-| 运营商账号上网 | [PPPoE 课文](<cookbook/00-home/pppoe-dial.md>) | Lab 03 |
-| 共享上网 / 端口映射 | [04 章 NAT](<docs/04-NAT(nat)/README.md>) | Lab 04 |
-| 防火墙 | [05 章](<docs/05-防火墙(firewall)/README.md>) | Lab 05 |
-| 无线 | [06 章](<docs/06-无线(wireless)/README.md>) | （有无线硬件再做） |
-| 回家 VPN | [07 章](<docs/07-VPN(vpn)/README.md>) | Lab 06 WireGuard |
-| 限速 | [08 章](<docs/08-QoS(qos)/README.md>) | Lab 08 |
-| 双宽带 | [09 章](<docs/09-高可用(high-availability)/README.md>) | Lab 07 |
-| VLAN / 跨网段 | [10 章](<docs/10-二层交换(switching)/README.md>)、[11 章](<docs/11-三层路由(routing)/README.md>) | Lab 09、10 |
-| OSPF / BGP | [18 章](<docs/18-动态路由(dynamic-routing)/README.md>) | Lab 11、12 |
+| 电脑自动拿地址 | [地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)、[02 章](<docs/02-RouterOS基础(routeros-basics)/README.md>) | Lab 02 |
+| 运营商账号上网 | [PPPoE](<cookbook/00-home/pppoe-dial.md>) | Lab 03 |
+| 共享上网 / 端口映射 | [NAT](<docs/04-NAT(nat)/README.md>) | Lab 04 |
+| 防火墙 | [防火墙](<docs/05-防火墙(firewall)/README.md>) | Lab 05 |
+| 无线 | [无线](<docs/06-无线(wireless)/README.md>) | |
+| 回家 VPN | [VPN](<docs/07-VPN(vpn)/README.md>) | Lab 06 |
+| 限速 | [QoS](<docs/08-QoS(qos)/README.md>) | Lab 08 |
+| 双宽带 | [高可用](<docs/09-高可用(high-availability)/README.md>) | Lab 07 |
+| VLAN / 跨网段 | [交换](<docs/10-二层交换(switching)/README.md>)、[路由](<docs/11-三层路由(routing)/README.md>) | Lab 09、10 |
+| OSPF / BGP | [动态路由](<docs/18-动态路由(dynamic-routing)/README.md>) | Lab 11、12 |
 
-对照上表即可。
+## 目录
 
-## 课程与实验目录
+- [课文](docs/实战课表.md)
+- [实验](labs/README.md)
+- [课程索引](docs/README.md)
+- [文件清单](COURSE-TREE.md)
 
-- 课程索引：[docs/README.md](docs/README.md)
-- 课文目录：[docs/实战课表.md](docs/实战课表.md)
-- 实验索引：[labs/README.md](labs/README.md)
-- 已完成清单：[COURSE-TREE.md](COURSE-TREE.md)
-
----
-
-## 后面再用（先不必点）
-
-| 目录 | 什么时候看 |
-| --- | --- |
-| `cookbook/00-home/` | 家庭场景；PPPoE 跟做 |
-| `configs/00-baseline/` | 会手改接口之后再导入 |
-| `scripts/00-backup/` | 备份脚本，不是开局包 |
-| `cheatsheets/` | 做过实验，需要查命令 |
-| `automation/` | REST / Python / Ansible / Terraform |
-| `diagrams/` | 画大图时 |
-| `migration/` | 从 v6 升上来时 |
-| `images/` | 新截图按课存放 |
-
-专家向课文在 [第 20 章](<docs/20-高级(advanced)/README.md>)，做完 Lab 00–06 再说。
-
----
-
-## 课程章
+## 章
 
 - [00 入门](<docs/00-入门(introduction)/README.md>)
 - [01 网络基础](<docs/01-网络基础(networking-basics)/README.md>)
@@ -91,9 +61,7 @@
 - [19 MPLS](<docs/19-MPLS(mpls)/README.md>)
 - [20 高级](<docs/20-高级(advanced)/README.md>)
 
----
-
-## Labs
+## Lab
 
 | Lab | 内容 |
 | --- | --- |
@@ -115,4 +83,12 @@
 | [15](<labs/15-MPLS(mpls)/README.md>) | MPLS |
 | [16](<labs/16-自动化(automation)/README.md>) | 自动化 |
 
-MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。许可见 [LICENSE](LICENSE)。截图怎么脱敏见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+## 其它
+
+- [家庭场景](cookbook/00-home/)
+- [整机配置](configs/00-baseline/)
+- [命令速查](cheatsheets/)
+- [备份脚本](scripts/00-backup/)
+- [v6 升 v7](migration/)
+
+MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。许可：[LICENSE](LICENSE)。

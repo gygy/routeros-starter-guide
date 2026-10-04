@@ -51,14 +51,16 @@ description: >-
 
 连接信息只读本机 **`lab-env.local.md`**（与本技能同目录，已 gitignore）。没有该文件则先按 `lab-env.example.md` 复制再填。
 
-- 环境：PVE 上的 x86 虚拟机 **VMID 901**（RouterOS x86）
-- 无管理 IP 时：WinBox **Neighbors → 点 MAC** 连接（真实 MAC 只写 `lab-env.local.md`，教程用 `00:11:22:33:44:55`）
-- 本机可用 WinBox 3 或 WinBox 4；课文写 WinBox，截图以真机为准
+- **只连 PVE 上的 x86 虚拟机 VMID 901**（RouterOS x86，`lab-env.local.md` 里的 MAC / 管理 IP）
+- **严禁连接监听 5009 端口的任何 RouterOS**（那是别的机，不是本课实验机）。WinBox / SSH / API 地址栏禁止写成 `x.x.x.x:5009` 或端口 5009
+- WinBox 连 901：无管理 IP 时 **Neighbors → 点 MAC**；有 IP 后用该 IP、**WinBox 默认端口 8291**（不要改成 5009）
+- SSH 只打 901 的 22（或 lab-env 写明的 901 管理口），不要打 5009
+- 本机可用 WinBox 3 或 WinBox 4；课文写 WinBox，**全部操作图必须是这台 x86 真机窗口**，禁止 AI 假界面、禁止拿别的 ROS 截图顶替
 - 教程里登录账号写 `admin`；**真实密码、真实管理 IP、个人昵称一律不准出现在 md / 图 / .rsc**
 - 教程密码位只写 `********`，并写「填你自己的管理员密码」
 - 登录类截图：密码框必须是空的或圆点，不得露出明文
 
-终端：用 SSH/`New Terminal` 对 **901** 执行本步命令，核对与 WinBox 一致。
+终端：用 SSH/`New Terminal` 对 **901（x86）** 执行本步命令，核对与 WinBox 一致。连错机先断开。
 
 ## 硬性要求
 
@@ -77,7 +79,7 @@ RouterOS / WinBox 新手教程、实战配置、要配图，或 `/ros-beginner-t
 ## 工作流程
 
 ```
-- [ ] 1. 先写清用户场景（一句话问题）。读 lab-env.local.md，连上 901 的 WinBox 和终端
+- [ ] 1. 先写清用户场景。读 lab-env.local.md，**只**连 x86 **901** 的 WinBox 和终端。发现目标端口是 5009 或地址带 `:5009`：立刻停止，改连 901
 - [ ] 2. WebFetch 官方文档，记下 URL
 - [ ] 3. 按「做完能测通」列出全部步骤（含客户端和测试），不要先拆成多课。若涉及「包从哪来、到哪去、地址变不变」：先 **读并执行** `network-v1-diagram`（整体原理）和/或 `packet-flow-diagram`（包变形），图落到本课 `images/`，再写 WinBox 步骤
 - [ ] 4. 在真机 WinBox 做出该步 → 截 WinBox 窗口（禁止 GenerateImage 充 WinBox 界面）
@@ -87,7 +89,7 @@ RouterOS / WinBox 新手教程、实战配置、要配图，或 `/ros-beginner-t
 - [ ] 8. 终端执行检查命令，写入「检查」。常见问题：只写用户容易忽略的具体坑；没有就整节省略。
 ```
 
-连不上 901 或截不到真机 WinBox：**停写课文**，说明缺什么。禁止用 AI 假界面凑图。
+连不上 **x86 901**、误连到 **5009**、或截不到这台机的真机 WinBox：**停写课文、停换图**，说明缺什么。禁止用 AI 假界面凑图，禁止用 5009 那台机的窗口顶替。
 
 未点名主题时，按 reference 场景课表一次只写**一个场景**。写到客户端能测通再结束。
 
@@ -187,8 +189,8 @@ WinBox 看哪里。
 
 ## 截图（必须真机）
 
-- 截 **本机已打开、已登录 901** 的 WinBox 窗口。窗口必须就是这一步的菜单（Firewall/NAT/WireGuard/PPP…），禁止拿 Packages、TR069、Bridge 等无关窗顶替。登录步就截登录窗，不要截进系统之后的界面。
-- **禁止**用 `GenerateImage`、网图、WebFig **顶替 WinBox**（除非用户点名 WebFig 课）。整体原理图按 `network-v1-diagram` 用 GenerateImage，不在本节。
+- 截 **本机已打开、已登录 x86 901** 的 WinBox 窗口。禁止截 5009 端口那台 ROS。窗口必须就是这一步的菜单（Firewall/NAT/WireGuard/PPP…），禁止拿 Packages、TR069、Bridge 等无关窗顶替。登录步就截登录窗，不要截进系统之后的界面。
+- **全部操作图 = 真机 WinBox。** 禁止 `GenerateImage`、网图、WebFig **顶替 WinBox**（除非用户点名 WebFig 课）。禁止把旧的 AI 假界面留在课文里充数。整体原理图按 `network-v1-diagram` 用 GenerateImage，不在本节。
 - 标注前先问：这一步要点哪里？红框只能套在**这些像素**上。
 
 ### 红框（位置必须对）
@@ -258,6 +260,7 @@ WinBox 看哪里。
 - [ ] 除仓库根外没有任何 `README.md`；章/Lab 索引为 `00-目录.md`
 - [ ] 一课覆盖用户那一件事的全过程（含客户端和测试），没有拆成半成品
 - [ ] 路由器侧每步真机 WinBox 图 + 操作 + 本步命令；客户端步骤字段写全
+- [ ] 截图来自 x86 901，未连接 5009
 - [ ] 教程/图中无实验机密码、无个人昵称、无真实公网/MAC
 - [ ] 短：无百科章节
 - [ ] 文首只有适用版本，无「管理工具 / 官方依据」

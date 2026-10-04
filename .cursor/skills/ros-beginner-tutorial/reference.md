@@ -168,6 +168,8 @@ docs/03-DHCP与DNS(dhcp-dns)/00-目录.md
 
 截不到真机就停，不要用 GenerateImage 顶替 WinBox。登录步截 Neighbors 列表和 Connect/Login/Password **原控件**，不要盖白底、不要标本窗没有的菜单。
 
+**只截 x86 901。** 地址带 `:5009` 的窗口一律作废。
+
 ## 拓扑 / 原理图
 
 VPN、NAT、防火墙路径、VLAN、DHCP Option、双 WAN 等课：先读并执行 **`network-v1-diagram`**（A：整体原理，深蓝插画）和需要时的 **`packet-flow-diagram`**（B：①～⑤ 包变形 Mermaid PNG）。

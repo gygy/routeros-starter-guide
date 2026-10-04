@@ -37,6 +37,9 @@ RouterOS 7。按主题分组的目录见 [docs/实战课表.md](docs/实战课�
 | `05-防火墙(firewall)/06-端口封禁/06-端口封禁.md` | 端口封禁  |
 | `05-防火墙(firewall)/07-查看防火墙日志/07-查看防火墙日志.md` | 查看防火墙日志  |
 | `05-防火墙(firewall)/08-端口敲门/08-端口敲门.md` | 端口敲门  |
+| `06-无线(wireless)/01-家里WiFi/01-家里WiFi.md` | 家里 Wi-Fi  |
+| `06-无线(wireless)/02-访客WiFi/02-访客WiFi.md` | 访客 Wi-Fi  |
+| `06-无线(wireless)/03-CAPsMAN/03-CAPsMAN.md` | CAPsMAN 管多台 AP  |
 | `07-VPN(vpn)/01-WireGuard/01-WireGuard.md` | WireGuard 回家  |
 | `07-VPN(vpn)/02-WireGuard手机/02-WireGuard手机.md` | WireGuard 手机  |
 | `07-VPN(vpn)/03-WireGuard电脑/03-WireGuard电脑.md` | WireGuard 电脑  |
@@ -52,6 +55,8 @@ RouterOS 7。按主题分组的目录见 [docs/实战课表.md](docs/实战课�
 | `07-VPN(vpn)/13-OpenVPN/13-OpenVPN.md` | OpenVPN  |
 | `07-VPN(vpn)/14-L2TP/14-L2TP.md` | L2TP/IPsec  |
 | `07-VPN(vpn)/15-ZeroTier/15-ZeroTier.md` | ZeroTier | ARM/ARM64 |
+| `08-QoS(qos)/01-SimpleQueue限速/01-SimpleQueue限速.md` | Simple Queue 限一台电脑  |
+| `08-QoS(qos)/02-QueueTree限网段/02-QueueTree限网段.md` | Queue Tree 限网段  |
 | `09-高可用(high-availability)/01-双WAN/01-双WAN.md` | 双 WAN  |
 | `10-二层交换(switching)/01-VLAN基础/01-VLAN基础.md` | VLAN 基础  |
 | `10-二层交换(switching)/02-创建VLAN/02-创建VLAN.md` | 创建 VLAN  |
@@ -78,8 +83,17 @@ RouterOS 7。按主题分组的目录见 [docs/实战课表.md](docs/实战课�
 | `13-安全(security)/06-开启HTTPS/06-开启HTTPS.md` | 开启 HTTPS  |
 | `13-安全(security)/07-SSH密钥登录/07-SSH密钥登录.md` | SSH 密钥登录  |
 | `14-故障排查(troubleshooting)/01-网络故障排查流程/01-网络故障排查流程.md` | 网络故障排查流程  |
+| `15-性能优化(performance)/01-FastTrack/01-FastTrack.md` | FastTrack  |
+| `15-性能优化(performance)/02-查看CPU瓶颈/02-查看CPU瓶颈.md` | 查看 CPU 瓶颈  |
+| `16-自动化(automation)/01-定时备份/01-定时备份.md` | 定时备份  |
+| `16-自动化(automation)/02-Netwatch探测/02-Netwatch探测.md` | Netwatch 探测  |
 | `17-生产环境(production)/01-配置备份/01-配置备份.md` | 配置备份  |
 | `17-生产环境(production)/02-Export导出/02-Export导出.md` | Export 导出  |
 | `17-生产环境(production)/03-Import恢复/03-Import恢复.md` | Import 恢复  |
 | `17-生产环境(production)/04-恢复出厂/04-恢复出厂.md` | 恢复出厂  |
 | `17-生产环境(production)/05-Netinstall/05-Netinstall.md` | Netinstall  |
+| `18-动态路由(dynamic-routing)/01-OSPF互通/01-OSPF互通.md` | OSPF 互通  |
+| `18-动态路由(dynamic-routing)/02-BGP互通/02-BGP互通.md` | BGP 互通  |
+| `19-MPLS(mpls)/01-LDP互通/01-LDP互通.md` | LDP 互通  |
+| `20-高级(advanced)/01-RoMON/01-RoMON.md` | RoMON  |
+| `20-高级(advanced)/02-VRF隔离/02-VRF隔离.md` | VRF 隔离  |

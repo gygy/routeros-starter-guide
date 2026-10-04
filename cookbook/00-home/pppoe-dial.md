@@ -50,4 +50,4 @@ WinBox：pppoe-out1 为 R，内网能上网。
 
 ## 常见问题
 
-详细逐步与 NAT 见：[WAN 拨号 PPPoE](../../docs/04-NAT(nat)/01-WAN拨号PPPoE/01-WAN拨号PPPoE.md) · [Masquerade](../../docs/04-NAT(nat)/04-Masquerade/04-Masquerade.md)。
+详细逐步见：[PPPoE 上网](../../docs/04-NAT(nat)/01-WAN拨号PPPoE/01-WAN拨号PPPoE.md)。

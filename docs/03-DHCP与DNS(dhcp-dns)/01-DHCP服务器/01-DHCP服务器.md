@@ -1,10 +1,10 @@
-# DHCP 服务器
+# 电脑自动拿地址
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-给内网发地址。
+家里电脑自动拿到地址、网关和 DNS，能打开网页。
 
 ## 网络
 
@@ -51,11 +51,23 @@ WinBox：`IP → DHCP Server → Networks`
 /ip/dhcp-server/network/print
 ```
 
+## 第3步：开 DNS 转发
+
+WinBox：`IP → DNS`
+
+动作：Servers=`1.1.1.1`，Allow Remote Requests 勾上（只给家里网用）。DHCP Network 的 DNS 填 `192.168.88.1`。
+
+```routeros
+/ip/dns/set allow-remote-requests=yes servers=1.1.1.1
+/ip/dhcp-server/network/set [find address="192.168.88.0/24"] dns-server=192.168.88.1
+```
+
 ## 检查
 
-WinBox：dhcp1 启用
+WinBox：dhcp1 启用；电脑能拿到地址并能打开网页
 
 ```routeros
 /ip/dhcp-server/print
 /ip/dhcp-server/network/print
+/ip/dns/print
 ```

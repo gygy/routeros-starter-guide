@@ -5,7 +5,7 @@
 ## 入门
 
 1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)
-2. [连接路由器](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)
+2. [第一次连上](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)
 3. [Lab 00 环境准备](<labs/00-环境准备(getting-started)/00-环境准备.md>)
 4. [Lab 01 第一台路由器](<labs/01-第一台路由器(first-router)/01-第一台路由器.md>)
 5. [地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)
@@ -19,15 +19,15 @@
 | 要做的事 | 课文 | 实验 |
 | --- | --- | --- |
 | 安装、登录 | [环境准备](<docs/00-入门(introduction)/00-环境准备.md>) | Lab 00、01 |
-| 电脑自动拿地址 | [地址、网关、DNS](<docs/01-网络基础(networking-basics)/00-本周必读.md>)、[02 章](<docs/02-RouterOS基础(routeros-basics)/00-目录.md>) | Lab 02 |
-| 运营商账号上网 | [PPPoE](<cookbook/00-home/pppoe-dial.md>) | Lab 03 |
-| 共享上网 / 端口映射 | [NAT](<docs/04-NAT(nat)/00-目录.md>) | Lab 04 |
-| 防火墙 | [防火墙](<docs/05-防火墙(firewall)/00-目录.md>) | Lab 05 |
-| 无线 | [无线](<docs/06-无线(wireless)/00-目录.md>) | |
-| 回家 VPN | [VPN](<docs/07-VPN(vpn)/00-目录.md>) | Lab 06 |
+| 电脑自动拿地址 | [电脑自动拿地址](<docs/03-DHCP与DNS(dhcp-dns)/01-DHCP服务器/01-DHCP服务器.md>) | Lab 02 |
+| 运营商账号上网 | [PPPoE 上网](<docs/04-NAT(nat)/01-WAN拨号PPPoE/01-WAN拨号PPPoE.md>) | Lab 03 |
+| 共享上网 / 端口映射 | [端口映射与回流](<docs/04-NAT(nat)/08-端口映射与回流/08-端口映射与回流.md>) | Lab 04 |
+| 防火墙 | [家里防火墙](<docs/05-防火墙(firewall)/02-保护路由器Input/02-保护路由器Input.md>) | Lab 05 |
+| 无线 | [家里 Wi-Fi](<docs/06-无线(wireless)/01-家里WiFi/01-家里WiFi.md>) | |
+| 回家 VPN | [WireGuard 回家](<docs/07-VPN(vpn)/01-WireGuard/01-WireGuard.md>)、[IKEv2 回家](<docs/07-VPN(vpn)/11-IKEv2回家/11-IKEv2回家.md>) | Lab 06 |
 | 限速 | [QoS](<docs/08-QoS(qos)/00-目录.md>) | Lab 08 |
 | 双宽带 | [高可用](<docs/09-高可用(high-availability)/00-目录.md>) | Lab 07 |
-| VLAN / 跨网段 | [交换](<docs/10-二层交换(switching)/00-目录.md>)、[路由](<docs/11-三层路由(routing)/00-目录.md>) | Lab 09、10 |
+| VLAN / 跨网段 | [家里 VLAN](<docs/10-二层交换(switching)/05-VLAN间路由/05-VLAN间路由.md>) | Lab 09、10 |
 | OSPF / BGP | [动态路由](<docs/18-动态路由(dynamic-routing)/00-目录.md>) | Lab 11、12 |
 
 ## 目录

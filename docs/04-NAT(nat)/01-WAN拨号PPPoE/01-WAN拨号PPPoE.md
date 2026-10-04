@@ -1,10 +1,10 @@
-# WAN 拨号 PPPoE
+# PPPoE 上网
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-运营商拨号上网。
+用运营商账号拨号，家里电脑能上网。
 
 ## 网络
 
@@ -53,11 +53,22 @@ WinBox：`IP → Addresses`
 /ip/address/print where interface=pppoe-out1
 ```
 
+## 第3步：内网共享上网
+
+WinBox：`IP → Firewall → NAT → +`
+
+动作：Chain=`srcnat`，Out. Interface=`pppoe-out1`，Action=`masquerade`，Comment=`lab-masq`。
+
+```routeros
+/ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade comment=lab-masq
+```
+
 ## 检查
 
-WinBox：pppoe-out1 Running 且有地址
+WinBox：pppoe-out1 Running 且有地址；NAT 有 lab-masq；电脑能打开网页
 
 ```routeros
 /interface/pppoe-client/print
-/ip/address/print where dynamic
+/ip/address/print where interface=pppoe-out1
+/ip/firewall/nat/print where comment=lab-masq
 ```

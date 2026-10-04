@@ -1,10 +1,10 @@
-# Bridge
+# 家里有线网
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-把多个口接到同一二层网桥。
+把 LAN 口接到同一座桥，并加上 `192.168.88.1`，电脑能 ping 网关。
 
 ## 网络
 
@@ -51,11 +51,22 @@ WinBox：`Bridge → Ports → +`
 /interface/bridge/port/add bridge=bridge interface=ether2
 ```
 
+## 第3步：给桥加 LAN 地址
+
+WinBox：`IP → Addresses → +`
+
+动作：Address=`192.168.88.1/24`，Interface=`bridge`。
+
+```routeros
+/ip/address/add address=192.168.88.1/24 interface=bridge
+```
+
 ## 检查
 
-WinBox：Bridge 为 R；Ports 有成员
+WinBox：Bridge 为 R；Ports 有成员；bridge 有 `192.168.88.1/24`
 
 ```routeros
 /interface/bridge/print
 /interface/bridge/port/print
+/ip/address/print where interface=bridge
 ```

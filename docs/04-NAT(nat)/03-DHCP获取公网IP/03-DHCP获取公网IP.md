@@ -1,10 +1,10 @@
-# DHCP 获取公网 IP
+# DHCP 上网
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-WAN 口 DHCP 拿公网/上联地址。
+WAN 口用 DHCP 拿地址，家里电脑能上网。
 
 ## 网络
 
@@ -52,11 +52,22 @@ WinBox：`IP → Addresses / Routes`
 /ip/route/print where dst-address=0.0.0.0/0
 ```
 
+## 第3步：内网共享上网
+
+WinBox：`IP → Firewall → NAT → +`
+
+动作：Chain=`srcnat`，Out. Interface=`ether1`，Action=`masquerade`，Comment=`lab-masq`。
+
+```routeros
+/ip/firewall/nat/add chain=srcnat out-interface=ether1 action=masquerade comment=lab-masq
+```
+
 ## 检查
 
-WinBox：Client bound 且有默认路由
+WinBox：Client bound、有默认路由、NAT 有 lab-masq、电脑能打开网页
 
 ```routeros
 /ip/dhcp-client/print
 /ip/route/print where dst-address=0.0.0.0/0
+/ip/firewall/nat/print where comment=lab-masq
 ```

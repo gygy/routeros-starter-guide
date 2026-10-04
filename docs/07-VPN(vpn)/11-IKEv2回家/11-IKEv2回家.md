@@ -131,15 +131,41 @@ WinBox：`System → Certificates → Export`
 /file/print where name~"cert_export"
 ```
 
+## 第6步：签客户端证书并导出
+
+WinBox：`System → Certificates → + / Sign / Export`
+
+动作：再建一张客户端证书，common-name=`phone1`，用 CA 签发。导出 CA（不要私钥）给手机信任。再导出 `phone1` 为 PKCS12，Export Passphrase 填你自己的（教程写成 `********`）。Windows 同样导入 CA；用证书登录时还要导入这张 p12。
+
+```routeros
+/certificate/add name=phone1 common-name=phone1 key-usage=tls-client
+/certificate/sign phone1 ca=ca
+/certificate/export-certificate ca
+/certificate/export-certificate phone1 export-passphrase=******** type=pkcs12
+```
+
+## 第7步：手机 IKEv2
+
+iPhone：`设置 → 通用 → VPN 与设备管理` 先安装 CA 描述文件/证书，再 `设置 → VPN → 添加 VPN`。
+
+动作：类型=`IKEv2`，服务器=`203.0.113.10`（改成你的公网 IP 或域名，必须和证书 CN/SAN 一致），远程 ID 同样填这个地址。用户认证用证书时选刚导入的 `phone1`；测试用密码的话不要和课文证书方案混用。Android 用系统 VPN 或 strongSwan，字段相同。
+
+连上后手机应拿到 `192.168.77.x`。
+
+## 第8步：Windows IKEv2
+
+动作：把导出的 CA 双击装到「受信任的根证书颁发机构」（当前用户）。`设置 → 网络和 Internet → VPN → 添加 VPN`：VPN 提供商=`Windows（内置）`，服务器名=`203.0.113.10`，VPN 类型=`IKEv2`。用证书时在适配器属性里选计算机/用户证书。
+
 ## 检查
 
-WinBox：IPsec Active Peers 有条目；手机能 ping 192.168.88.1
+WinBox：`IP → IPsec → Active Peers` 有手机或电脑。手机能 ping `192.168.88.1`。
 
 ```routeros
 /ip/ipsec/active-peers/print
 /ip/ipsec/installed-sa/print
+/ping 192.168.77.2 count=4
 ```
 
 ## 常见问题
 
-容易忽略：证书 CN/SAN 必须对得上客户端填的服务器地址。UDP 500/4500 要通。时间不准会验签失败，先配 NTP。
+容易忽略：证书 CN/SAN 必须对得上客户端填的服务器地址。UDP 500/4500 要通。时间不准会验签失败，先配 NTP。手机必须信任家里导出的 CA。

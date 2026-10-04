@@ -1,10 +1,10 @@
-# Export 导出
+# 导出与恢复
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-导出可读配置文本。
+把配置导出成 `.rsc`，必要时再 import 回去。
 
 ## 网络
 
@@ -43,9 +43,19 @@ WinBox：`Files`
 /file/print where name~"lab-export"
 ```
 
+## 第3步：需要时 Import 回去
+
+WinBox：`Files` 把 `lab-export.rsc` 拖进路由器；`New Terminal` 执行 import。
+
+动作：先看文件在，再 `/import file-name=lab-export.rsc`。证书和用户密码不会出现在 export 里，要另外处理。
+
+```routeros
+/import file-name=lab-export.rsc
+```
+
 ## 检查
 
-WinBox：Files 有 .rsc
+WinBox：Files 有 `.rsc`；import 无报错
 
 ```routeros
 /file/print where name~"export"

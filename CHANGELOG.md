@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- 课文按「一个场景一份完整教程」收目录：拆开的半成品课从课表拿掉；IKEv2/WireGuard 补上客户端与测试；PPPoE/DHCP/固定 IP 含 masquerade；家里防火墙、家里 VLAN、第一次连上含改名改密。
+
 - 补齐空章实战课：无线（家里 Wi-Fi / 访客 / CAPsMAN）、QoS（Simple Queue / Queue Tree）、FastTrack 与 CPU、定时备份与 Netwatch、OSPF / BGP、LDP、RoMON / VRF。
 
 - 只有仓库根保留 `README.md`；其余索引改为 `00-目录.md`，Lab 正文改为与文件夹同号的 md。

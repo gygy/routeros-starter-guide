@@ -109,9 +109,26 @@ WinBox：`IP → Firewall → NAT → +`
 /ip/firewall/nat/add chain=srcnat src-address=10.10.10.0/24 out-interface=pppoe-out1 action=masquerade comment=lab-wg-masq
 ```
 
+## 第6步：手机 WireGuard
+
+到商店装官方 WireGuard。新建隧道：
+
+- Interface Address：`10.10.10.2/24`
+- DNS：`192.168.88.1`
+- Peer Public Key：路由器 wg-home 的公钥
+- Endpoint：`203.0.113.10:13231`（改成你家公网或 DDNS）
+- AllowedIPs：`10.10.10.0/24,192.168.88.0/24`
+- PersistentKeepalive：`25`
+
+把手机公钥填回第3步的 Peer。点激活。
+
+## 第7步：电脑 WireGuard
+
+Windows/macOS 同样装官方客户端，字段与手机相同。再加一台时 Allowed Address 用 `10.10.10.3/32`，路由器再加一条 Peer。
+
 ## 检查
 
-WinBox：wg-home 为 R；Peer 有 Last Handshake
+WinBox：wg-home 为 R；Peer 有 Last Handshake。手机能 ping `192.168.88.1`。
 
 ```routeros
 /interface/wireguard/print
@@ -121,4 +138,4 @@ WinBox：wg-home 为 R；Peer 有 Last Handshake
 
 ## 常见问题
 
-容易忽略：光猫转发 UDP 13231。手机 AllowedIPs 至少含 10.10.10.0/24 和 192.168.88.0/24。Endpoint 填你家公网或 DDNS。
+容易忽略：光猫转发 UDP 13231。手机 AllowedIPs 至少含 `10.10.10.0/24` 和 `192.168.88.0/24`。Endpoint 填你家公网或 DDNS。私钥不要发到网上。

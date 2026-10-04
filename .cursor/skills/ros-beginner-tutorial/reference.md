@@ -37,10 +37,6 @@ WireGuard：<https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard>
 | 服务端口 / SSH | IP Services, SSH |
 | Ping / Torch / 抓包 | Ping, Torch, Packet Sniffer, Torch |
 | 日志 | Logging |
-| Wi-Fi / CAPsMAN | WiFi, wifi-qcom, CAPsMAN |
-| 队列 / FastTrack | Queues, Fasttrack |
-| OSPF / BGP / LDP | OSPF, BGP, LDP |
-| RoMON / VRF | RoMON, VRF |
 
 ## 课表（写作大纲）→ 课程仓落盘
 
@@ -72,20 +68,62 @@ docs/03-DHCP与DNS(dhcp-dns)/00-目录.md
 
 **只有仓库根可以有 `README.md`。** 章索引、labs 总表用 `00-目录.md`。单个 Lab 用 `labs/00-环境准备(getting-started)/00-环境准备.md`。
 
-默认生成顺序（未点名主题时，一次一课）：
+默认生成顺序（未点名主题时，一次一个**完整场景**）：
 
-1. 连接路由器（WinBox；无 IP 用 MAC）  
-2. 查看信息 / 改名称 / 改管理员密码  
-3. 接口、Bridge、IP 地址  
-4. DHCP 服务器、DHCP 客户端、DNS  
-5. WAN：PPPoE 或 DHCP 或固定 IP  
-6. NAT masquerade  
-7. 防火墙 Input / Forward  
-8. 备份与导出  
-9. WireGuard（家用远程，完整过程）  
-10. IKEv2 / SSTP / OpenVPN / L2TP / ZeroTier（各一份完整过程）  
-11. 端口映射+回流、DHCP Option 分流、IPv6、HTTPS、SSH 密钥、端口敲门、安全加固  
-12. 其余按大纲
+1. 第一次连上（WinBox/MAC + 改名 + 改密）
+2. 家里有线网（桥 + LAN 地址）
+3. 电脑自动拿地址（DHCP + DNS）
+4. 上网：PPPoE 或 DHCP WAN 或固定 IP（含 masquerade）
+5. 家里防火墙
+6. WireGuard 回家 / IKEv2 回家（各含客户端）
+7. 端口映射与回流、安全加固、HTTPS、SSH 密钥、端口敲门
+8. 其余按「场景课表」
+
+## 场景课表（目录只列这些）
+
+刷新 `00-目录.md` / `实战课表.md` / `COURSE-TREE.md` 时以本表为准。半成品文件夹删掉。
+
+| 场景 | 落盘 |
+| --- | --- |
+| 环境准备 | `00-入门(introduction)/00-环境准备.md` |
+| 第一次连上并改名改密 | `00-入门(introduction)/01-连接路由器/` |
+| 备份 | `00-入门(introduction)/05-备份/` |
+| 升级 | `00-入门(introduction)/06-升级RouterOS/` |
+| 地址网关 DNS 是什么 | `01-网络基础(networking-basics)/00-本周必读.md` |
+| ARP | `01-网络基础(networking-basics)/01-ARP/` |
+| 家里有线网 | `02-RouterOS基础(routeros-basics)/02-Bridge/` 与 `03-IP地址/` 应合成一课；目录只留合成后的那份 |
+| IPv6 | `02-RouterOS基础(routeros-basics)/04-配置IPv6/` |
+| 电脑自动拿地址 | `03-DHCP与DNS(dhcp-dns)/01-DHCP服务器/`（含 DNS） |
+| Option 分流 | `03-DHCP与DNS(dhcp-dns)/04-DHCP-Option分流/` |
+| PPPoE 上网 | `04-NAT(nat)/01-WAN拨号PPPoE/`（含 masquerade） |
+| 固定 IP 上网 | `04-NAT(nat)/02-固定IP上网/`（含 masquerade） |
+| DHCP 上网 | `04-NAT(nat)/03-DHCP获取公网IP/`（含 masquerade） |
+| 端口映射与回流 | `04-NAT(nat)/08-端口映射与回流/` |
+| 1 对 1 NAT | `04-NAT(nat)/06-1对1NAT/` |
+| NAT 不通 | `04-NAT(nat)/07-NAT排错/` |
+| 家里防火墙 | `05-防火墙(firewall)/` 合成一课 |
+| 端口敲门 | `05-防火墙(firewall)/08-端口敲门/` |
+| 家里 Wi-Fi / 访客 / CAPsMAN | `06-无线(wireless)/` 三课 |
+| WireGuard 回家 | `07-VPN(vpn)/01-WireGuard/` |
+| WireGuard 两地 | `07-VPN(vpn)/04-WireGuard站点到站点/` |
+| IKEv2 回家 | `07-VPN(vpn)/11-IKEv2回家/` |
+| IPsec 两地 | `07-VPN(vpn)/09-IPsec站点到站点/` |
+| SSTP / OpenVPN / L2TP / ZeroTier | `07-VPN(vpn)/12`～`15` |
+| VPN 连不上 | `07-VPN(vpn)/10-VPN排错/` |
+| 限一台 / 限网段 | `08-QoS(qos)/` |
+| 双 WAN | `09-高可用(high-availability)/01-双WAN/` |
+| 家里 VLAN | `10-二层交换(switching)/` 合成一课（建 VLAN + Access + Trunk + 互通） |
+| 去某网段怎么走 | `11-三层路由(routing)/02-添加静态路由/`（含默认路由） |
+| 指定流量走另一条线 | `11-三层路由(routing)/04-策略路由/` |
+| 多路由表 | `11-三层路由(routing)/05-多路由表/` |
+| 网络不通 | `14-故障排查(troubleshooting)/01-网络故障排查流程/`（含 ping/Torch/日志） |
+| 安全加固 | `13-安全(security)/05-安全加固/` |
+| 开启 HTTPS | `13-安全(security)/06-开启HTTPS/` |
+| SSH 密钥登录 | `13-安全(security)/07-SSH密钥登录/` |
+| FastTrack | `15-性能优化(performance)/01-FastTrack/` |
+| 定时备份 / Netwatch | `16-自动化(automation)/` |
+| 备份文件 / 导出恢复 / 出厂 / Netinstall | `17-生产环境(production)/` |
+| OSPF / BGP / LDP / RoMON / VRF | 对应 18～20 章已有完整场景课 |
 
 ## WinBox 3 路径 ↔ CLI
 

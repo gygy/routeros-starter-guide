@@ -1,10 +1,10 @@
-# 保护路由器 Input
+# 家里防火墙
 
 > 适用版本：RouterOS 7.x
 
 ## 目的
 
-保护路由器自身（input 链）。
+保护路由器自己，并管好转发：家里能上网、WAN 乱来的新连接进不来。同时关掉不用的服务。
 
 ## 网络
 
@@ -86,14 +86,37 @@ WinBox：`IP → Firewall → Filter Rules`
 /ip/firewall/filter/print where chain=input
 ```
 
-## 检查
+## 第5步：放行家里出去、丢掉无效转发
 
-WinBox：input 有 lab-icmp / lab-lan-in
+WinBox：`IP → Firewall → Filter Rules → +`
+
+动作：Chain=`forward`，Connection State 勾 `established,related`，Action=`accept`，Comment=`lab-fwd-est`。再加一条 Chain=`forward`，Connection State=`invalid`，Action=`drop`，Comment=`lab-fwd-inv`。最后可再加 WAN 入站新连接 drop（放在 VPN/端口映射放行之后）。
 
 ```routeros
-/ip/firewall/filter/print where chain=input
+/ip/firewall/filter/add chain=forward connection-state=established,related action=accept comment=lab-fwd-est
+/ip/firewall/filter/add chain=forward connection-state=invalid action=drop comment=lab-fwd-inv
+```
+
+## 第6步：关掉不用的服务
+
+WinBox：`IP → Services`
+
+动作：Disable `ftp`、`telnet`、不用的 `www`。
+
+```routeros
+/ip/service/disable [find name=ftp]
+/ip/service/disable [find name=telnet]
+```
+
+## 检查
+
+WinBox：input 有 lab-icmp / lab-lan-in；forward 有 lab-fwd-*；危险服务为 disabled。LAN 仍能 WinBox 登录。
+
+```routeros
+/ip/firewall/filter/print
+/ip/service/print
 ```
 
 ## 常见问题
 
-容易忽略：最后再考虑 drop，防把自己锁死。
+容易忽略：最后再考虑 drop，防把自己锁死。Available From 填错会把自己关在门外，改前用 Neighbors/MAC 留退路。

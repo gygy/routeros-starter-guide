@@ -27,6 +27,12 @@ WireGuard：<https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard>
 | Address List | Address Lists |
 | VLAN | VLAN, Bridge VLAN Filtering |
 | WireGuard / IPsec / IKEv2 | WireGuard, IPsec |
+| SSTP / OpenVPN / L2TP | SSTP, OpenVPN, L2TP |
+| ZeroTier | ZeroTier（ARM/ARM64 extra package） |
+| 证书 / HTTPS / www-ssl | Certificates, Services |
+| IPv6 | IPv6 Address, IPv6 Settings |
+| DHCP Option / 121 | DHCP Server option |
+| SSH 公钥 | SSH, user ssh-keys |
 | NTP | NTP, Clock |
 | 服务端口 / SSH | IP Services, SSH |
 | Ping / Torch / 抓包 | Ping, Torch, Packet Sniffer, Torch |
@@ -69,8 +75,10 @@ docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
 6. NAT masquerade  
 7. 防火墙 Input / Forward  
 8. 备份与导出  
-9. WireGuard（家用远程）  
-10. 其余按大纲
+9. WireGuard（家用远程，完整过程）  
+10. IKEv2 / SSTP / OpenVPN / L2TP / ZeroTier（各一份完整过程）  
+11. 端口映射+回流、DHCP Option 分流、IPv6、HTTPS、SSH 密钥、端口敲门、安全加固  
+12. 其余按大纲
 
 ## WinBox 3 路径 ↔ CLI
 

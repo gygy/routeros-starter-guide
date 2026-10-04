@@ -10,6 +10,9 @@ description: >-
 
 写 **短、直说步骤、照着就能配完** 的课文。不是参数百科。
 
+**站在用户角度：一个完整功能及配置过程 = 一份教程。**  
+例如「手机回家走 IKEv2」从证书、池、Peer、防火墙到客户端导入，写在同一课里；不要拆成「只开窗口」「只加证书」的半成品。
+
 默认：**RouterOS 7.x** + **WinBox 3**（界面英文，说明中文）。  
 结构固定：**WinBox 截图 → 操作 → 本步命令 → 验证**。依据：[WinBox](https://help.mikrotik.com/docs/spaces/ROS/pages/328129/WinBox)。
 
@@ -58,7 +61,23 @@ RouterOS / WinBox 新手教程、实战配置、要配图，或 `/ros-beginner-t
 
 连不上 901 或截不到真机 WinBox：**停写课文**，说明缺什么。禁止用 AI 假界面凑图。
 
-未点名主题时，按 reference 课表一次只写一课。
+未点名主题时，按 reference 课表一次只写一课。用户点名「完整配置过程」时，该功能从准备到检查写完再结束。
+
+完整功能课（用户侧一整件事）优先写这些：
+
+1. IKEv2 回家（证书 + 服务器 + 手机/Windows）
+2. SSTP
+3. OpenVPN
+4. L2TP/IPsec
+5. ZeroTier（仅 ARM/ARM64；x86 实验机写清不支持）
+6. WireGuard 回家（接口 + 地址 + Peer + 防火墙/NAT + 客户端）
+7. 端口敲门（Filter + Address List，无独立菜单）
+8. 安全加固（改密、关服务、限制来源、NTP）
+9. 配置 IPv6
+10. 开启 HTTPS（www-ssl / 证书）
+11. DHCP Option 分流（option 121 无类静态路由）
+12. 端口映射 + 端口回流（dst-nat + hairpin masquerade）
+13. SSH 公钥登录
 
 ## 课文结构（短）
 

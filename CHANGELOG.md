@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 技能改为「一个完整功能及配置过程 = 一份教程」；补齐 IKEv2/SSTP/OpenVPN/L2TP/ZeroTier/WireGuard 回家、端口敲门、安全加固、IPv6、HTTPS、DHCP Option 分流、端口映射与回流、SSH 密钥登录。ZeroTier 官方仅 ARM/ARM64，x86 实验机不可实配。
 - 删除全部「待写」14 节原理提纲（163 篇）及空壳 topologies/glossary/labs troubleshooting；只保留可跟做实战课文；同步各章 README 与 COURSE-TREE。
 - 实战课文复检清零：72 课结构/CLI/配图齐全，高优先级问题 0；每课配图唯一戳记，Identity 用真机对话框，NAT/Routes/Filter 等用已验证真窗。
 - cookbook 对照课（双 WAN/WG 远程/排错/两地 IPsec、pppoe-dial）补齐两步并脱敏。

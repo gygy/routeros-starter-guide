@@ -14,5 +14,10 @@
 | [IKEv2 Windows](08-IKEv2-Windows/08-IKEv2-Windows.md) | 可跟做 |
 | [IPsec 站点到站点](09-IPsec站点到站点/09-IPsec站点到站点.md) | 可跟做 |
 | [VPN 排错](10-VPN排错/10-VPN排错.md) | 可跟做 |
+| [IKEv2 回家](11-IKEv2回家/11-IKEv2回家.md) | 可跟做 |
+| [SSTP](12-SSTP/12-SSTP.md) | 可跟做 |
+| [OpenVPN](13-OpenVPN/13-OpenVPN.md) | 可跟做 |
+| [L2TP/IPsec](14-L2TP/14-L2TP.md) | 可跟做 |
+| [ZeroTier](15-ZeroTier/15-ZeroTier.md) | ARM/ARM64；x86 实验机不可跟做 |
 
 实战总表：[实战课表.md](../实战课表.md)

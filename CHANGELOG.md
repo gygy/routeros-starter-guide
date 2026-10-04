@@ -3,6 +3,7 @@
 ## Unreleased
 
 - 课文按「一个场景一份完整教程」收目录：拆开的半成品课从课表拿掉；IKEv2/WireGuard 补上客户端与测试；PPPoE/DHCP/固定 IP 含 masquerade；家里防火墙、家里 VLAN、第一次连上含改名改密。
+- 截图规则：红框必须套住本步真实控件；禁止在登录窗标 Firewall/Connections；禁止白色方框盖住 Connect/Login/Password。
 
 - 补齐空章实战课：无线（家里 Wi-Fi / 访客 / CAPsMAN）、QoS（Simple Queue / Queue Tree）、FastTrack 与 CPU、定时备份与 Netwatch、OSPF / BGP、LDP、RoMON / VRF。
 

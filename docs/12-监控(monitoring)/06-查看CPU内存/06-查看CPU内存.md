@@ -21,6 +21,9 @@ WinBox：`System → Resources`
 
 ![图(1) 打开Resources](images/01-cpu.png)
 
+<p align="center">图(1) 打开Resources</p>
+
+
 ```routeros
 /system/resource/print
 ```
@@ -32,6 +35,9 @@ WinBox：`Interfaces`
 动作：CPU 高时看哪个口在跑流量。
 
 ![图(2) 对照接口流量](images/02-接口.png)
+
+<p align="center">图(2) 对照接口流量</p>
+
 
 ```routeros
 /interface/print stats

@@ -19,6 +19,8 @@
 
 ![图(0) DHCP服务器](images/00-原理.svg)
 
+<p align="center">图(0) DHCP服务器</p>
+
 ## 第1步：打开 DHCP Server
 
 WinBox：`IP → DHCP Server`
@@ -26,6 +28,9 @@ WinBox：`IP → DHCP Server`
 动作：看是否已有 dhcp1。
 
 ![图(1) 打开DHCPServer](images/01-DHCP.png)
+
+<p align="center">图(1) 打开DHCPServer</p>
+
 
 ```routeros
 /ip/dhcp-server/print
@@ -38,6 +43,9 @@ WinBox：`IP → DHCP Server → Networks`
 动作：Address=192.168.88.0/24，Gateway=192.168.88.1。
 
 ![图(2) 核对Network](images/02-网络.png)
+
+<p align="center">图(2) 核对Network</p>
+
 
 ```routeros
 /ip/dhcp-server/network/print

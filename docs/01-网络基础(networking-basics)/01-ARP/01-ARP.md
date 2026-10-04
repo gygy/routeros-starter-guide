@@ -19,6 +19,8 @@
 
 ![图(0) ARP](images/00-原理.svg)
 
+<p align="center">图(0) ARP</p>
+
 ## 第1步：打开 ARP
 
 WinBox：`IP → ARP`
@@ -26,6 +28,9 @@ WinBox：`IP → ARP`
 动作：查看 IP Address / MAC Address / Interface。
 
 ![图(1) 打开ARP](images/01-ARP.png)
+
+<p align="center">图(1) 打开ARP</p>
+
 
 ```routeros
 /ip/arp/print
@@ -38,6 +43,9 @@ WinBox：`IP → ARP`
 动作：内网通信后会出现动态条目。
 
 ![图(2) 刷新观察](images/02-刷新.png)
+
+<p align="center">图(2) 刷新观察</p>
+
 
 ```routeros
 /ip/arp/print where dynamic

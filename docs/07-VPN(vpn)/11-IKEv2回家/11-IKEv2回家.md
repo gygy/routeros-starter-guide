@@ -21,6 +21,8 @@ UDP 500/4500 进 R1，分到 192.168.77.x，再访问 192.168.88.0/24。
 
 ![图(0) IKEv2回家](images/00-原理.svg)
 
+<p align="center">图(0) IKEv2回家</p>
+
 ```mermaid
 flowchart LR
     subgraph C["🟣 路上"]
@@ -47,6 +49,9 @@ WinBox：`System → Certificates → + / Sign`
 
 ![图(1) 签CA和服务器证书](images/01-证书.png)
 
+<p align="center">图(1) 签CA和服务器证书</p>
+
+
 ```routeros
 /certificate/add name=ca common-name=home-ca key-usage=key-cert-sign,crl-sign
 /certificate/sign ca
@@ -62,6 +67,9 @@ WinBox：`IP → Pool / IP → IPsec → Mode Configs`
 
 ![图(2) 建地址池和ModeConfig](images/02-池.png)
 
+<p align="center">图(2) 建地址池和ModeConfig</p>
+
+
 ```routeros
 /ip/pool/add name=ike2-pool ranges=192.168.77.2-192.168.77.20
 /ip/ipsec/mode-config/add name=ike2-conf address-pool=ike2-pool address-prefix-length=32 split-include=192.168.88.0/24
@@ -74,6 +82,9 @@ WinBox：`IP → IPsec`
 动作：Profile 名 ike2；Proposal 名 ike2，pfs-group=none。Policy Group=ike2-policies；模板：src=0.0.0.0/0 dst=192.168.77.0/24 template=yes。
 
 ![图(3) Profile/Proposal/Policy](images/03-提案.png)
+
+<p align="center">图(3) Profile/Proposal/Policy</p>
+
 
 ```routeros
 /ip/ipsec/profile/add name=ike2
@@ -90,6 +101,9 @@ WinBox：`IP → IPsec → Peers / Identities`
 
 ![图(4) Peer与Identity](images/04-peer.png)
 
+<p align="center">图(4) Peer与Identity</p>
+
+
 ```routeros
 /ip/ipsec/peer/add name=ike2 exchange-mode=ike2 profile=ike2 passive=yes
 /ip/ipsec/identity/add peer=ike2 auth-method=digital-signature certificate=server1 generate-policy=port-strict mode-config=ike2-conf policy-template-group=ike2-policies
@@ -103,6 +117,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 ![图(5) 防火墙放行IKE](images/05-防火墙.png)
 
+<p align="center">图(5) 防火墙放行IKE</p>
+
+
 ```routeros
 /ip/firewall/filter/add chain=input protocol=udp dst-port=500,4500 action=accept comment=lab-ike
 /ip/firewall/filter/add chain=input protocol=ipsec-esp action=accept comment=lab-esp
@@ -115,6 +132,9 @@ WinBox：`System → Certificates → Export`
 动作：导出 CA（无私钥）给客户端信任；Windows 还需导入。私钥口令只在本机填 ********，不要写进文档。
 
 ![图(6) 导出证书给手机/Windows](images/06-导出.png)
+
+<p align="center">图(6) 导出证书给手机/Windows</p>
+
 
 ```routeros
 /certificate/export-certificate ca

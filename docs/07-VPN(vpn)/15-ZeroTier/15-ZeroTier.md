@@ -21,6 +21,8 @@ ARM/ARM64 设备加入 ZeroTier 网络，从手机直达家里 LAN。
 
 ![图(0) ZeroTier](images/00-原理.svg)
 
+<p align="center">图(0) ZeroTier</p>
+
 ## 第1步：确认架构并安装包
 
 WinBox：`System → Resources / Packages`
@@ -28,6 +30,9 @@ WinBox：`System → Resources / Packages`
 动作：Architecture 必须是 arm 或 arm64。Extra packages 里上传 zerotier-*.npk 后重启。x86 到此停止。
 
 ![图(1) 确认架构并安装包](images/01-软件包.png)
+
+<p align="center">图(1) 确认架构并安装包</p>
+
 
 ```routeros
 /system/resource/print
@@ -41,6 +46,9 @@ WinBox：`ZeroTier`
 动作：/zerotier/enable zt1。Interface → +，Network=你的 16 位 Network ID，Instance=zt1。
 
 ![图(2) 启用实例并加入网络](images/02-加入.png)
+
+<p align="center">图(2) 启用实例并加入网络</p>
+
 
 ```routeros
 /zerotier/enable zt1
@@ -56,6 +64,9 @@ WinBox：`浏览器 my.zerotier.com 或 RouterOS Controller`
 
 ![图(3) 控制台授权节点](images/03-状态.png)
 
+<p align="center">图(3) 控制台授权节点</p>
+
+
 ```routeros
 /zerotier/interface/print
 /ip/address/print where interface~"zero"
@@ -68,6 +79,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：input/forward 对 zerotier1 accept（按官方示例放在前面）。
 
 ![图(4) 防火墙放行ZeroTier口](images/04-防火墙.png)
+
+<p align="center">图(4) 防火墙放行ZeroTier口</p>
+
 
 ```routeros
 /ip/firewall/filter/add chain=input in-interface=zerotier1 action=accept comment=lab-zt-in place-before=0

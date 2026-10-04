@@ -19,6 +19,8 @@
 
 ![图(0) VPN排错](images/00-原理.svg)
 
+<p align="center">图(0) VPN排错</p>
+
 ## 第1步：看 WireGuard
 
 WinBox：`WireGuard`
@@ -26,6 +28,9 @@ WinBox：`WireGuard`
 动作：接口是否 Running，端口是否监听。
 
 ![图(1) 看WireGuard](images/01-握手.png)
+
+<p align="center">图(1) 看WireGuard</p>
+
 
 ```routeros
 /interface/wireguard/print
@@ -38,6 +43,9 @@ WinBox：`WireGuard → Peers`
 动作：Last Handshake 是否更新。
 
 ![图(2) 看Peer握手](images/02-peer.png)
+
+<p align="center">图(2) 看Peer握手</p>
+
 
 ```routeros
 /interface/wireguard/peers/print

@@ -19,6 +19,8 @@
 
 ![图(0) Trunk口](images/00-原理.svg)
 
+<p align="center">图(0) Trunk口</p>
+
 ## 第1步：打开 Bridge VLANs
 
 WinBox：`Bridge → VLANs`
@@ -26,6 +28,9 @@ WinBox：`Bridge → VLANs`
 动作：准备 tagged 上联口。
 
 ![图(1) 打开BridgeVLANs](images/01-trunk.png)
+
+<p align="center">图(1) 打开BridgeVLANs</p>
+
 
 ```routeros
 /interface/bridge/vlan/print
@@ -38,6 +43,9 @@ WinBox：`Bridge → VLANs → +`
 动作：vlan-ids=10,20，tagged=ether2（示例）。
 
 ![图(2) 设置Trunk](images/02-tagged.png)
+
+<p align="center">图(2) 设置Trunk</p>
+
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10,20 tagged=ether2

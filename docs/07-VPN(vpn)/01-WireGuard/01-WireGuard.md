@@ -22,6 +22,8 @@
 
 ![图(0) WireGuard回家](images/00-原理.svg)
 
+<p align="center">图(0) WireGuard回家</p>
+
 ```mermaid
 flowchart LR
     subgraph C["🟣 路上"]
@@ -48,6 +50,9 @@ WinBox：`WireGuard → +`
 
 ![图(1) 新建接口](images/01-接口.png)
 
+<p align="center">图(1) 新建接口</p>
+
+
 ```routeros
 /interface/wireguard/add name=wg-home listen-port=13231
 /interface/wireguard/print
@@ -61,6 +66,9 @@ WinBox：`IP → Addresses → +`
 
 ![图(2) 给隧道加地址](images/02-地址.png)
 
+<p align="center">图(2) 给隧道加地址</p>
+
+
 ```routeros
 /ip/address/add address=10.10.10.1/24 interface=wg-home
 ```
@@ -72,6 +80,9 @@ WinBox：`WireGuard → Peers → +`
 动作：Interface=wg-home，Public Key=手机公钥，Allowed Address=10.10.10.2/32，Persistent Keepalive=25s。
 
 ![图(3) 添加手机Peer](images/03-peer.png)
+
+<p align="center">图(3) 添加手机Peer</p>
+
 
 ```routeros
 /interface/wireguard/peers/add interface=wg-home public-key="BASE64PUBLICKEY=======" allowed-address=10.10.10.2/32 persistent-keepalive=25s comment=phone
@@ -85,6 +96,9 @@ WinBox：`IP → Firewall → Filter Rules → +`
 
 ![图(4) 放行UDP与隧道](images/04-防火墙.png)
 
+<p align="center">图(4) 放行UDP与隧道</p>
+
+
 ```routeros
 /ip/firewall/filter/add chain=input protocol=udp dst-port=13231 action=accept comment=lab-wg-in
 /ip/firewall/filter/add chain=forward in-interface=wg-home action=accept comment=lab-wg-fwd
@@ -97,6 +111,9 @@ WinBox：`IP → Firewall → NAT → +`
 动作：若手机要经路由器上网：Chain=srcnat，Out. Interface=pppoe-out1，Src. Address=10.10.10.0/24，Action=masquerade。只进 LAN 可跳过。
 
 ![图(5) 需要时给隧道做NAT](images/05-nat.png)
+
+<p align="center">图(5) 需要时给隧道做NAT</p>
+
 
 ```routeros
 /ip/firewall/nat/add chain=srcnat src-address=10.10.10.0/24 out-interface=pppoe-out1 action=masquerade comment=lab-wg-masq

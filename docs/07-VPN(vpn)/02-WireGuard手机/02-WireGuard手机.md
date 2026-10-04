@@ -22,6 +22,8 @@
 
 ![图(0) 手机Peer](images/00-原理.svg)
 
+<p align="center">图(0) 手机Peer</p>
+
 ## 第1步：核对服务端
 
 WinBox：`WireGuard`
@@ -29,6 +31,9 @@ WinBox：`WireGuard`
 动作：wg-demo Running，有 Listen Port。
 
 ![图(1) 核对服务端](images/01-手机.png)
+
+<p align="center">图(1) 核对服务端</p>
+
 
 ```routeros
 /interface/wireguard/print
@@ -41,6 +46,9 @@ WinBox：`WireGuard → Peers`
 动作：Public Key、Allowed Address、Endpoint 按对端填写（勿写真实私钥）。
 
 ![图(2) 添加/核对Peer](images/02-peer.png)
+
+<p align="center">图(2) 添加/核对Peer</p>
+
 
 ```routeros
 /interface/wireguard/peers/print

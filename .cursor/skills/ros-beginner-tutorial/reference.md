@@ -117,11 +117,15 @@ docs/03-DHCP与DNS(dhcp-dns)/04-DHCP服务器/images/01-打开DHCP.png
 
 1. 读 `lab-env.local.md`，把实验机改成教程占位数据后再截（R1、示例网段；密码框圆点）。
 2. 做到该步画面，截 **这一步的 WinBox 窗口**（菜单名必须对得上步骤）。
-3. 红框 + 中文标签标菜单、填写字段、关键结果；图底水平居中 `图(N) 短说明`。
-4. **不要白块打码。** 不要把文件名写进页脚。可在右上角留一处 `RouterOS 入门与精通`。
+3. 红框 + 中文标签标菜单、填写字段、关键结果。
+4. **图注写在 md 里图片正下方居中**（`<p align="center">图(N) …</p>`），不要画进 PNG。
 5. 存到本课 `images/01-短中文.png`。
 
-截不到真机就停，不要用 GenerateImage 顶替。
+截不到真机就停，不要用 GenerateImage 顶替 WinBox。
+
+## 拓扑 / 原理图
+
+VPN、NAT、防火墙路径、VLAN、DHCP Option、双 WAN 等课：在「网络」后增加 `images/00-原理.svg`（左外网 / 中 R1 / 右内网，编号步骤）。WinBox 假界面仍禁止 AI；原理插画可用 GenerateImage。
 
 ## 文风
 

@@ -19,6 +19,8 @@
 
 ![图(0) 端口转发](images/00-原理.svg)
 
+<p align="center">图(0) 端口转发</p>
+
 ```mermaid
 flowchart LR
     subgraph W["🌐 外网"]
@@ -45,6 +47,9 @@ WinBox：`IP → Firewall → NAT`
 
 ![图(1) 打开NAT列表](images/01-dstnat.png)
 
+<p align="center">图(1) 打开NAT列表</p>
+
+
 ```routeros
 /ip/firewall/nat/print
 ```
@@ -56,6 +61,9 @@ WinBox：`IP → Firewall → NAT → +`
 动作：Chain=dstnat，Protocol=tcp，Dst. Port=8080，In. Interface=pppoe-out1，Action=dst-nat，To Addresses=192.168.88.10，Comment=lab-portfwd。
 
 ![图(2) 添加dst-nat](images/02-规则.png)
+
+<p align="center">图(2) 添加dst-nat</p>
+
 
 ```routeros
 /ip/firewall/nat/add chain=dstnat protocol=tcp dst-port=8080 in-interface=pppoe-out1 action=dst-nat to-addresses=192.168.88.10 comment=lab-portfwd

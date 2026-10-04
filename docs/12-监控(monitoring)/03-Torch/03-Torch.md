@@ -21,6 +21,9 @@ WinBox：`Tools → Torch`
 
 ![图(1) 打开Torch](images/01-torch.png)
 
+<p align="center">图(1) 打开Torch</p>
+
+
 ```routeros
 /tool/torch interface=bridge
 ```
@@ -32,6 +35,9 @@ WinBox：`Interfaces`
 动作：流量大的口再 Torch。
 
 ![图(2) 对照接口](images/02-cli.png)
+
+<p align="center">图(2) 对照接口</p>
+
 
 ```routeros
 /interface/print stats

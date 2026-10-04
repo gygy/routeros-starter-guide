@@ -21,6 +21,9 @@ WinBox：`Files`
 
 ![图(1) 上传rsc](images/01-rst.png)
 
+<p align="center">图(1) 上传rsc</p>
+
+
 ```routeros
 /file/print where name~"rsc"
 ```
@@ -32,6 +35,9 @@ WinBox：`New Terminal`
 动作：/import file-name=lab-export.rsc
 
 ![图(2) Import](images/02-import.png)
+
+<p align="center">图(2) Import</p>
+
 
 ```routeros
 /import file-name=lab-export.rsc

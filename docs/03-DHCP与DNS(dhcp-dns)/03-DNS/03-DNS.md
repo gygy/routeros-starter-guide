@@ -19,6 +19,8 @@
 
 ![图(0) DNS](images/00-原理.svg)
 
+<p align="center">图(0) DNS</p>
+
 ## 第1步：打开 DNS
 
 WinBox：`IP → DNS`
@@ -26,6 +28,9 @@ WinBox：`IP → DNS`
 动作：Servers 填公共 DNS（示例 1.1.1.1）。
 
 ![图(1) 打开DNS](images/01-DNS.png)
+
+<p align="center">图(1) 打开DNS</p>
+
 
 ```routeros
 /ip/dns/print
@@ -38,6 +43,9 @@ WinBox：`IP → DNS`
 动作：Allow Remote Requests=yes（仅可信网段时）。
 
 ![图(2) 开远程请求](images/02-允许.png)
+
+<p align="center">图(2) 开远程请求</p>
+
 
 ```routeros
 /ip/dns/set allow-remote-requests=yes servers=1.1.1.1

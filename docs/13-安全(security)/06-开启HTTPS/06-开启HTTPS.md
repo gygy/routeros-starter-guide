@@ -20,6 +20,8 @@
 
 ![图(0) 开启HTTPS](images/00-原理.svg)
 
+<p align="center">图(0) 开启HTTPS</p>
+
 ## 第1步：签一张 www 证书
 
 WinBox：`System → Certificates → + / Sign`
@@ -27,6 +29,9 @@ WinBox：`System → Certificates → + / Sign`
 动作：Name=www-cert，common-name=R1 或你的域名，Sign（可用自签）。
 
 ![图(1) 签一张www证书](images/01-证书.png)
+
+<p align="center">图(1) 签一张www证书</p>
+
 
 ```routeros
 /certificate/add name=www-cert common-name=R1 key-usage=tls-server
@@ -41,6 +46,9 @@ WinBox：`IP → Services → www-ssl`
 
 ![图(2) 启用www-ssl](images/02-wwwssl.png)
 
+<p align="center">图(2) 启用www-ssl</p>
+
+
 ```routeros
 /ip/service/set www-ssl certificate=www-cert disabled=no port=443
 /ip/service/print where name=www-ssl
@@ -54,6 +62,9 @@ WinBox：`IP → Services → www`
 
 ![图(3) 关掉明文www（可选）](images/03-关http.png)
 
+<p align="center">图(3) 关掉明文www（可选）</p>
+
+
 ```routeros
 /ip/service/set www disabled=yes
 ```
@@ -65,6 +76,9 @@ WinBox：`IP → Services → www-ssl`
 动作：Available From=192.168.88.0/24。
 
 ![图(4) 限制来源](images/04-限制.png)
+
+<p align="center">图(4) 限制来源</p>
+
 
 ```routeros
 /ip/service/set www-ssl address=192.168.88.0/24

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="484" viewBox="0 0 1100 484">
   <rect width="1100" height="520" fill="#071526"/>
   <text x="550" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">用 WinBox 连上 R1</text>
   <text x="550" y="70" text-anchor="middle" font-size="14" fill="#90caf9" font-family="Microsoft YaHei, PingFang SC, sans-serif">电脑和路由器在同一二层，点邻居里的 MAC 就能进。</text>
@@ -40,6 +40,4 @@
   <text x="90" y="450" font-size="12" fill="#80deea">外网 / 远端</text>
   <text x="490" y="450" font-size="12" fill="#ffab91">MikroTik R1</text>
   <text x="860" y="450" font-size="12" fill="#a5d6a7">家里 / 内网</text>
-  <rect x="0" y="484" width="1100" height="36" fill="#121212"/>
-  <text x="550" y="508" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif">undefined</text>
 </svg>

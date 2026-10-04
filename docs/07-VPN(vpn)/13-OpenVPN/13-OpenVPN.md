@@ -21,6 +21,8 @@
 
 ![图(0) OpenVPN回家](images/00-原理.svg)
 
+<p align="center">图(0) OpenVPN回家</p>
+
 ```mermaid
 flowchart LR
     subgraph C["🟣 路上"]
@@ -47,6 +49,9 @@ WinBox：`System → Certificates`
 
 ![图(1) 签服务器证书](images/01-证书.png)
 
+<p align="center">图(1) 签服务器证书</p>
+
+
 ```routeros
 /certificate/add name=ca-ovpn common-name=ovpn-ca key-usage=key-cert-sign,crl-sign
 /certificate/sign ca-ovpn
@@ -62,6 +67,9 @@ WinBox：`IP → Pool / PPP → Profiles`
 
 ![图(2) 地址池和PPPProfile](images/02-池.png)
 
+<p align="center">图(2) 地址池和PPPProfile</p>
+
+
 ```routeros
 /ip/pool/add name=ovpn-pool ranges=192.168.77.2-192.168.77.20
 /ppp/profile/add name=ovpn local-address=192.168.77.1 remote-address=ovpn-pool
@@ -75,6 +83,9 @@ WinBox：`PPP → Secrets → +`
 
 ![图(3) PPP账号](images/03-用户.png)
 
+<p align="center">图(3) PPP账号</p>
+
+
 ```routeros
 /ppp/secret/add name=ovpnuser password=******** service=ovpn profile=ovpn
 ```
@@ -87,6 +98,9 @@ WinBox：`PPP / Interfaces → OVPN Server`
 
 ![图(4) 启用OVPN服务器](images/04-服务器.png)
 
+<p align="center">图(4) 启用OVPN服务器</p>
+
+
 ```routeros
 /interface/ovpn-server/server/add name=ovpn-home certificate=ovpn-server port=1194 protocol=tcp disabled=no default-profile=ovpn
 ```
@@ -98,6 +112,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：input TCP（或 UDP）1194 accept。
 
 ![图(5) 防火墙放行1194](images/05-防火墙.png)
+
+<p align="center">图(5) 防火墙放行1194</p>
+
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=tcp dst-port=1194 action=accept comment=lab-ovpn

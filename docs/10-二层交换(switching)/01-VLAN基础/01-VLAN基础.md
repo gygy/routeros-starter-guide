@@ -19,6 +19,8 @@
 
 ![图(0) VLAN基础](images/00-原理.svg)
 
+<p align="center">图(0) VLAN基础</p>
+
 ## 第1步：打开 Bridge
 
 WinBox：`Bridge`
@@ -26,6 +28,9 @@ WinBox：`Bridge`
 动作：确认有 bridge。
 
 ![图(1) 打开Bridge](images/01-vlan.png)
+
+<p align="center">图(1) 打开Bridge</p>
+
 
 ```routeros
 /interface/bridge/print
@@ -38,6 +43,9 @@ WinBox：`Bridge → 双击 bridge`
 动作：vlan-filtering 按你环境开启（改前备份）。
 
 ![图(2) 看VLANFiltering](images/02-filtering.png)
+
+<p align="center">图(2) 看VLANFiltering</p>
+
 
 ```routeros
 /interface/bridge/print detail

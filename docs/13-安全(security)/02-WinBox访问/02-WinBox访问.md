@@ -21,6 +21,9 @@ WinBox：`IP → Services`
 
 ![图(1) 打开Services](images/01-winbox服务.png)
 
+<p align="center">图(1) 打开Services</p>
+
+
 ```routeros
 /ip/service/print where name=winbox
 ```
@@ -32,6 +35,9 @@ WinBox：`IP → Services → winbox`
 动作：Available From 填 192.168.88.0/24（示例）。
 
 ![图(2) 限制网段](images/02-限制.png)
+
+<p align="center">图(2) 限制网段</p>
+
 
 ```routeros
 /ip/service/set winbox address=192.168.88.0/24

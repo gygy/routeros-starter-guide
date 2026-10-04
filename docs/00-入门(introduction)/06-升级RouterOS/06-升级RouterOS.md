@@ -21,6 +21,9 @@ WinBox：`System → Packages`
 
 ![图(1) 打开Packages](images/01-Packages.png)
 
+<p align="center">图(1) 打开Packages</p>
+
+
 ```routeros
 /system/package/print
 ```
@@ -32,6 +35,9 @@ WinBox：`System → Resources`
 动作：Version 与 Packages 一致。
 
 ![图(2) 核对版本](images/02-版本.png)
+
+<p align="center">图(2) 核对版本</p>
+
 
 ```routeros
 /system/resource/print

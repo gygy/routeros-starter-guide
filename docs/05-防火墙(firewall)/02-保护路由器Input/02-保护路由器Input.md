@@ -19,6 +19,8 @@
 
 ![图(0) 保护Input](images/00-原理.svg)
 
+<p align="center">图(0) 保护Input</p>
+
 ## 第1步：放行 ICMP
 
 WinBox：`IP → Firewall → Filter Rules`
@@ -26,6 +28,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：Chain=input，Protocol=icmp，Action=accept，Comment=lab-icmp。
 
 ![图(1) 放行ICMP](images/01-established.png)
+
+<p align="center">图(1) 放行ICMP</p>
+
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=icmp action=accept comment=lab-icmp
@@ -39,6 +44,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 ![图(2) 放行LAN管理](images/02-icmp.png)
 
+<p align="center">图(2) 放行LAN管理</p>
+
+
 ```routeros
 /ip/firewall/filter/add chain=input src-address=192.168.88.0/24 action=accept comment=lab-lan-in
 ```
@@ -51,6 +59,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 ![图(3) 放行已建立](images/03-lan.png)
 
+<p align="center">图(3) 放行已建立</p>
+
+
 ```routeros
 /ip/firewall/filter/print where chain=input
 ```
@@ -62,6 +73,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：确认 input 规则顺序合理。
 
 ![图(4) 看整体](images/04-drop.png)
+
+<p align="center">图(4) 看整体</p>
+
 
 ```routeros
 /ip/firewall/filter/print where chain=input

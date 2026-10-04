@@ -19,6 +19,8 @@ ICMP 来回一趟，延时就是路上花的时间。
 
 ![图(0) Ping](images/00-原理.svg)
 
+<p align="center">图(0) Ping</p>
+
 ## 第1步：打开 Ping
 
 WinBox：`Tools → Ping`
@@ -26,6 +28,9 @@ WinBox：`Tools → Ping`
 动作：Address 填 1.1.1.1，Start。
 
 ![图(1) 打开Ping](images/01-ping.png)
+
+<p align="center">图(1) 打开Ping</p>
+
 
 ```routeros
 /ping 1.1.1.1 count=4
@@ -38,6 +43,9 @@ WinBox：`New Terminal`
 动作：执行同样 ping。
 
 ![图(2) 终端核对](images/02-cli.png)
+
+<p align="center">图(2) 终端核对</p>
+
 
 ```routeros
 /ping 1.1.1.1 count=4

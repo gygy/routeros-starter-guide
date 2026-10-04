@@ -21,6 +21,8 @@ Windows 走 TCP 443，像上网一样穿过多数防火墙。
 
 ![图(0) SSTP回家](images/00-原理.svg)
 
+<p align="center">图(0) SSTP回家</p>
+
 ```mermaid
 flowchart LR
     subgraph C["🟣 路上"]
@@ -47,6 +49,9 @@ WinBox：`System → Certificates`
 
 ![图(1) 准备服务器证书](images/01-证书.png)
 
+<p align="center">图(1) 准备服务器证书</p>
+
+
 ```routeros
 /certificate/add name=ca-sstp common-name=sstp-ca key-usage=key-cert-sign,crl-sign
 /certificate/sign ca-sstp
@@ -62,6 +67,9 @@ WinBox：`PPP → Secrets → +`
 
 ![图(2) 建PPP用户](images/02-用户.png)
 
+<p align="center">图(2) 建PPP用户</p>
+
+
 ```routeros
 /ppp/secret/add name=vpnuser password=******** service=sstp local-address=10.20.20.1 remote-address=10.20.20.2
 ```
@@ -74,6 +82,9 @@ WinBox：`PPP → Interface → SSTP Server`
 
 ![图(3) 启用SSTP服务器](images/03-服务器.png)
 
+<p align="center">图(3) 启用SSTP服务器</p>
+
+
 ```routeros
 /interface/sstp-server/server/set enabled=yes certificate=sstp-server authentication=mschap2 default-profile=default-encryption
 ```
@@ -85,6 +96,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：input TCP 443 accept（若 443 已给 www-ssl，改 SSTP port）。
 
 ![图(4) 防火墙放行443](images/04-防火墙.png)
+
+<p align="center">图(4) 防火墙放行443</p>
+
 
 ```routeros
 /ip/firewall/filter/add chain=input protocol=tcp dst-port=443 action=accept comment=lab-sstp

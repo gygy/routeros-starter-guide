@@ -19,6 +19,8 @@
 
 ![图(0) Masquerade](images/00-原理.svg)
 
+<p align="center">图(0) Masquerade</p>
+
 ```mermaid
 flowchart LR
     subgraph L["🟢 家里"]
@@ -45,6 +47,9 @@ WinBox：`IP → Firewall → NAT`
 
 ![图(1) 打开NAT](images/01-NAT.png)
 
+<p align="center">图(1) 打开NAT</p>
+
+
 ```routeros
 /ip/firewall/nat/print
 ```
@@ -56,6 +61,9 @@ WinBox：`IP → Firewall → NAT → +`
 动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。
 
 ![图(2) 添加masquerade](images/02-添加.png)
+
+<p align="center">图(2) 添加masquerade</p>
+
 
 ```routeros
 /ip/firewall/nat/add chain=srcnat out-interface=pppoe-out1 action=masquerade comment=lab-masq

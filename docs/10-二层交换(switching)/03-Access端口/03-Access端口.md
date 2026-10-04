@@ -19,6 +19,8 @@
 
 ![图(0) Access口](images/00-原理.svg)
 
+<p align="center">图(0) Access口</p>
+
 ## 第1步：打开 Bridge VLANs
 
 WinBox：`Bridge → VLANs`
@@ -26,6 +28,9 @@ WinBox：`Bridge → VLANs`
 动作：准备添加 vlan-ids 与 untagged 端口。
 
 ![图(1) 打开BridgeVLANs](images/01-access.png)
+
+<p align="center">图(1) 打开BridgeVLANs</p>
+
 
 ```routeros
 /interface/bridge/vlan/print
@@ -38,6 +43,9 @@ WinBox：`Bridge → VLANs → +`
 动作：vlan-ids=10，untagged=ether3（示例）。
 
 ![图(2) 设置Access](images/02-设置.png)
+
+<p align="center">图(2) 设置Access</p>
+
 
 ```routeros
 /interface/bridge/vlan/add bridge=bridge vlan-ids=10 untagged=ether3

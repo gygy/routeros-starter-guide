@@ -21,6 +21,8 @@ R1 拿运营商账号，在 WAN 上长出一个 pppoe-out1。
 
 ![图(0) PPPoE拨号](images/00-原理.svg)
 
+<p align="center">图(0) PPPoE拨号</p>
+
 ## 第1步：打开 PPP
 
 WinBox：`PPP → Interface`
@@ -28,6 +30,9 @@ WinBox：`PPP → Interface`
 动作：看是否已有 pppoe-out1。账号密码填你自己的，勿写入教程。
 
 ![图(1) 打开PPP](images/01-PPPoE.png)
+
+<p align="center">图(1) 打开PPP</p>
+
 
 ```routeros
 /interface/pppoe-client/print
@@ -40,6 +45,9 @@ WinBox：`IP → Addresses`
 动作：pppoe-out1 上有动态地址。
 
 ![图(2) 确认拿址](images/02-地址.png)
+
+<p align="center">图(2) 确认拿址</p>
+
 
 ```routeros
 /ip/address/print where interface=pppoe-out1

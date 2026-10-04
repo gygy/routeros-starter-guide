@@ -20,6 +20,8 @@
 
 ![图(0) SSH密钥](images/00-原理.svg)
 
+<p align="center">图(0) SSH密钥</p>
+
 ## 第1步：上传公钥文件
 
 WinBox：`Files`
@@ -27,6 +29,9 @@ WinBox：`Files`
 动作：把电脑上的 .pub 拖进 Files，例如 id_rsa.pub。
 
 ![图(1) 上传公钥文件](images/01-文件.png)
+
+<p align="center">图(1) 上传公钥文件</p>
+
 
 ```routeros
 /file/print where name~"pub"
@@ -39,6 +44,9 @@ WinBox：`New Terminal`
 动作：官方：/user ssh-keys import。User=admin。
 
 ![图(2) 导入给admin](images/02-导入.png)
+
+<p align="center">图(2) 导入给admin</p>
+
 
 ```routeros
 /user/ssh-keys/import public-key-file=id_rsa.pub user=admin
@@ -53,6 +61,9 @@ WinBox：`电脑终端`
 
 ![图(3) 电脑试连](images/03-服务.png)
 
+<p align="center">图(3) 电脑试连</p>
+
+
 ```routeros
 /ip/service/print where name=ssh
 ```
@@ -64,6 +75,9 @@ WinBox：`IP → SSH`
 动作：确认密钥能登录后，再设 password-authentication=no。官方默认 yes-if-no-key。设错会锁死，先留 MAC 登录退路。
 
 ![图(4) （可选）关闭密码登录](images/04-关密码.png)
+
+<p align="center">图(4) （可选）关闭密码登录</p>
+
 
 ```routeros
 /ip/ssh/set password-authentication=no

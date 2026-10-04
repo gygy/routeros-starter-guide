@@ -19,6 +19,8 @@
 
 ![图(0) 保护Forward](images/00-原理.svg)
 
+<p align="center">图(0) 保护Forward</p>
+
 ## 第1步：放行 established
 
 WinBox：`IP → Firewall → Filter Rules`
@@ -26,6 +28,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：Chain=forward，Action=accept，Comment=lab-fwd-est。
 
 ![图(1) 放行established](images/01-fwd-est.png)
+
+<p align="center">图(1) 放行established</p>
+
 
 ```routeros
 /ip/firewall/filter/add chain=forward action=accept comment=lab-fwd-est
@@ -39,6 +44,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 ![图(2) 丢弃invalid](images/02-fwd-lan.png)
 
+<p align="center">图(2) 丢弃invalid</p>
+
+
 ```routeros
 /ip/firewall/filter/add chain=forward action=drop comment=lab-fwd-inv
 ```
@@ -50,6 +58,9 @@ WinBox：`IP → Firewall → Filter Rules`
 动作：确认 forward 规则顺序。
 
 ![图(3) 核对列表](images/03-fwd-drop.png)
+
+<p align="center">图(3) 核对列表</p>
+
 
 ```routeros
 /ip/firewall/filter/print where chain=forward

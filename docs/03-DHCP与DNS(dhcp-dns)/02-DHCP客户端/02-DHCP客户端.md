@@ -19,6 +19,8 @@ R1 当客户端，ether1 去问上一级 DHCP。
 
 ![图(0) DHCP客户端](images/00-原理.svg)
 
+<p align="center">图(0) DHCP客户端</p>
+
 ## 第1步：打开 DHCP Client
 
 WinBox：`IP → DHCP Client`
@@ -26,6 +28,9 @@ WinBox：`IP → DHCP Client`
 动作：看 Interface、Status。
 
 ![图(1) 打开DHCPClient](images/01-DHCPClient.png)
+
+<p align="center">图(1) 打开DHCPClient</p>
+
 
 ```routeros
 /ip/dhcp-client/print
@@ -38,6 +43,9 @@ WinBox：`IP → DHCP Client → +`
 动作：Interface=ether1（示例），Add Default Route=yes。
 
 ![图(2) 添加客户端](images/02-添加.png)
+
+<p align="center">图(2) 添加客户端</p>
+
 
 ```routeros
 /ip/dhcp-client/add interface=ether1 add-default-route=yes

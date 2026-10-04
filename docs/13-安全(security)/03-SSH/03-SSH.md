@@ -21,6 +21,9 @@ WinBox：`IP → Services`
 
 ![图(1) 打开Services](images/01-ssh.png)
 
+<p align="center">图(1) 打开Services</p>
+
+
 ```routeros
 /ip/service/print where name=ssh
 ```
@@ -32,6 +35,9 @@ WinBox：`IP → Services → ssh`
 动作：Available From 填管理网段。
 
 ![图(2) 限制来源](images/02-限制.png)
+
+<p align="center">图(2) 限制来源</p>
+
 
 ```routeros
 /ip/service/set ssh address=192.168.88.0/24

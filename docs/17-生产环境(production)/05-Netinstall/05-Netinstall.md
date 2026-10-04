@@ -21,6 +21,9 @@ WinBox：`System → Packages`
 
 ![图(1) 核对当前版本](images/01-netinstall.png)
 
+<p align="center">图(1) 核对当前版本</p>
+
+
 ```routeros
 /system/resource/print
 /system/package/print
@@ -33,6 +36,9 @@ WinBox：`Interfaces`
 动作：Netinstall 需要直连网口，先认清 ether 编号。
 
 ![图(2) 确认接口](images/02-接口.png)
+
+<p align="center">图(2) 确认接口</p>
+
 
 ```routeros
 /interface/print

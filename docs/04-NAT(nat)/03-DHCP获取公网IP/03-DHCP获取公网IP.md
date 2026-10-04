@@ -19,6 +19,8 @@ WAN 口 DHCP 拿公网/上联地址。
 
 ![图(0) WAN DHCP](images/00-原理.svg)
 
+<p align="center">图(0) WAN DHCP</p>
+
 ## 第1步：打开 DHCP Client
 
 WinBox：`IP → DHCP Client`
@@ -26,6 +28,9 @@ WinBox：`IP → DHCP Client`
 动作：Interface 选 WAN 口。
 
 ![图(1) 打开DHCPClient](images/01-WANDHCP.png)
+
+<p align="center">图(1) 打开DHCPClient</p>
+
 
 ```routeros
 /ip/dhcp-client/print
@@ -38,6 +43,9 @@ WinBox：`IP → Addresses / Routes`
 动作：动态地址出现，且有默认路由。
 
 ![图(2) 确认地址与路由](images/02-路由.png)
+
+<p align="center">图(2) 确认地址与路由</p>
+
 
 ```routeros
 /ip/dhcp-client/print

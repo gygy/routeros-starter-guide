@@ -21,6 +21,9 @@ WinBox：`New Terminal`
 
 ![图(1) Export到文件](images/01-exp.png)
 
+<p align="center">图(1) Export到文件</p>
+
+
 ```routeros
 /export file=lab-export
 ```
@@ -32,6 +35,9 @@ WinBox：`Files`
 动作：确认有 lab-export.rsc
 
 ![图(2) 在Files查看](images/02-files.png)
+
+<p align="center">图(2) 在Files查看</p>
+
 
 ```routeros
 /file/print where name~"lab-export"

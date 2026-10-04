@@ -19,6 +19,8 @@
 
 ![图(0) NAT排错](images/00-原理.svg)
 
+<p align="center">图(0) NAT排错</p>
+
 ## 第1步：看 NAT 计数
 
 WinBox：`IP → Firewall → NAT`
@@ -26,6 +28,9 @@ WinBox：`IP → Firewall → NAT`
 动作：Bytes/Packets 是否在涨。
 
 ![图(1) 看NAT计数](images/01-计数.png)
+
+<p align="center">图(1) 看NAT计数</p>
+
 
 ```routeros
 /ip/firewall/nat/print stats
@@ -38,6 +43,9 @@ WinBox：`IP → Firewall → Connections`
 动作：确认会话经过 srcnat/dstnat。
 
 ![图(2) 看Connections](images/02-连接.png)
+
+<p align="center">图(2) 看Connections</p>
+
 
 ```routeros
 /ip/firewall/connection/print

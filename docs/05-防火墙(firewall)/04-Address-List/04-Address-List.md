@@ -19,6 +19,8 @@
 
 ![图(0) Address-List](images/00-原理.svg)
 
+<p align="center">图(0) Address-List</p>
+
 ## 第1步：打开 Address Lists
 
 WinBox：`IP → Firewall → Address Lists`
@@ -26,6 +28,9 @@ WinBox：`IP → Firewall → Address Lists`
 动作：查看已有列表。901 有 mgmt=192.168.88.0/24。
 
 ![图(1) 打开AddressLists](images/01-alist.png)
+
+<p align="center">图(1) 打开AddressLists</p>
+
 
 ```routeros
 /ip/firewall/address-list/print
@@ -38,6 +43,9 @@ WinBox：`IP → Firewall → Address Lists → +`
 动作：List=mgmt，Address=192.168.88.0/24，Comment=lab。
 
 ![图(2) 添加条目](images/02-添加.png)
+
+<p align="center">图(2) 添加条目</p>
+
 
 ```routeros
 /ip/firewall/address-list/add list=mgmt address=192.168.88.0/24 comment=lab

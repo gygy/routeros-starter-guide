@@ -21,6 +21,9 @@ WinBox：`System → Clock`
 
 ![图(1) 打开Clock](images/01-ntp.png)
 
+<p align="center">图(1) 打开Clock</p>
+
+
 ```routeros
 /system/clock/print
 ```
@@ -32,6 +35,9 @@ WinBox：`System → NTP Client`
 动作：Servers 填 pool.ntp.org（或运营商 NTP）。
 
 ![图(2) 开NTPclient](images/02-client.png)
+
+<p align="center">图(2) 开NTPclient</p>
+
 
 ```routeros
 /system/ntp/client/set enabled=yes servers=pool.ntp.org

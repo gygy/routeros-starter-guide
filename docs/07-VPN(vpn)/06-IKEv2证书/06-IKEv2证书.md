@@ -17,7 +17,7 @@
 
 CA 签发 server，CN/SAN 必须等于手机里填的服务器地址。
 
-![图(1) IKEv2证书](images/00-原理.svg)
+![图(1) IKEv2证书](images/00-原理.png)
 
 <p align="center">图(1) IKEv2证书</p>
 

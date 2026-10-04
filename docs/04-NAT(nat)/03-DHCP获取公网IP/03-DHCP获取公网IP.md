@@ -17,7 +17,7 @@ WAN 口 DHCP 拿公网/上联地址。
 
 和家里电脑拿地址一样，只是发生在 WAN 口。
 
-![图(1) WAN DHCP](images/00-原理.svg)
+![图(1) WAN DHCP](images/00-原理.png)
 
 <p align="center">图(1) WAN DHCP</p>
 

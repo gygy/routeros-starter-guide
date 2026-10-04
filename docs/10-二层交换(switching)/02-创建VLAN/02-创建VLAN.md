@@ -17,7 +17,7 @@
 
 先有 bridge vlan-filtering，再加 VID。
 
-![图(1) 创建VLAN](images/00-原理.svg)
+![图(1) 创建VLAN](images/00-原理.png)
 
 <p align="center">图(1) 创建VLAN</p>
 

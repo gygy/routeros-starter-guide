@@ -17,9 +17,14 @@
 
 已建立的连接放行，WAN 上乱来的新连接丢掉。
 
-![图(1) 保护Input](images/00-原理.svg)
+![图(1) 保护Input](images/00-原理.png)
 
 <p align="center">图(1) 保护Input</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：放行 ICMP
 
@@ -27,9 +32,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=input，Protocol=icmp，Action=accept，Comment=lab-icmp。
 
-![图(2) 放行ICMP](images/01-established.png)
+![图(3) 放行ICMP](images/01-established.png)
 
-<p align="center">图(2) 放行ICMP</p>
+<p align="center">图(3) 放行ICMP</p>
 
 
 ```routeros
@@ -42,9 +47,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=input，Src. Address=192.168.88.0/24，Action=accept，Comment=lab-lan-in。
 
-![图(3) 放行LAN管理](images/02-icmp.png)
+![图(4) 放行LAN管理](images/02-icmp.png)
 
-<p align="center">图(3) 放行LAN管理</p>
+<p align="center">图(4) 放行LAN管理</p>
 
 
 ```routeros
@@ -57,9 +62,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：connection-state=established,related。
 
-![图(4) 放行已建立](images/03-lan.png)
+![图(5) 放行已建立](images/03-lan.png)
 
-<p align="center">图(4) 放行已建立</p>
+<p align="center">图(5) 放行已建立</p>
 
 
 ```routeros
@@ -72,9 +77,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：确认 input 规则顺序合理。
 
-![图(5) 看整体](images/04-drop.png)
+![图(6) 看整体](images/04-drop.png)
 
-<p align="center">图(5) 看整体</p>
+<p align="center">图(6) 看整体</p>
 
 
 ```routeros

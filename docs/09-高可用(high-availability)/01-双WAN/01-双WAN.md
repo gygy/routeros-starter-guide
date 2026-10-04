@@ -17,9 +17,14 @@
 
 主线路优先，断了走备用；距离/探测决定谁在用。
 
-![图(1) 双WAN](images/00-原理.svg)
+![图(1) 双WAN](images/00-原理.png)
 
 <p align="center">图(1) 双WAN</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：看默认路由
 
@@ -27,9 +32,9 @@ WinBox：`IP → Routes`
 
 动作：主线 distance 更小，带 A。
 
-![图(2) 看默认路由](images/01-双路由.png)
+![图(3) 看默认路由](images/01-双路由.png)
 
-<p align="center">图(2) 看默认路由</p>
+<p align="center">图(3) 看默认路由</p>
 
 
 ```routeros
@@ -42,9 +47,9 @@ WinBox：`IP → Routes → +`
 
 动作：备线 distance=2；可加 check-gateway=ping。
 
-![图(3) 备线distance](images/02-备路由.png)
+![图(4) 备线distance](images/02-备路由.png)
 
-<p align="center">图(3) 备线distance</p>
+<p align="center">图(4) 备线distance</p>
 
 
 ```routeros

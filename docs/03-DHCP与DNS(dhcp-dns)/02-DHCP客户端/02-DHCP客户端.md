@@ -17,7 +17,7 @@ WAN 口用 DHCP 拿地址。
 
 R1 当客户端，ether1 去问上一级 DHCP。
 
-![图(1) DHCP客户端](images/00-原理.svg)
+![图(1) DHCP客户端](images/00-原理.png)
 
 <p align="center">图(1) DHCP客户端</p>
 

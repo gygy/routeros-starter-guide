@@ -19,7 +19,7 @@
 
 R1 拿运营商账号，在 WAN 上长出一个 pppoe-out1。
 
-![图(1) PPPoE拨号](images/00-原理.svg)
+![图(1) PPPoE拨号](images/00-原理.png)
 
 <p align="center">图(1) PPPoE拨号</p>
 

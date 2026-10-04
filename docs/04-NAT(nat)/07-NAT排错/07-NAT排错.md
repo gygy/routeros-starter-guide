@@ -17,9 +17,14 @@
 
 先看规则有没有计数，再看连接表源/目标是否已改。
 
-![图(1) NAT排错](images/00-原理.svg)
+![图(1) NAT排错](images/00-原理.png)
 
 <p align="center">图(1) NAT排错</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：看 NAT 计数
 
@@ -27,9 +32,9 @@ WinBox：`IP → Firewall → NAT`
 
 动作：Bytes/Packets 是否在涨。
 
-![图(2) 看NAT计数](images/01-计数.png)
+![图(3) 看NAT计数](images/01-计数.png)
 
-<p align="center">图(2) 看NAT计数</p>
+<p align="center">图(3) 看NAT计数</p>
 
 
 ```routeros
@@ -42,9 +47,9 @@ WinBox：`IP → Firewall → Connections`
 
 动作：确认会话经过 srcnat/dstnat。
 
-![图(3) 看Connections](images/02-连接.png)
+![图(4) 看Connections](images/02-连接.png)
 
-<p align="center">图(3) 看Connections</p>
+<p align="center">图(4) 看Connections</p>
 
 
 ```routeros

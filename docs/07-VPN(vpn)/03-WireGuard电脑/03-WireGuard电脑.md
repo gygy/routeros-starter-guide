@@ -20,9 +20,14 @@
 
 和手机同一套，只是客户端换成电脑。
 
-![图(1) 电脑Peer](images/00-原理.svg)
+![图(1) 电脑Peer](images/00-原理.png)
 
 <p align="center">图(1) 电脑Peer</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：核对服务端
 
@@ -30,9 +35,9 @@ WinBox：`WireGuard`
 
 动作：wg-demo Running，有 Listen Port。
 
-![图(2) 核对服务端](images/01-电脑.png)
+![图(3) 核对服务端](images/01-电脑.png)
 
-<p align="center">图(2) 核对服务端</p>
+<p align="center">图(3) 核对服务端</p>
 
 
 ```routeros
@@ -45,9 +50,9 @@ WinBox：`WireGuard → Peers`
 
 动作：Public Key、Allowed Address、Endpoint 按对端填写（勿写真实私钥）。
 
-![图(3) 添加/核对Peer](images/02-peer.png)
+![图(4) 添加/核对Peer](images/02-peer.png)
 
-<p align="center">图(3) 添加/核对Peer</p>
+<p align="center">图(4) 添加/核对Peer</p>
 
 
 ```routeros

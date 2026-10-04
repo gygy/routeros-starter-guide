@@ -17,9 +17,14 @@
 
 只允许「家里出去」和「已经聊上的回话」，WAN 主动进 LAN 默认丢。
 
-![图(1) 保护Forward](images/00-原理.svg)
+![图(1) 保护Forward](images/00-原理.png)
 
 <p align="center">图(1) 保护Forward</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：放行 established
 
@@ -27,9 +32,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=forward，Action=accept，Comment=lab-fwd-est。
 
-![图(2) 放行established](images/01-fwd-est.png)
+![图(3) 放行established](images/01-fwd-est.png)
 
-<p align="center">图(2) 放行established</p>
+<p align="center">图(3) 放行established</p>
 
 
 ```routeros
@@ -42,9 +47,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：Chain=forward，Action=drop，Comment=lab-fwd-inv。
 
-![图(3) 丢弃invalid](images/02-fwd-lan.png)
+![图(4) 丢弃invalid](images/02-fwd-lan.png)
 
-<p align="center">图(3) 丢弃invalid</p>
+<p align="center">图(4) 丢弃invalid</p>
 
 
 ```routeros
@@ -57,9 +62,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：确认 forward 规则顺序。
 
-![图(4) 核对列表](images/03-fwd-drop.png)
+![图(5) 核对列表](images/03-fwd-drop.png)
 
-<p align="center">图(4) 核对列表</p>
+<p align="center">图(5) 核对列表</p>
 
 
 ```routeros

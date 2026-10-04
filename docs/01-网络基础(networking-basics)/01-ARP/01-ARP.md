@@ -17,7 +17,7 @@
 
 同一网段通信前，先广播：谁是 192.168.88.1？
 
-![图(1) ARP](images/00-原理.svg)
+![图(1) ARP](images/00-原理.png)
 
 <p align="center">图(1) ARP</p>
 

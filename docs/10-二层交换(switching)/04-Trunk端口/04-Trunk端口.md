@@ -17,7 +17,7 @@
 
 对端必须是懂标签的交换机或 R1。
 
-![图(1) Trunk口](images/00-原理.svg)
+![图(1) Trunk口](images/00-原理.png)
 
 <p align="center">图(1) Trunk口</p>
 

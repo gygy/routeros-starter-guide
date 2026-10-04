@@ -17,27 +17,17 @@
 
 别人访问你的 WAN:8080，R1 改成 192.168.88.10:80。
 
-![图(1) 端口转发](images/00-原理.svg)
+![图(1) 端口转发](images/00-原理.png)
 
 <p align="center">图(1) 端口转发</p>
 
-```mermaid
-flowchart LR
-    subgraph W["🌐 外网"]
-      U["用户 → WAN:8080"]
-    end
-    subgraph R["🔴 R1"]
-      D["dstnat 改目标 .10:80"]
-    end
-    subgraph L["🟢 家里"]
-      S["192.168.88.10:80"]
-    end
-    U -->|① 原始包| D -->|② 转发| S
-    style W fill:#e0f7fa,stroke:#00acc1
-    style R fill:#ffebee,stroke:#e53935
-    style L fill:#e8f5e9,stroke:#43a047
-    style D fill:#fff9c4,stroke:#f9a825
-```
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
+
+``
+``
 
 ## 第1步：打开 NAT 列表
 
@@ -45,9 +35,9 @@ WinBox：`IP → Firewall → NAT`
 
 动作：先看到现有 NAT 规则。
 
-![图(2) 打开NAT列表](images/01-dstnat.png)
+![图(3) 打开NAT列表](images/01-dstnat.png)
 
-<p align="center">图(2) 打开NAT列表</p>
+<p align="center">图(3) 打开NAT列表</p>
 
 
 ```routeros
@@ -60,9 +50,9 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=dstnat，Protocol=tcp，Dst. Port=8080，In. Interface=pppoe-out1，Action=dst-nat，To Addresses=192.168.88.10，Comment=lab-portfwd。
 
-![图(3) 添加dst-nat](images/02-规则.png)
+![图(4) 添加dst-nat](images/02-规则.png)
 
-<p align="center">图(3) 添加dst-nat</p>
+<p align="center">图(4) 添加dst-nat</p>
 
 
 ```routeros

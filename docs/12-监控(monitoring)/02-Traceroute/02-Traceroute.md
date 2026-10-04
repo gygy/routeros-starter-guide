@@ -17,7 +17,7 @@
 
 TTL 一跳加一，看卡在哪。
 
-![图(1) Traceroute](images/00-原理.svg)
+![图(1) Traceroute](images/00-原理.png)
 
 <p align="center">图(1) Traceroute</p>
 

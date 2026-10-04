@@ -17,7 +17,7 @@
 
 标签像颜色，同色才能二层互通。
 
-![图(1) VLAN基础](images/00-原理.svg)
+![图(1) VLAN基础](images/00-原理.png)
 
 <p align="center">图(1) VLAN基础</p>
 

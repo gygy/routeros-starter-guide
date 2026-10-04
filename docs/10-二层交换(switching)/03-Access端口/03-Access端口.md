@@ -17,7 +17,7 @@
 
 口上 untagged 某 VID，电脑当普通网线用。
 
-![图(1) Access口](images/00-原理.svg)
+![图(1) Access口](images/00-原理.png)
 
 <p align="center">图(1) Access口</p>
 

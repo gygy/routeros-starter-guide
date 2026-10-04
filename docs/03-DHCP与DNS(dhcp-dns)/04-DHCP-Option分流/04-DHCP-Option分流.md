@@ -19,9 +19,14 @@
 
 电脑仍从 .1 拿地址，但指定网段改走另一台网关。
 
-![图(1) DHCP Option分流](images/00-原理.svg)
+![图(1) DHCP Option分流](images/00-原理.png)
 
 <p align="center">图(1) DHCP Option分流</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：打开 DHCP Server
 
@@ -29,9 +34,9 @@ WinBox：`IP → DHCP Server`
 
 动作：先确认已有 dhcp1 和 network 192.168.88.0/24。
 
-![图(2) 打开DHCPServer](images/01-DHCP.png)
+![图(3) 打开DHCPServer](images/01-DHCP.png)
 
-<p align="center">图(2) 打开DHCPServer</p>
+<p align="center">图(3) 打开DHCPServer</p>
 
 
 ```routeros
@@ -45,9 +50,9 @@ WinBox：`IP → DHCP Server → Options → +`
 
 动作：Name=classless，Code=121。官方示例把 160.0.0.0/24 和默认路由推给客户端。本课推 10.0.0.0/8 via 192.168.88.2：value=`0x080AC0A85802`。
 
-![图(3) 添加option121](images/02-option.png)
+![图(4) 添加option121](images/02-option.png)
 
-<p align="center">图(3) 添加option121</p>
+<p align="center">图(4) 添加option121</p>
 
 
 ```routeros
@@ -60,9 +65,9 @@ WinBox：`IP → DHCP Server → Networks`
 
 动作：该网段的 DHCP Option 勾选 classless。Windows 会请求 121；有的客户端不请求则加 force=yes。
 
-![图(4) 挂到Network](images/03-网络.png)
+![图(5) 挂到Network](images/03-网络.png)
 
-<p align="center">图(4) 挂到Network</p>
+<p align="center">图(5) 挂到Network</p>
 
 
 ```routeros
@@ -75,9 +80,9 @@ WinBox：`电脑 ipconfig /renew`
 
 动作：看电脑路由表是否出现 10.0.0.0/8。路由器上 print option 的 raw-value。
 
-![图(5) 电脑重新租约](images/04-核对.png)
+![图(6) 电脑重新租约](images/04-核对.png)
 
-<p align="center">图(5) 电脑重新租约</p>
+<p align="center">图(6) 电脑重新租约</p>
 
 
 ```routeros

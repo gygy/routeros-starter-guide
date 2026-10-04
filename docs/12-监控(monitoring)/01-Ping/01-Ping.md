@@ -17,7 +17,7 @@
 
 ICMP 来回一趟，延时就是路上花的时间。
 
-![图(1) Ping](images/00-原理.svg)
+![图(1) Ping](images/00-原理.png)
 
 <p align="center">图(1) Ping</p>
 

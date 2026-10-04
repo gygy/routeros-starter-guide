@@ -17,27 +17,17 @@
 
 家里私网地址不能上公网，R1 把源地址换成 WAN 口。
 
-![图(1) Masquerade](images/00-原理.svg)
+![图(1) Masquerade](images/00-原理.png)
 
 <p align="center">图(1) Masquerade</p>
 
-```mermaid
-flowchart LR
-    subgraph L["🟢 家里"]
-      P["电脑 192.168.88.10"]
-    end
-    subgraph R["🔴 R1 srcnat"]
-      M["masquerade 换源"]
-    end
-    subgraph W["🌐 互联网"]
-      I["只看见 WAN 地址"]
-    end
-    P -->|① 私网源| M -->|② 公网源| I
-    style L fill:#e8f5e9,stroke:#43a047
-    style R fill:#ffebee,stroke:#e53935
-    style W fill:#e0f7fa,stroke:#00acc1
-    style M fill:#fff9c4,stroke:#f9a825
-```
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
+
+``
+``
 
 ## 第1步：打开 NAT
 
@@ -45,9 +35,9 @@ WinBox：`IP → Firewall → NAT`
 
 动作：确认在 NAT 页签（不是 Filter Rules）。
 
-![图(2) 打开NAT](images/01-NAT.png)
+![图(3) 打开NAT](images/01-NAT.png)
 
-<p align="center">图(2) 打开NAT</p>
+<p align="center">图(3) 打开NAT</p>
 
 
 ```routeros
@@ -60,9 +50,9 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：Chain=srcnat，Out. Interface=pppoe-out1，Action=masquerade，Comment=lab-masq。
 
-![图(3) 添加masquerade](images/02-添加.png)
+![图(4) 添加masquerade](images/02-添加.png)
 
-<p align="center">图(3) 添加masquerade</p>
+<p align="center">图(4) 添加masquerade</p>
 
 
 ```routeros

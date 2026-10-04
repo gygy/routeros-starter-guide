@@ -17,7 +17,7 @@
 
 电脑喊一声，R1 把地址、网关、DNS 一次性给它。
 
-![图(1) DHCP服务器](images/00-原理.svg)
+![图(1) DHCP服务器](images/00-原理.png)
 
 <p align="center">图(1) DHCP服务器</p>
 

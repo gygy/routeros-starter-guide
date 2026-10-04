@@ -17,7 +17,7 @@
 
 家里电脑问 R1，R1 再问公网 DNS。
 
-![图(1) DNS](images/00-原理.svg)
+![图(1) DNS](images/00-原理.png)
 
 <p align="center">图(1) DNS</p>
 

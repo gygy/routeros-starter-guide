@@ -19,27 +19,17 @@
 
 电脑用账号连 TCP 1194，R1 从池里发 192.168.77.x。
 
-![图(1) OpenVPN回家](images/00-原理.svg)
+![图(1) OpenVPN回家](images/00-原理.png)
 
 <p align="center">图(1) OpenVPN回家</p>
 
-```mermaid
-flowchart LR
-    subgraph C["🟣 路上"]
-      Ph["手机 / 电脑"]
-    end
-    subgraph R["🔴 R1"]
-      V["隧道口"]
-    end
-    subgraph L["🟢 家里 LAN"]
-      H["192.168.88.0/24"]
-    end
-    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
-    style C fill:#ede7f6,stroke:#7e57c2
-    style R fill:#ffebee,stroke:#e53935
-    style L fill:#e8f5e9,stroke:#43a047
-    style V fill:#fff9c4,stroke:#f9a825
-```
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
+
+``
+``
 
 ## 第1步：签服务器证书
 
@@ -47,9 +37,9 @@ WinBox：`System → Certificates`
 
 动作：CA + server（tls-server）。最简只需服务器证书。
 
-![图(2) 签服务器证书](images/01-证书.png)
+![图(3) 签服务器证书](images/01-证书.png)
 
-<p align="center">图(2) 签服务器证书</p>
+<p align="center">图(3) 签服务器证书</p>
 
 
 ```routeros
@@ -65,9 +55,9 @@ WinBox：`IP → Pool / PPP → Profiles`
 
 动作：Pool=ovpn-pool。Profile 名 ovpn：Local Address=192.168.77.1，Remote Address=ovpn-pool。
 
-![图(3) 地址池和PPPProfile](images/02-池.png)
+![图(4) 地址池和PPPProfile](images/02-池.png)
 
-<p align="center">图(3) 地址池和PPPProfile</p>
+<p align="center">图(4) 地址池和PPPProfile</p>
 
 
 ```routeros
@@ -81,9 +71,9 @@ WinBox：`PPP → Secrets → +`
 
 动作：Name=ovpnuser，Password=********，Service=ovpn，Profile=ovpn。
 
-![图(4) PPP账号](images/03-用户.png)
+![图(5) PPP账号](images/03-用户.png)
 
-<p align="center">图(4) PPP账号</p>
+<p align="center">图(5) PPP账号</p>
 
 
 ```routeros
@@ -96,9 +86,9 @@ WinBox：`PPP / Interfaces → OVPN Server`
 
 动作：v7 用 /interface/ovpn-server/server add：certificate=ovpn-server，disabled=no，port=1194。
 
-![图(5) 启用OVPN服务器](images/04-服务器.png)
+![图(6) 启用OVPN服务器](images/04-服务器.png)
 
-<p align="center">图(5) 启用OVPN服务器</p>
+<p align="center">图(6) 启用OVPN服务器</p>
 
 
 ```routeros
@@ -111,9 +101,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input TCP（或 UDP）1194 accept。
 
-![图(6) 防火墙放行1194](images/05-防火墙.png)
+![图(7) 防火墙放行1194](images/05-防火墙.png)
 
-<p align="center">图(6) 防火墙放行1194</p>
+<p align="center">图(7) 防火墙放行1194</p>
 
 
 ```routeros

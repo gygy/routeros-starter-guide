@@ -17,7 +17,7 @@
 
 先把网段放进列表，防火墙只写「来自这份名单」。
 
-![图(1) Address-List](images/00-原理.svg)
+![图(1) Address-List](images/00-原理.png)
 
 <p align="center">图(1) Address-List</p>
 

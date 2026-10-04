@@ -20,27 +20,17 @@
 
 手机打 UDP 13231 到家里，进 10.10.10.0/24，再进 192.168.88.0/24。
 
-![图(1) WireGuard回家](images/00-原理.svg)
+![图(1) WireGuard回家](images/00-原理.png)
 
 <p align="center">图(1) WireGuard回家</p>
 
-```mermaid
-flowchart LR
-    subgraph C["🟣 路上"]
-      Ph["手机 / 电脑"]
-    end
-    subgraph R["🔴 R1"]
-      V["隧道口"]
-    end
-    subgraph L["🟢 家里 LAN"]
-      H["192.168.88.0/24"]
-    end
-    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
-    style C fill:#ede7f6,stroke:#7e57c2
-    style R fill:#ffebee,stroke:#e53935
-    style L fill:#e8f5e9,stroke:#43a047
-    style V fill:#fff9c4,stroke:#f9a825
-```
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
+
+``
+``
 
 ## 第1步：新建接口
 
@@ -48,9 +38,9 @@ WinBox：`WireGuard → +`
 
 动作：Name=wg-home，Listen Port=13231。OK 后记下本机公钥（Private Key 不要外传）。
 
-![图(2) 新建接口](images/01-接口.png)
+![图(3) 新建接口](images/01-接口.png)
 
-<p align="center">图(2) 新建接口</p>
+<p align="center">图(3) 新建接口</p>
 
 
 ```routeros
@@ -64,9 +54,9 @@ WinBox：`IP → Addresses → +`
 
 动作：Address=10.10.10.1/24，Interface=wg-home。
 
-![图(3) 给隧道加地址](images/02-地址.png)
+![图(4) 给隧道加地址](images/02-地址.png)
 
-<p align="center">图(3) 给隧道加地址</p>
+<p align="center">图(4) 给隧道加地址</p>
 
 
 ```routeros
@@ -79,9 +69,9 @@ WinBox：`WireGuard → Peers → +`
 
 动作：Interface=wg-home，Public Key=手机公钥，Allowed Address=10.10.10.2/32，Persistent Keepalive=25s。
 
-![图(4) 添加手机Peer](images/03-peer.png)
+![图(5) 添加手机Peer](images/03-peer.png)
 
-<p align="center">图(4) 添加手机Peer</p>
+<p align="center">图(5) 添加手机Peer</p>
 
 
 ```routeros
@@ -94,9 +84,9 @@ WinBox：`IP → Firewall → Filter Rules → +`
 
 动作：input：UDP 13231 accept；forward：进/出 wg-home 放行 LAN。
 
-![图(5) 放行UDP与隧道](images/04-防火墙.png)
+![图(6) 放行UDP与隧道](images/04-防火墙.png)
 
-<p align="center">图(5) 放行UDP与隧道</p>
+<p align="center">图(6) 放行UDP与隧道</p>
 
 
 ```routeros
@@ -110,9 +100,9 @@ WinBox：`IP → Firewall → NAT → +`
 
 动作：若手机要经路由器上网：Chain=srcnat，Out. Interface=pppoe-out1，Src. Address=10.10.10.0/24，Action=masquerade。只进 LAN 可跳过。
 
-![图(6) 需要时给隧道做NAT](images/05-nat.png)
+![图(7) 需要时给隧道做NAT](images/05-nat.png)
 
-<p align="center">图(6) 需要时给隧道做NAT</p>
+<p align="center">图(7) 需要时给隧道做NAT</p>
 
 
 ```routeros

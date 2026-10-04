@@ -19,27 +19,17 @@
 
 UDP 500/4500 进 R1，分到 192.168.77.x，再访问 192.168.88.0/24。
 
-![图(1) IKEv2回家](images/00-原理.svg)
+![图(1) IKEv2回家](images/00-原理.png)
 
 <p align="center">图(1) IKEv2回家</p>
 
-```mermaid
-flowchart LR
-    subgraph C["🟣 路上"]
-      Ph["手机 / 电脑"]
-    end
-    subgraph R["🔴 R1"]
-      V["隧道口"]
-    end
-    subgraph L["🟢 家里 LAN"]
-      H["192.168.88.0/24"]
-    end
-    Ph -->|① 加密进隧道| V -->|② 解开进 LAN| H
-    style C fill:#ede7f6,stroke:#7e57c2
-    style R fill:#ffebee,stroke:#e53935
-    style L fill:#e8f5e9,stroke:#43a047
-    style V fill:#fff9c4,stroke:#f9a825
-```
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
+
+``
+``
 
 ## 第1步：签 CA 和服务器证书
 
@@ -47,9 +37,9 @@ WinBox：`System → Certificates → + / Sign`
 
 动作：先建 CA（key-usage 含 key-cert-sign），Sign。再建 server：common-name 与 SAN=你的公网 IP 或 DNS，key-usage 含 tls-server，用 CA 签发。
 
-![图(2) 签CA和服务器证书](images/01-证书.png)
+![图(3) 签CA和服务器证书](images/01-证书.png)
 
-<p align="center">图(2) 签CA和服务器证书</p>
+<p align="center">图(3) 签CA和服务器证书</p>
 
 
 ```routeros
@@ -65,9 +55,9 @@ WinBox：`IP → Pool / IP → IPsec → Mode Configs`
 
 动作：Pool=ike2-pool。Mode Config：Name=ike2-conf，Address Pool=ike2-pool，Split Include=192.168.88.0/24。
 
-![图(3) 建地址池和ModeConfig](images/02-池.png)
+![图(4) 建地址池和ModeConfig](images/02-池.png)
 
-<p align="center">图(3) 建地址池和ModeConfig</p>
+<p align="center">图(4) 建地址池和ModeConfig</p>
 
 
 ```routeros
@@ -81,9 +71,9 @@ WinBox：`IP → IPsec`
 
 动作：Profile 名 ike2；Proposal 名 ike2，pfs-group=none。Policy Group=ike2-policies；模板：src=0.0.0.0/0 dst=192.168.77.0/24 template=yes。
 
-![图(4) Profile/Proposal/Policy](images/03-提案.png)
+![图(5) Profile/Proposal/Policy](images/03-提案.png)
 
-<p align="center">图(4) Profile/Proposal/Policy</p>
+<p align="center">图(5) Profile/Proposal/Policy</p>
 
 
 ```routeros
@@ -99,9 +89,9 @@ WinBox：`IP → IPsec → Peers / Identities`
 
 动作：Peer：exchange-mode=ike2，passive=yes，profile=ike2。Identity：digital-signature，certificate=server1，generate-policy=port-strict，mode-config=ike2-conf。
 
-![图(5) Peer与Identity](images/04-peer.png)
+![图(6) Peer与Identity](images/04-peer.png)
 
-<p align="center">图(5) Peer与Identity</p>
+<p align="center">图(6) Peer与Identity</p>
 
 
 ```routeros
@@ -115,9 +105,9 @@ WinBox：`IP → Firewall → Filter Rules`
 
 动作：input 放行 UDP 500、4500 和 ipsec-esp。
 
-![图(6) 防火墙放行IKE](images/05-防火墙.png)
+![图(7) 防火墙放行IKE](images/05-防火墙.png)
 
-<p align="center">图(6) 防火墙放行IKE</p>
+<p align="center">图(7) 防火墙放行IKE</p>
 
 
 ```routeros
@@ -131,9 +121,9 @@ WinBox：`System → Certificates → Export`
 
 动作：导出 CA（无私钥）给客户端信任；Windows 还需导入。私钥口令只在本机填 ********，不要写进文档。
 
-![图(7) 导出证书给手机/Windows](images/06-导出.png)
+![图(8) 导出证书给手机/Windows](images/06-导出.png)
 
-<p align="center">图(7) 导出证书给手机/Windows</p>
+<p align="center">图(8) 导出证书给手机/Windows</p>
 
 
 ```routeros

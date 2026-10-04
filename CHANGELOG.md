@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 已按新技能刷新课文示意图：56 课 `00-原理.png`（network-v1-diagram 深蓝插画）；NAT/VPN/防火墙改写等课另附 `00-包变形.png`。
 - 示意图按 `network-v1-diagram` / `packet-flow-diagram`：本课 `00-原理.png`（及需要时的 `00-包变形.png`），不再手搓另一套扁平 SVG 当主图。
 - 图注从 **图(1)** 起编，禁止图(0)；原理图文件名仍可为 `00-原理.png`。
 - 图注改为课文里图片下一行居中文字，去掉画进 PNG/SVG 的同色底栏。

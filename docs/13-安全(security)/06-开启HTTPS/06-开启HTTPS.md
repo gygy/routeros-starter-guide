@@ -18,7 +18,7 @@
 
 证书给 www-ssl，浏览器用 https://192.168.88.1。
 
-![图(1) 开启HTTPS](images/00-原理.svg)
+![图(1) 开启HTTPS](images/00-原理.png)
 
 <p align="center">图(1) 开启HTTPS</p>
 

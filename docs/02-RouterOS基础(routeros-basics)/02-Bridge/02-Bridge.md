@@ -17,7 +17,7 @@
 
 LAN 口丢进同一座桥，电脑互相二层直通。
 
-![图(1) Bridge](images/00-原理.svg)
+![图(1) Bridge](images/00-原理.png)
 
 <p align="center">图(1) Bridge</p>
 

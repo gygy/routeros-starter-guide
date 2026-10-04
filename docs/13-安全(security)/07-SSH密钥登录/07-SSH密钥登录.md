@@ -18,7 +18,7 @@
 
 电脑保存私钥，R1 只收公钥。
 
-![图(1) SSH密钥](images/00-原理.svg)
+![图(1) SSH密钥](images/00-原理.png)
 
 <p align="center">图(1) SSH密钥</p>
 

@@ -17,7 +17,7 @@
 
 握手、防火墙端口、路由/AllowedIPs，缺一不可。
 
-![图(1) VPN排错](images/00-原理.svg)
+![图(1) VPN排错](images/00-原理.png)
 
 <p align="center">图(1) VPN排错</p>
 

@@ -17,9 +17,14 @@
 
 Peer 被动等手机来，用证书证明「你连的就是我家」。
 
-![图(1) IKEv2服务器](images/00-原理.svg)
+![图(1) IKEv2服务器](images/00-原理.png)
 
 <p align="center">图(1) IKEv2服务器</p>
+
+![图(2) 数据包变形](images/00-包变形.png)
+
+<p align="center">图(2) 数据包变形</p>
+
 
 ## 第1步：打开 IPsec
 
@@ -27,9 +32,9 @@ WinBox：`IP → IPsec`
 
 动作：认 Peers / Identities / Policies 页签。
 
-![图(2) 打开IPsec](images/01-ipsec.png)
+![图(3) 打开IPsec](images/01-ipsec.png)
 
-<p align="center">图(2) 打开IPsec</p>
+<p align="center">图(3) 打开IPsec</p>
 
 
 ```routeros
@@ -42,9 +47,9 @@ WinBox：`IP → IPsec → Profiles`
 
 动作：确认加密提案存在。
 
-![图(3) 看Profiles](images/02-profile.png)
+![图(4) 看Profiles](images/02-profile.png)
 
-<p align="center">图(3) 看Profiles</p>
+<p align="center">图(4) 看Profiles</p>
 
 
 ```routeros

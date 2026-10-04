@@ -1,2 +1,2 @@
-# RouterOS v7 — BGP 会话骨架
+# RouterOS v7 — BGP 会话模板
 # 这是完整配置片段，导入前请按环境修改接口名与网段。

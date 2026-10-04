@@ -1,10 +1,10 @@
 # RouterOS 入门与精通
 
-> 从家庭上网到企业/ISP。主线 **RouterOS v7**。目录按**家里最常用的功能**往前排。
+家里上网、回家连 VPN、公司出口，都用 **RouterOS 7**。
 
-**第一周先动手。** 首页只推荐能跟着做的材料；全书实战课表见 [docs/实战课表.md](docs/实战课表.md)，文件清单见 [COURSE-TREE.md](COURSE-TREE.md)。
+先从下面几篇做起，做完电脑就能上网。全部课文：[docs/实战课表.md](docs/实战课表.md)。
 
-## 本周只看这些
+## 先看这些
 
 1. [环境准备](<docs/00-入门(introduction)/00-环境准备.md>)  
 2. [连接路由器（WinBox / MAC）](<docs/00-入门(introduction)/01-连接路由器/01-连接路由器.md>)  
@@ -39,12 +39,12 @@
 | VLAN / 跨网段 | [10 章](<docs/10-二层交换(switching)/README.md>)、[11 章](<docs/11-三层路由(routing)/README.md>) | Lab 09、10 |
 | OSPF / BGP | [18 章](<docs/18-动态路由(dynamic-routing)/README.md>) | Lab 11、12 |
 
-章号和 Lab 号现在按「家里常用程度」对齐，对照上表即可。
+对照上表即可。
 
 ## 课程与实验目录
 
 - 课程索引：[docs/README.md](docs/README.md)
-- **实战短课文总表：** [docs/实战课表.md](docs/实战课表.md)
+- 课文目录：[docs/实战课表.md](docs/实战课表.md)
 - 实验索引：[labs/README.md](labs/README.md)
 - 已完成清单：[COURSE-TREE.md](COURSE-TREE.md)
 
@@ -67,7 +67,7 @@
 
 ---
 
-## 课程章（常用在前）
+## 课程章
 
 - [00 入门](<docs/00-入门(introduction)/README.md>)
 - [01 网络基础](<docs/01-网络基础(networking-basics)/README.md>)
@@ -93,7 +93,7 @@
 
 ---
 
-## Labs（常用在前）
+## Labs
 
 | Lab | 内容 |
 | --- | --- |
@@ -115,4 +115,4 @@
 | [15](<labs/15-MPLS(mpls)/README.md>) | MPLS |
 | [16](<labs/16-自动化(automation)/README.md>) | 自动化 |
 
-官方依据：[MikroTik RouterOS 文档](https://help.mikrotik.com/docs/spaces/ROS/overview)。许可见 [LICENSE](LICENSE)。截图脱敏见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。许可见 [LICENSE](LICENSE)。截图怎么脱敏见 [CONTRIBUTING.md](CONTRIBUTING.md)。

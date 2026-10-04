@@ -1,10 +1,6 @@
 # 课程索引
 
-`docs/` 只放课文。编号按家庭/个人**常用程度**：DHCP、NAT、防火墙、无线、VPN 在前；VLAN、OSPF、MPLS 在后。
-
-第一周请走仓库根 [README.md](../README.md) 的「本周只看这些」。
-
-**实战短课文总表：** [实战课表.md](实战课表.md)（连接、DHCP、NAT、防火墙、WireGuard 等，照着 WinBox 做）。
+先从仓库根 [README.md](../README.md) 的「先看这些」做起。课文目录：[实战课表.md](实战课表.md)。
 
 | 章 | 家庭场景 |
 | --- | --- |
@@ -30,4 +26,4 @@
 | [19 MPLS](<19-MPLS(mpls)/README.md>) | 跳过 |
 | [20 高级](<20-高级(advanced)/README.md>) | 企业/ISP |
 
-已完成课文清单：[COURSE-TREE.md](../COURSE-TREE.md) · [实战课表.md](实战课表.md)。
+文件清单：[COURSE-TREE.md](../COURSE-TREE.md)。

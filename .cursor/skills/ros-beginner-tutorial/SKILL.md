@@ -192,7 +192,7 @@ WinBox 看哪里。
 
 课程仓落盘（不要写到技能仓库的 `docs/images/`）：
 
-- A：本课 `images/00-原理.png`（按 network-v1-diagram：`GenerateImage`、暖纸色底、左→中→右、外网灰蓝 / 路由器赭石 / 内网墨绿 / VPN 灰紫、不要霓虹、中文+示例 IP）
+- A：本课 `images/00-原理.png`（按 network-v1-diagram：`GenerateImage`、深蓝底、左→中→右、外网青 / 路由器红橙 / 内网绿 / VPN 紫、中文+示例 IP）
 - B：本课 `images/00-包变形.png`（按 packet-flow-diagram：Mermaid `flowchart LR`、白底、①～⑤、分区 emoji；用该技能的 `scripts/render.py` 或 `network-v1-diagram` 的 `render_packet_flow.py` 出 4800px PNG）
 
 课文里仍用本课图注：`<p align="center">图(1) …</p>`，从 1 起编。有 A+B 时图(1)=原理、图(2)=包变形，WinBox 从下一号接着。  

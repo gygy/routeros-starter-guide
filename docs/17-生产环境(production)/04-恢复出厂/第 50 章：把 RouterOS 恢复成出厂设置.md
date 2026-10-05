@@ -1,0 +1,53 @@
+# 第 50 章：把 RouterOS 恢复成出厂设置
+
+> 适用版本：RouterOS 7.x
+
+## 目的
+
+清空配置（危险操作）。
+
+## 网络
+
+- 示例 LAN：`192.168.88.0/24`，网关 `192.168.88.1`，接口 `bridge`（改成你的口）
+- WAN 示例：`pppoe-out1` 或 `ether1`
+- 密码示例：`********`（填你自己的管理员密码）
+- 身份示例：`R1`
+
+## 第1步：确认已备份
+
+WinBox：`Files`
+
+动作：确认电脑上已有 backup/export。
+
+![图(1) 确认已备份](images/01-reset.png)
+
+<p align="center">图(1) 确认已备份</p>
+
+
+```routeros
+/file/print
+```
+
+## 第2步：了解复位命令
+
+WinBox：`New Terminal`
+
+动作：生产慎用：/system/reset-configuration。本课只演示查看帮助，不在课文执行复位。
+
+![图(2) 了解复位命令](images/02-说明.png)
+
+<p align="center">图(2) 了解复位命令</p>
+
+
+```routeros
+/system/reset-configuration ?
+```
+
+## 检查
+
+WinBox：理解复位后果且已有备份
+
+```routeros
+/file/print
+/system/backup/save name=before-reset
+```

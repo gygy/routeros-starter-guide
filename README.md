@@ -25,7 +25,7 @@
 | 共享上网 / 端口映射 | [第 14 课：让外网和家里都能访问家里的服务](<docs/04-NAT(nat)/08-端口映射与回流/08-端口映射与回流.md>) | Lab 04 |
 | 防火墙 | [第 22 课：让路由器挡住外网乱扫家里仍能管](<docs/05-防火墙(firewall)/02-保护路由器Input/02-保护路由器Input.md>) | Lab 05 |
 | 无线 | [第 24 课：让家里手机连上自己的 Wi-Fi](<docs/06-无线(wireless)/01-家里WiFi/01-家里WiFi.md>) | |
-| 回家 VPN | [第 32 课](<docs/07-VPN(vpn)/01-WireGuard/01-WireGuard.md>)、[第 34 课](<docs/07-VPN(vpn)/11-IKEv2回家/11-IKEv2回家.md>) | Lab 06 |
+| 回家 VPN | [第 32 课](<docs/07-VPN(vpn)/01-WireGuard//347/254/254 32 /350/257/276/357/274/232/350/256/251/346/211/213/346/234/272/345/222/214/347/224/265/350/204/221/347/224/250 WireGuard /350/277/236/345/233/236/345/207/214 RouterOS.md>)、[第 34 课](<docs/07-VPN(vpn)/11-IKEv2回家/11-IKEv2回家.md>) | Lab 06 |
 | 限速 | [第 27 课](<docs/08-QoS(qos)/01-SimpleQueue限速/01-SimpleQueue限速.md>) | Lab 08 |
 | 双宽带 | [第 17 课：让两条宽带互相备份上网](<docs/09-高可用(high-availability)/01-双WAN/01-双WAN.md>) | Lab 07 |
 | VLAN / 跨网段 | [第 21 课：让家里不同 VLAN 能互相访问](<docs/10-二层交换(switching)/05-VLAN间路由/05-VLAN间路由.md>) | Lab 09、10 |

@@ -1,4 +1,4 @@
-# 第 38 课：让电脑用 L2TP/IPsec 连回家
+# 第 38 课：让电脑用 L2TP／IPsec 连回家
 
 > 适用版本：RouterOS 7.x
 

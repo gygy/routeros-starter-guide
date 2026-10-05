@@ -9,8 +9,8 @@ RouterOS 7。按课号见 [docs/实战课表.md](docs/实战课表.md)。
 | `00-入门(introduction)/05-备份/05-备份.md` | 第 3 课：让改配置之前先留一份备份 |
 | `00-入门(introduction)/06-升级RouterOS/06-升级RouterOS.md` | 第 4 课：让 RouterOS 升到当前稳定版 |
 | `01-网络基础(networking-basics)/00-本周必读.md` | 第 5 课：弄清地址、网关和 DNS 各管什么 |
-| `01-网络基础(networking-basics)/01-ARP/01-ARP.md` | 第 6 课：看清电脑和路由器怎么用 ARP 对上 |
-| `02-RouterOS基础(routeros-basics)/02-Bridge/02-Bridge.md` | 第 7 课：让家里有线电脑都进同一张网 |
+| `01-网络基础(networking-basics)/270/212.md` | 第 6 课：看清电脑和路由器怎么用 ARP 对上 |
+| `02-RouterOS基础(routeros-basics)/275/221.md` | 第 7 课：让家里有线电脑都进同一张网 |
 | `02-RouterOS基础(routeros-basics)/04-配置IPv6/04-配置IPv6.md` | 第 8 课：让家里也能用 IPv6 |
 | `03-DHCP与DNS(dhcp-dns)/01-DHCP服务器/01-DHCP服务器.md` | 第 9 课：让家里电脑自动拿到地址 |
 | `03-DHCP与DNS(dhcp-dns)/04-DHCP-Option分流/04-DHCP-Option分流.md` | 第 10 课：让指定电脑走另一条上网路径 |
@@ -29,31 +29,31 @@ RouterOS 7。按课号见 [docs/实战课表.md](docs/实战课表.md)。
 | `05-防火墙(firewall)/08-端口敲门/08-端口敲门.md` | 第 23 课：让外网敲对端口才能打开 SSH |
 | `06-无线(wireless)/01-家里WiFi/01-家里WiFi.md` | 第 24 课：让家里手机连上自己的 Wi-Fi |
 | `06-无线(wireless)/02-访客WiFi/02-访客WiFi.md` | 第 25 课：让客人上网却进不了家里电脑 |
-| `06-无线(wireless)/03-CAPsMAN/03-CAPsMAN.md` | 第 26 课：让一台路由器统一管多台 AP |
+| `06-无线(wireless)/217/260 AP.md` | 第 26 课：让一台路由器统一管多台 AP |
 | `08-QoS(qos)/01-SimpleQueue限速/01-SimpleQueue限速.md` | 第 27 课：让某一台电脑限速 |
 | `08-QoS(qos)/02-QueueTree限网段/02-QueueTree限网段.md` | 第 28 课：让整个网段限速 |
 | `18-动态路由(dynamic-routing)/01-OSPF互通/01-OSPF互通.md` | 第 29 课：让两台 RouterOS 用 OSPF 自动学路由 |
 | `18-动态路由(dynamic-routing)/02-BGP互通/02-BGP互通.md` | 第 30 课：让两台 RouterOS 用 BGP 互通 |
 | `19-MPLS(mpls)/01-LDP互通/01-LDP互通.md` | 第 31 课：让两台 RouterOS 用 LDP 建起 MPLS |
-| `07-VPN(vpn)/01-WireGuard/01-WireGuard.md` | 第 32 课：让手机和电脑用 WireGuard 连回家 |
+| `07-VPN(vpn)/01-WireGuard//347/254/254 32 /350/257/276/357/274/232/350/256/251/346/211/213/346/234/272/345/222/214/347/224/265/350/204/221/347/224/250 WireGuard /350/277/236/345/233/236/345/207/214 RouterOS.md` | 第 32 课：让手机和电脑用 WireGuard 连回家 |
 | `07-VPN(vpn)/04-WireGuard站点到站点/04-WireGuard站点到站点.md` | 第 33 课：让两个地方的网络用 WireGuard 打通 |
 | `07-VPN(vpn)/11-IKEv2回家/11-IKEv2回家.md` | 第 34 课：让手机用 IKEv2 连回家里 RouterOS |
 | `07-VPN(vpn)/09-IPsec站点到站点/09-IPsec站点到站点.md` | 第 35 课：让两个地方的网络用 IPsec 打通 |
-| `07-VPN(vpn)/12-SSTP/12-SSTP.md` | 第 36 课：让 Windows 用 SSTP 连回家 |
-| `07-VPN(vpn)/13-OpenVPN/13-OpenVPN.md` | 第 37 课：让电脑用 OpenVPN 连回家 |
-| `07-VPN(vpn)/14-L2TP/14-L2TP.md` | 第 38 课：让电脑用 L2TP/IPsec 连回家 |
-| `07-VPN(vpn)/15-ZeroTier/15-ZeroTier.md` | 第 39 课：让 ARM 设备加入 ZeroTier 虚拟网 |
+| `07-VPN(vpn)/12-SSTP//347/254/254 36 /350/257/276/357/274/232/350/256/251 Windows /347/224/250 SSTP /350/277/236/345/233/236/345/207/214 RouterOS.md` | 第 36 课：让 Windows 用 SSTP 连回家 |
+| `07-VPN(vpn)/13-OpenVPN//347/254/254 37 /350/257/276/357/274/232/350/256/251/347/224/265/350/204/221/347/224/250 OpenVPN /350/277/236/345/233/236/345/207/214 RouterOS.md` | 第 37 课：让电脑用 OpenVPN 连回家 |
+| `07-VPN(vpn)/14-L2TP//347/254/254 38 /350/257/276/357/274/232/350/256/251/347/224/265/350/204/221/347/224/250 L2TP/357/274/217IPsec /350/277/236/345/233/236/345/207/214 RouterOS.md` | 第 38 课：让电脑用 L2TP/IPsec 连回家 |
+| `07-VPN(vpn)/15-ZeroTier//347/254/254 39 /350/257/276/357/274/232/350/256/251 ARM /350/256/276/345/244/207/345/212/240/345/205/245 ZeroTier /350/231/232/346/213/237/347/275/221.md` | 第 39 课：让 ARM 设备加入 ZeroTier 虚拟网 |
 | `07-VPN(vpn)/10-VPN排错/10-VPN排错.md` | 第 40 课：查清回家 VPN 为什么连不上 |
 | `13-安全(security)/05-安全加固/05-安全加固.md` | 第 41 课：让路由器少暴露并把服务收紧 |
 | `13-安全(security)/06-开启HTTPS/06-开启HTTPS.md` | 第 42 课：让网页管理改走 HTTPS |
 | `13-安全(security)/07-SSH密钥登录/07-SSH密钥登录.md` | 第 43 课：让 SSH 用密钥登录并关掉密码 |
 | `14-故障排查(troubleshooting)/01-网络故障排查流程/01-网络故障排查流程.md` | 第 44 课：按流程查清网络为什么不通 |
-| `15-性能优化(performance)/01-FastTrack/01-FastTrack.md` | 第 45 课：让转发走 FastTrack 少占 CPU |
+| `15-性能优化(performance)/215/240 CPU.md` | 第 45 课：让转发走 FastTrack 少占 CPU |
 | `16-自动化(automation)/01-定时备份/01-定时备份.md` | 第 46 课：让路由器每天自动留一份备份 |
 | `16-自动化(automation)/02-Netwatch探测/02-Netwatch探测.md` | 第 47 课：让路由器盯住外网通断并做动作 |
 | `17-生产环境(production)/01-配置备份/01-配置备份.md` | 第 48 课：做出一份能还原的备份文件 |
 | `17-生产环境(production)/02-Export导出/02-Export导出.md` | 第 49 课：导出能看懂的配置并按需恢复 |
 | `17-生产环境(production)/04-恢复出厂/04-恢复出厂.md` | 第 50 课：把 RouterOS 恢复成出厂设置 |
-| `17-生产环境(production)/05-Netinstall/05-Netinstall.md` | 第 51 课：用 Netinstall 重装救砖的 RouterOS |
-| `20-高级(advanced)/01-RoMON/01-RoMON.md` | 第 52 课：让 WinBox 穿过二层找到旁边那台机 |
+| `17-生产环境(production)/232/204 RouterOS.md` | 第 51 课：用 Netinstall 重装救砖的 RouterOS |
+| `20-高级(advanced)/234/272.md` | 第 52 课：让 WinBox 穿过二层找到旁边那台机 |
 | `20-高级(advanced)/02-VRF隔离/02-VRF隔离.md` | 第 53 课：让两套网络在同一台机上互不干扰 |

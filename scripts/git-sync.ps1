@@ -37,13 +37,9 @@ function Invoke-Git {
 $status = & $git @GitConfig status --porcelain
 if ($status) {
     Invoke-Git add -A
-    $authorName = if ($env:GIT_AUTHOR_NAME) { $env:GIT_AUTHOR_NAME } else { $null }
-    $authorEmail = if ($env:GIT_AUTHOR_EMAIL) { $env:GIT_AUTHOR_EMAIL } else { $null }
-    if ($authorName -and $authorEmail) {
-        Invoke-Git -c "user.name=$authorName" -c "user.email=$authorEmail" commit -m $Message
-    } else {
-        Invoke-Git commit -m $Message
-    }
+    $authorName = if ($env:GIT_AUTHOR_NAME) { $env:GIT_AUTHOR_NAME } else { "gygy" }
+    $authorEmail = if ($env:GIT_AUTHOR_EMAIL) { $env:GIT_AUTHOR_EMAIL } else { "2096830+gygy@users.noreply.github.com" }
+    Invoke-Git -c "user.name=$authorName" -c "user.email=$authorEmail" commit -m $Message
 }
 Invoke-Git push -u origin $Branch
 Write-Host "Pushed to origin/$Branch"

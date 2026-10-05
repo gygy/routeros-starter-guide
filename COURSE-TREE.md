@@ -57,3 +57,11 @@ RouterOS 7。按章号见 [docs/实战课表.md](docs/实战课表.md)。
 | `17-生产环境(production)/05-Netinstall/第 51 章：用 Netinstall 重装救砖的 RouterOS.md` | 第 51 章：用 Netinstall 重装救砖的 RouterOS |
 | `20-高级(advanced)/01-RoMON/第 52 章：让 WinBox 穿过二层找到旁边那台机.md` | 第 52 章：让 WinBox 穿过二层找到旁边那台机 |
 | `20-高级(advanced)/02-VRF隔离/第 53 章：让两套网络在同一台机上互不干扰.md` | 第 53 章：让两套网络在同一台机上互不干扰 |
+| `11-三层路由(routing)/06-地址列表分流/第 54 章：让名单里的地址改走旁路由或 VPN.md` | 第 54 章：让名单里的地址改走旁路由或 VPN |
+| `07-VPN(vpn)/16-WireGuard主动连出/第 55 章：让家里主动连上外面的 WireGuard，人在外面能进局域网.md` | 第 55 章：让家里主动连上外面的 WireGuard，人在外面能进局域网 |
+| `16-自动化(automation)/03-脚本入门/第 56 章：让 RouterOS 用脚本跑一条自己的命令.md` | 第 56 章：让 RouterOS 用脚本跑一条自己的命令 |
+| `05-防火墙(firewall)/09-拦猜密码/第 57 章：让乱猜密码的地址被临时拦住.md` | 第 57 章：让乱猜密码的地址被临时拦住 |
+| `16-自动化(automation)/04-指定设备上线/第 58 章：让指定设备一上线就在日志里记一笔.md` | 第 58 章：让指定设备一上线就在日志里记一笔 |
+| `16-自动化(automation)/05-Telegram通知/第 59 章：让 RouterOS 给 Telegram 发一条消息.md` | 第 59 章：让 RouterOS 给 Telegram 发一条消息 |
+| `05-防火墙(firewall)/10-挡住连接洪水/第 60 章：让路由器挡住突发的连接洪水.md` | 第 60 章：让路由器挡住突发的连接洪水 |
+| `20-高级(advanced)/03-容器/第 61 章：让 RouterOS 跑起一个小容器.md` | 第 61 章：让 RouterOS 跑起一个小容器 |

@@ -28,7 +28,7 @@ RouterOS 跑在 MikroTik 硬件上，也可以跑在 **CHR**（云/虚拟机里�
 
 软件：
 
-- **WinBox**：到 [MikroTik 下载页](https://mikrotik.com/download) 下 Windows 版（WinBox 3 或 4 均可，步骤以窗口标题为准）
+- **WinBox**：到 [MikroTik 下载页](https://mikrotik.com/download) 下 Windows 版，用 **4.4 或更新**。不要用 WinBox 3。
 - 浏览器可开 **WebFig**（`http://192.168.88.1`），但入门以 WinBox 为主
 - 官方文档：[First Time Configuration](https://help.mikrotik.com/docs/spaces/ROS/pages/328151/First+Time+Configuration)
 

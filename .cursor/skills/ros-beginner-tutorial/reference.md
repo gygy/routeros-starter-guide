@@ -170,7 +170,7 @@ docs/03-DHCP与DNS(dhcp-dns)/00-目录.md
 
 **只截 x86 901。** 地址带 `:5009` 的窗口一律作废。
 
-## 拓扑 / 原理图
+## 网络拓扑及原理图
 
 VPN、NAT、防火墙路径、VLAN、DHCP Option、双 WAN 等课：先读并执行 **`network-v1-diagram`**（A：整体原理，深蓝插画）和需要时的 **`packet-flow-diagram`**（B：①～⑤ 包变形 Mermaid PNG）。
 

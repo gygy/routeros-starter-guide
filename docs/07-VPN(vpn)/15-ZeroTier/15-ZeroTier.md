@@ -15,7 +15,7 @@ ARM/ARM64 设备加入 ZeroTier 网络，从手机直达家里 LAN。
 - Network ID 示例：`1d71939404912b40`（换成你在 my.zerotier.com 创建的）
 - **官方：zerotier 包只支持 ARM/ARM64。普通 x86 电脑装不了，要用 ARM 板子。**
 
-## 先看懂
+## 网络拓扑及原理图
 
 官方包只支持 ARM/ARM64。双方加入同一 Network ID 并授权。
 

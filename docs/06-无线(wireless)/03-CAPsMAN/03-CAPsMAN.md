@@ -15,7 +15,7 @@
 
 控制器和管理口在同一二层。CAP 用 `wifi-qcom`。旧 Wireless 的 CAPsMAN 管不了新 WiFi。
 
-## 先看懂
+## 网络拓扑及原理图
 
 控制器下发配置，墙上 AP 只负责射频。
 

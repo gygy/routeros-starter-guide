@@ -15,7 +15,7 @@
 
 没有无线网卡的 x86 虚拟机没有 radio，换 hAP / Audience 这类板子做。菜单是 `WiFi`（wifi-qcom），不是旧的 `Wireless`。
 
-## 先看懂
+## 网络拓扑及原理图
 
 手机连 R1 的 SSID，流量进 bridge，再走家里上网。
 

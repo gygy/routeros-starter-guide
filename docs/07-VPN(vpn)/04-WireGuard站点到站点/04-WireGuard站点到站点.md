@@ -16,7 +16,7 @@
 - 公钥示例：`BASE64PUBLICKEY=======`
 
 
-## 先看懂
+## 网络拓扑及原理图
 
 两边各一个 WG，把对端网段写进 allowed-address。
 

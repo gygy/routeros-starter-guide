@@ -78,4 +78,4 @@ RouterOS 跑在 MikroTik 硬件上，也可以跑在 **CHR**（云/虚拟机里�
 ## 10. 延伸阅读
 
 - [MikroTik Help · RouterOS](https://help.mikrotik.com/docs/spaces/ROS/overview)  
-- [本周必读：地址、网关、DNS](<../01-网络基础(networking-basics)/00-本周必读.md>)
+- [第 5 课：弄清地址、网关和 DNS 各管什么](<../01-网络基础(networking-basics)/第 5 课：弄清地址、网关和 DNS 各管什么.md>)

@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Drawing
 
 $Utf8Bom = New-Object System.Text.UTF8Encoding $true
-$WatermarkText = "RouterOS 入门与精通"
+$WatermarkText = "RouterOS 入门实战"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $DefaultDir = Join-Path (Split-Path -Parent $ScriptDir) "cookbook\00-home\images"
 

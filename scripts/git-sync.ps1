@@ -1,4 +1,4 @@
-# Standard git-sync for G:\gitea\RouterOS入门与精通
+# Standard git-sync for G:\gitea\RouterOS 入门实战
 param(
     [string]$Message = "chore: sync workspace changes",
     [string]$RepoRoot = (Join-Path $PSScriptRoot "..")

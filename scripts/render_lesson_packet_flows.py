@@ -6,7 +6,7 @@ import base64
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(r"G:\gitea\RouterOS入门与精通\docs")
+ROOT = Path(r"G:\gitea\RouterOS 入门实战\docs")
 WIDTH = 4800
 
 STYLES = """

@@ -1,4 +1,4 @@
-# RouterOS 入门与精通
+# RouterOS 入门实战
 
 家里上网、回家连 VPN、公司出口，用 **RouterOS 7**。
 

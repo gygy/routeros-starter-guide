@@ -1,4 +1,4 @@
-# OSPF 互通
+# 第 29 课：让两台 RouterOS 用 OSPF 自动学路由
 
 > 适用版本：RouterOS 7.x
 

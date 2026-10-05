@@ -1,4 +1,4 @@
-# LDP 互通
+# 第 31 课：让两台 RouterOS 用 LDP 建起 MPLS
 
 > 适用版本：RouterOS 7.x
 

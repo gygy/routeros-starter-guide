@@ -1,4 +1,4 @@
-# 升级 RouterOS
+# 第 4 课：让 RouterOS 升到当前稳定版
 
 > 适用版本：RouterOS 7.x
 

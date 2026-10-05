@@ -1,4 +1,4 @@
-# PPPoE 上网
+# 第 11 课：让 RouterOS 用宽带账号拨号上网
 
 > 适用版本：RouterOS 7.x
 

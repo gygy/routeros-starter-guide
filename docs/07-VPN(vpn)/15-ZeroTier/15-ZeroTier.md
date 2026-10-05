@@ -1,4 +1,4 @@
-# ZeroTier
+# 第 39 课：让 ARM 设备加入 ZeroTier 虚拟网
 
 > 适用版本：RouterOS 7.x
 

@@ -1,4 +1,4 @@
-# WireGuard 站点到站点
+# 第 33 课：让两个地方的网络用 WireGuard 打通
 
 > 适用版本：RouterOS 7.x
 

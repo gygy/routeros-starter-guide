@@ -1,4 +1,4 @@
-# WireGuard 回家
+# 第 32 课：让手机和电脑用 WireGuard 连回家
 
 > 适用版本：RouterOS 7.x
 

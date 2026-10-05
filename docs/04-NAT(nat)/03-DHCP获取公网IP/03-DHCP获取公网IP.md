@@ -1,4 +1,4 @@
-# DHCP 上网
+# 第 13 课：让 RouterOS 通过 DHCP 接入互联网
 
 > 适用版本：RouterOS 7.x
 

@@ -81,49 +81,64 @@ docs/03-DHCP与DNS(dhcp-dns)/00-目录.md
 
 ## 场景课表（目录只列这些）
 
-刷新 `00-目录.md` / `实战课表.md` / `COURSE-TREE.md` 时以本表为准。半成品文件夹删掉。
+刷新 `00-目录.md` / `实战课表.md` / `COURSE-TREE.md` 时以本表为准。半成品文件夹删掉。  
+课文 H1 与链接文字必须用「题目」列，不要用「场景」短名。
 
-| 场景 | 落盘 |
-| --- | --- |
-| 环境准备 | `00-入门(introduction)/00-环境准备.md` |
-| 第一次连上并改名改密 | `00-入门(introduction)/01-连接路由器/` |
-| 备份 | `00-入门(introduction)/05-备份/` |
-| 升级 | `00-入门(introduction)/06-升级RouterOS/` |
-| 地址网关 DNS 是什么 | `01-网络基础(networking-basics)/00-本周必读.md` |
-| ARP | `01-网络基础(networking-basics)/01-ARP/` |
-| 家里有线网 | `02-RouterOS基础(routeros-basics)/02-Bridge/` 与 `03-IP地址/` 应合成一课；目录只留合成后的那份 |
-| IPv6 | `02-RouterOS基础(routeros-basics)/04-配置IPv6/` |
-| 电脑自动拿地址 | `03-DHCP与DNS(dhcp-dns)/01-DHCP服务器/`（含 DNS） |
-| Option 分流 | `03-DHCP与DNS(dhcp-dns)/04-DHCP-Option分流/` |
-| PPPoE 上网 | `04-NAT(nat)/01-WAN拨号PPPoE/`（含 masquerade） |
-| 固定 IP 上网 | `04-NAT(nat)/02-固定IP上网/`（含 masquerade） |
-| DHCP 上网 | `04-NAT(nat)/03-DHCP获取公网IP/`（含 masquerade） |
-| 端口映射与回流 | `04-NAT(nat)/08-端口映射与回流/` |
-| 1 对 1 NAT | `04-NAT(nat)/06-1对1NAT/` |
-| NAT 不通 | `04-NAT(nat)/07-NAT排错/` |
-| 家里防火墙 | `05-防火墙(firewall)/` 合成一课 |
-| 端口敲门 | `05-防火墙(firewall)/08-端口敲门/` |
-| 家里 Wi-Fi / 访客 / CAPsMAN | `06-无线(wireless)/` 三课 |
-| WireGuard 回家 | `07-VPN(vpn)/01-WireGuard/` |
-| WireGuard 两地 | `07-VPN(vpn)/04-WireGuard站点到站点/` |
-| IKEv2 回家 | `07-VPN(vpn)/11-IKEv2回家/` |
-| IPsec 两地 | `07-VPN(vpn)/09-IPsec站点到站点/` |
-| SSTP / OpenVPN / L2TP / ZeroTier | `07-VPN(vpn)/12`～`15` |
-| VPN 连不上 | `07-VPN(vpn)/10-VPN排错/` |
-| 限一台 / 限网段 | `08-QoS(qos)/` |
-| 双 WAN | `09-高可用(high-availability)/01-双WAN/` |
-| 家里 VLAN | `10-二层交换(switching)/` 合成一课（建 VLAN + Access + Trunk + 互通） |
-| 去某网段怎么走 | `11-三层路由(routing)/02-添加静态路由/`（含默认路由） |
-| 指定流量走另一条线 | `11-三层路由(routing)/04-策略路由/` |
-| 多路由表 | `11-三层路由(routing)/05-多路由表/` |
-| 网络不通 | `14-故障排查(troubleshooting)/01-网络故障排查流程/`（含 ping/Torch/日志） |
-| 安全加固 | `13-安全(security)/05-安全加固/` |
-| 开启 HTTPS | `13-安全(security)/06-开启HTTPS/` |
-| SSH 密钥登录 | `13-安全(security)/07-SSH密钥登录/` |
-| FastTrack | `15-性能优化(performance)/01-FastTrack/` |
-| 定时备份 / Netwatch | `16-自动化(automation)/` |
-| 备份文件 / 导出恢复 / 出厂 / Netinstall | `17-生产环境(production)/` |
-| OSPF / BGP / LDP / RoMON / VRF | 对应 18～20 章已有完整场景课 |
+| 课 | 题目 | 落盘 |
+| --- | --- | --- |
+| 1 | 让电脑装好 WinBox 并连上实验网 | `00-入门(introduction)/00-环境准备.md` |
+| 2 | 让 WinBox 第一次连上 RouterOS 并改名改密 | `00-入门(introduction)/01-连接路由器/` |
+| 3 | 让改配置之前先留一份备份 | `00-入门(introduction)/05-备份/` |
+| 4 | 让 RouterOS 升到当前稳定版 | `00-入门(introduction)/06-升级RouterOS/` |
+| 5 | 弄清地址、网关和 DNS 各管什么 | `01-网络基础(networking-basics)/00-本周必读.md` |
+| 6 | 看清电脑和路由器怎么用 ARP 对上 | `01-网络基础(networking-basics)/01-ARP/` |
+| 7 | 让家里有线电脑都进同一张网 | `02-RouterOS基础(routeros-basics)/02-Bridge/` |
+| 8 | 让家里也能用 IPv6 | `02-RouterOS基础(routeros-basics)/04-配置IPv6/` |
+| 9 | 让家里电脑自动拿到地址 | `03-DHCP与DNS(dhcp-dns)/01-DHCP服务器/`（含 DNS） |
+| 10 | 让指定电脑走另一条上网路径 | `03-DHCP与DNS(dhcp-dns)/04-DHCP-Option分流/` |
+| 11 | 让 RouterOS 用宽带账号拨号上网 | `04-NAT(nat)/01-WAN拨号PPPoE/`（含 masquerade） |
+| 12 | 让 RouterOS 用固定公网 IP 上网 | `04-NAT(nat)/02-固定IP上网/`（含 masquerade） |
+| 13 | 让 RouterOS 通过 DHCP 接入互联网 | `04-NAT(nat)/03-DHCP获取公网IP/`（含 masquerade） |
+| 14 | 让外网和家里都能访问家里的服务 | `04-NAT(nat)/08-端口映射与回流/` |
+| 15 | 让一台内网机器拥有独立公网地址 | `04-NAT(nat)/06-1对1NAT/` |
+| 16 | 查清为什么 NAT 之后上不了网 | `04-NAT(nat)/07-NAT排错/` |
+| 17 | 让两条宽带互相备份上网 | `09-高可用(high-availability)/01-双WAN/` |
+| 18 | 让去某个网段的包走指定下一跳 | `11-三层路由(routing)/02-添加静态路由/`（含默认路由） |
+| 19 | 让指定流量走另一条线路 | `11-三层路由(routing)/04-策略路由/` |
+| 20 | 让不同流量用各自的路由表 | `11-三层路由(routing)/05-多路由表/` |
+| 21 | 让家里不同 VLAN 能互相访问 | `10-二层交换(switching)/05-VLAN间路由/` |
+| 22 | 让路由器挡住外网乱扫家里仍能管 | `05-防火墙(firewall)/02-保护路由器Input/` |
+| 23 | 让外网敲对端口才能打开 SSH | `05-防火墙(firewall)/08-端口敲门/` |
+| 24 | 让家里手机连上自己的 Wi-Fi | `06-无线(wireless)/01-家里WiFi/` |
+| 25 | 让客人上网却进不了家里电脑 | `06-无线(wireless)/02-访客WiFi/` |
+| 26 | 让一台路由器统一管多台 AP | `06-无线(wireless)/03-CAPsMAN/` |
+| 27 | 让某一台电脑限速 | `08-QoS(qos)/01-SimpleQueue限速/` |
+| 28 | 让整个网段限速 | `08-QoS(qos)/02-QueueTree限网段/` |
+| 29 | 让两台 RouterOS 用 OSPF 自动学路由 | `18-动态路由(dynamic-routing)/01-OSPF互通/` |
+| 30 | 让两台 RouterOS 用 BGP 互通 | `18-动态路由(dynamic-routing)/02-BGP互通/` |
+| 31 | 让两台 RouterOS 用 LDP 建起 MPLS | `19-MPLS(mpls)/01-LDP互通/` |
+| 32 | 让手机和电脑用 WireGuard 连回家 | `07-VPN(vpn)/01-WireGuard/` |
+| 33 | 让两个地方的网络用 WireGuard 打通 | `07-VPN(vpn)/04-WireGuard站点到站点/` |
+| 34 | 让手机用 IKEv2 连回家里 RouterOS | `07-VPN(vpn)/11-IKEv2回家/` |
+| 35 | 让两个地方的网络用 IPsec 打通 | `07-VPN(vpn)/09-IPsec站点到站点/` |
+| 36 | 让 Windows 用 SSTP 连回家 | `07-VPN(vpn)/12-SSTP/` |
+| 37 | 让电脑用 OpenVPN 连回家 | `07-VPN(vpn)/13-OpenVPN/` |
+| 38 | 让电脑用 L2TP/IPsec 连回家 | `07-VPN(vpn)/14-L2TP/` |
+| 39 | 让 ARM 设备加入 ZeroTier 虚拟网 | `07-VPN(vpn)/15-ZeroTier/` |
+| 40 | 查清回家 VPN 为什么连不上 | `07-VPN(vpn)/10-VPN排错/` |
+| 41 | 让路由器少暴露并把服务收紧 | `13-安全(security)/05-安全加固/` |
+| 42 | 让网页管理改走 HTTPS | `13-安全(security)/06-开启HTTPS/` |
+| 43 | 让 SSH 用密钥登录并关掉密码 | `13-安全(security)/07-SSH密钥登录/` |
+| 44 | 按流程查清网络为什么不通 | `14-故障排查(troubleshooting)/01-网络故障排查流程/` |
+| 45 | 让转发走 FastTrack 少占 CPU | `15-性能优化(performance)/01-FastTrack/` |
+| 46 | 让路由器每天自动留一份备份 | `16-自动化(automation)/01-定时备份/` |
+| 47 | 让路由器盯住外网通断并做动作 | `16-自动化(automation)/02-Netwatch探测/` |
+| 48 | 做出一份能还原的备份文件 | `17-生产环境(production)/01-配置备份/` |
+| 49 | 导出能看懂的配置并按需恢复 | `17-生产环境(production)/02-Export导出/` |
+| 50 | 把 RouterOS 恢复成出厂设置 | `17-生产环境(production)/04-恢复出厂/` |
+| 51 | 用 Netinstall 重装救砖的 RouterOS | `17-生产环境(production)/05-Netinstall/` |
+| 52 | 让 WinBox 穿过二层找到旁边那台机 | `20-高级(advanced)/01-RoMON/` |
+| 53 | 让两套网络在同一台机上互不干扰 | `20-高级(advanced)/02-VRF隔离/` |
 
 ## WinBox 3 路径 ↔ CLI
 
@@ -186,6 +201,7 @@ WinBox 假界面仍禁止 AI。读者课文不要写那两套技能的风格说�
 读者只看步骤，不看你怎么规划课。
 
 - 像人说话：点哪个菜单、填哪个框。
+- 课文 H1 用 `第 N 课：让……`，不要功能名当题目。
 - 步骤标题用动词。
 - 不写「众所周知」「轻松掌握」「本节将」「骨架」「可跟做」「短操作课」「先从下面几篇做起」「全部课文」「不要一上来 import」。
 - 不把一课写成参数列表。

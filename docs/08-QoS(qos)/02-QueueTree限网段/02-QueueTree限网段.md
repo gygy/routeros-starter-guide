@@ -1,4 +1,4 @@
-# Queue Tree 限网段
+# 第 28 课：让整个网段限速
 
 > 适用版本：RouterOS 7.x
 

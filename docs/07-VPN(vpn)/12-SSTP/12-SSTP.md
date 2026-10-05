@@ -1,4 +1,4 @@
-# SSTP 回家
+# 第 36 课：让 Windows 用 SSTP 连回家
 
 > 适用版本：RouterOS 7.x
 

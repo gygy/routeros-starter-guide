@@ -1,4 +1,4 @@
-# 开启 HTTPS
+# 第 42 课：让网页管理改走 HTTPS
 
 > 适用版本：RouterOS 7.x
 

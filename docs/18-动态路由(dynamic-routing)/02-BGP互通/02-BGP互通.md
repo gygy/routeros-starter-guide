@@ -1,4 +1,4 @@
-# BGP 互通
+# 第 30 课：让两台 RouterOS 用 BGP 互通
 
 > 适用版本：RouterOS 7.x
 

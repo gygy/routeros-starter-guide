@@ -1,4 +1,4 @@
-# CAPsMAN 管多台 AP
+# 第 26 课：让一台路由器统一管多台 AP
 
 > 适用版本：RouterOS 7.x
 

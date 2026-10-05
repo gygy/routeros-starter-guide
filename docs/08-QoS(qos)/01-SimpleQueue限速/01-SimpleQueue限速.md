@@ -1,4 +1,4 @@
-# Simple Queue 限一台电脑
+# 第 27 课：让某一台电脑限速
 
 > 适用版本：RouterOS 7.x
 

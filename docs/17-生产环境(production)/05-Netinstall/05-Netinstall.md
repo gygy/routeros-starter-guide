@@ -1,4 +1,4 @@
-# Netinstall
+# 第 51 课：用 Netinstall 重装救砖的 RouterOS
 
 > 适用版本：RouterOS 7.x
 

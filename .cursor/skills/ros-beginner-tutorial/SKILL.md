@@ -192,11 +192,11 @@ WinBox 看哪里。
 
 课程仓落盘（不要写到技能仓库的 `docs/images/`）：
 
-- A：本课 `images/00-原理.drawio` + `images/00-原理.png`。按 `network-v1-diagram`：draw.io 手绘线框（暖纸色 `#fffaf3`、`sketch=1`、楷体、`mxgraph.networks` 图标）。禁止 `GenerateImage`、深蓝霓虹、3D 路由器、图内大标题。
+- A：本课 `images/00-原理.png`（按 network-v1-diagram：`GenerateImage`、深蓝底、左→中→右、外网青 / 路由器红橙 / 内网绿 / VPN 紫、中文+示例 IP）
 - B：本课 `images/00-包变形.png`（按 packet-flow-diagram：Mermaid `flowchart LR`、白底、①～⑤、分区 emoji；用该技能的 `scripts/render.py` 或 `network-v1-diagram` 的 `render_packet_flow.py` 出 4800px PNG）
 
 课文里仍用本课图注：`<p align="center">图(1) …</p>`，从 1 起编。有 A+B 时图(1)=原理、图(2)=包变形，WinBox 从下一号接着。  
-**不要**把技能里的画法说明、「复制此图」写进读者课文。
+**不要**把那两套技能里的「第一版风格说明」「复制此图」写进读者课文。
 
 图必须同时做到：
 
@@ -204,12 +204,12 @@ WinBox 看哪里。
 2. **讲清原理**：谁是外网、谁是 R1、谁是家里电脑/手机；变了的地址/端口画出 Before → After。
 3. **一看就懂**：图下用一句话人话。不要堆英文缩写墙。
 
-禁止：用 WinBox 截图冒充拓扑；用 AI 画假 WinBox；用 `GenerateImage` 或文生图画原理图（深蓝底、霓虹、3D 图标、图里出现 `LEFT`/`CENTER`/`RIGHT` 都算）；用 Mermaid 顶替 A 类整体原理图；用 GenerateImage 画 B 类流程图；图里出现真实公网/密码/昵称（用 `192.168.88.0/24`、`203.0.113.10`）。重画旧课的 `00-原理.png` / `00-原理.svg` 时改成 draw.io 手绘拓扑，源文件留下 `00-原理.drawio`。本机没有 draw.io 就停，不要退回文生图。
+禁止：用 WinBox 截图冒充拓扑；用 AI 画假 WinBox；用 Mermaid 顶替 A 类整体原理图；用 GenerateImage 画 B 类流程图；图里出现真实公网/密码/昵称（用 `192.168.88.0/24`、`203.0.113.10`）。重画旧课的 `00-原理.svg` 时改成上述 PNG，不要再手搓另一套扁平 SVG 当主图。
 
 ## 截图（必须真机）
 
 - 截 **本机已打开、已登录 x86 901** 的 WinBox 窗口。禁止截 5009 端口那台 ROS。窗口必须就是这一步的菜单（Firewall/NAT/WireGuard/PPP…），禁止拿 Packages、TR069、Bridge 等无关窗顶替。登录步就截登录窗，不要截进系统之后的界面。
-- **全部操作图 = 真机 WinBox。** 禁止 `GenerateImage`、网图、WebFig **顶替 WinBox**（除非用户点名 WebFig 课）。禁止把旧的 AI 假界面留在课文里充数。整体原理图按 `network-v1-diagram` 用 draw.io 手绘线框，不在本节，也不要用文生图。
+- **全部操作图 = 真机 WinBox。** 禁止 `GenerateImage`、网图、WebFig **顶替 WinBox**（除非用户点名 WebFig 课）。禁止把旧的 AI 假界面留在课文里充数。整体原理图按 `network-v1-diagram` 用 GenerateImage，不在本节。
 - 标注前先问：这一步要点哪里？红框只能套在**这些像素**上。
 
 ### 红框（位置必须对）
@@ -287,5 +287,5 @@ WinBox 看哪里。
 - [ ] 无白块打码
 - [ ] 常见问题要么具体、要么省略
 - [ ] 课文 H1 为 `第 N 课：让……`（或排错「查清……」），与 reference 课表编号一致；**md 文件名与 H1 相同**；目录链接文字与 H1 相同
-- [ ] 该配图的课：读者章节名为 `## 网络拓扑及原理图`；A 图是 draw.io 手绘线框（有 `00-原理.drawio`，PNG 不是深蓝霓虹海报），需要时 B 图按 `packet-flow-diagram`；图在本课 `images/`，图号从 1 起
+- [ ] 该配图的课：读者章节名为 `## 网络拓扑及原理图`；A 图按 `network-v1-diagram`，需要时 B 图按 `packet-flow-diagram`；图在本课 `images/`，图号从 1 起
 - [ ] 读者文字像人写的：无导读腔（先从下面几篇 / 全部课文 / 不要一上来 import）；无贴进仓库；无技能名与 901

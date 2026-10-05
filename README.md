@@ -162,10 +162,19 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 
 ## 其它
 
-- [家庭场景](cookbook/00-home/00-目录.md)
+- [实践分享](cookbook/00-home/00-目录.md)
 - [整机配置](configs/00-目录.md)
 - [命令速查](cheatsheets/00-cli.md)
 - [备份脚本](scripts/00-目录.md)
 - [v6 升 v7](migration/v6-to-v7/00-目录.md)
+
+## 欢迎贡献
+
+本教程目前是一个正在进行中的项目，如有疏漏在所难免，欢迎任何的 PR 及 issue 讨论。
+
+- 🐛 报告 Bug：发现内容或代码问题，请提交 Issue
+- 💡 提出建议：对项目有好想法，欢迎发起讨论
+- 📝 完善内容：帮助改进教程，提交你的 Pull Request
+- ✍️ 分享实践：把学习笔记和项目放到 [实践分享](cookbook/00-home/00-目录.md)
 
 MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。许可：[LICENSE](LICENSE)。

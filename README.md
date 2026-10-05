@@ -11,6 +11,11 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 
 它的搭法和 OpenWrt（大家说的 OP）不一样。OP 给你一个装好的玩具，到手就能玩。RouterOS 给你的是底层网络积木：接口、地址、路由、防火墙，要自己一块块接上。刚开始会有点不习惯，把原理弄懂之后，这些零件可以按你的网络自由组合。
 
+## 🔗 在线阅读
+
+- [GitHub Pages](https://gygy.github.io/routeros-starter-guide/)
+- [GitHub 仓库](https://github.com/gygy/routeros-starter-guide)
+
 ## 入门
 
 顺着往下做就行。先把课文看懂，再去做实验。

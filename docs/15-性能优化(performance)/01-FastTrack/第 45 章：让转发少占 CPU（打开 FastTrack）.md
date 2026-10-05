@@ -1,4 +1,4 @@
-# 第 45 章：让转发走 FastTrack 少占 CPU
+# 第 45 章：让转发少占 CPU（打开 FastTrack）
 
 > 适用版本：RouterOS 7.x
 

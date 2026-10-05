@@ -1,4 +1,4 @@
-# 第 30 章：让两台 RouterOS 用 BGP 互通
+# 第 30 章：让两台 RouterOS 用 BGP 互相学路由
 
 > 适用版本：RouterOS 7.x
 

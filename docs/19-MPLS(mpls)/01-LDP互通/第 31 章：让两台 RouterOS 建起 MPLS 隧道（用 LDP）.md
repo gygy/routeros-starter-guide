@@ -1,4 +1,4 @@
-# 第 31 章：让两台 RouterOS 用 LDP 建起 MPLS
+# 第 31 章：让两台 RouterOS 建起 MPLS 隧道（用 LDP）
 
 > 适用版本：RouterOS 7.x
 

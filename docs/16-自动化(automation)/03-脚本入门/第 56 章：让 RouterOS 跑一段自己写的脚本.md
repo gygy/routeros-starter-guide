@@ -1,4 +1,4 @@
-# 第 56 章：让 RouterOS 用脚本跑一条自己的命令
+# 第 56 章：让 RouterOS 跑一段自己写的脚本
 
 > 适用版本：RouterOS 7.x
 

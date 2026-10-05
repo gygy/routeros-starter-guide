@@ -1,4 +1,4 @@
-# 第 13 章：让 RouterOS 通过 DHCP 接入互联网
+# 第 13 章：让 RouterOS 用自动获取地址上网
 
 > 适用版本：RouterOS 7.x
 

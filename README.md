@@ -1,9 +1,3 @@
-<p>
-  <sub><code>FIG_000 · REFERENCE MANUAL V1.0</code></sub>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <sub><code>© 2026 · OPEN SOURCE · CC BY-SA · BSD</code></sub>
-</p>
-
 # RouterOS 入门实战
 
 给想从零把 MikroTik RouterOS 7.x 配通的人用的实战手册。打开 WinBox，按场景一步步做完：家里上网、组网、防火墙、回家 VPN。

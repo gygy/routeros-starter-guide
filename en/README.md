@@ -1,9 +1,3 @@
-<p>
-  <sub><code>FIG_000 · REFERENCE MANUAL V1.0</code></sub>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <sub><code>© 2026 · OPEN SOURCE · CC BY-SA · BSD</code></sub>
-</p>
-
 # RouterOS Starter Guide
 
 A hands-on reference for people who want to bring up MikroTik RouterOS 7.x from first boot. Follow real scenarios in WinBox: home internet, LAN, firewall, and VPN back home.

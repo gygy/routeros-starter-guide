@@ -40,6 +40,17 @@ Work top to bottom. Read the lesson, then do the lab.
 
 More lessons: see the Chinese [README · 按需求找教程](../README.md#按需求找教程). Lesson Markdown is being translated gradually; WinBox screenshots stay Chinese for now.
 
+## 🔍 Troubleshooting
+
+Match the symptom, then open the lesson. Full index (Chinese): [故障速查](../cookbook/00-home/故障速查.md). Home build-outs: [家庭案例](../cookbook/00-home/家庭案例.md).
+
+| Symptom | Start here |
+| --- | --- |
+| No internet | [Chapter 44](<../docs/14-故障排查(troubleshooting)/01-网络故障排查流程/第 44 章：查清网络为什么不通（按流程）.md>) |
+| Port forward fails | [Chapter 14](<../docs/04-NAT(nat)/08-端口映射与回流/第 14 章：让外网和家里都能访问家里的服务.md>) |
+| VPN connects, NAS unreachable | [Chapter 40](<../docs/07-VPN(vpn)/10-VPN排错/第 40 章：查清回家 VPN 为什么连不上.md>) |
+| No public IP | [Chapter 55](<../docs/07-VPN(vpn)/16-WireGuard主动连出/第 55 章：让家里主动连出 WireGuard，人在外面进局域网.md>) |
+
 ## 📝 Note on translation
 
 - **Now:** English covers this home page and future `en/` Markdown mirrors.

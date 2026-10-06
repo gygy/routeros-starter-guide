@@ -1,8 +1,22 @@
+<p>
+  <sub><code>FIG_000 · REFERENCE MANUAL V1.0</code></sub>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <sub><code>© 2026 · OPEN SOURCE · CC BY-SA · BSD</code></sub>
+</p>
+
 # RouterOS 入门实战
 
-第一次上手 MikroTik，从这里开始。
+给想从零把 MikroTik RouterOS 7.x 配通的人用的实战手册。打开 WinBox，按场景一步步做完：家里上网、组网、防火墙、回家 VPN。
 
-这是给新手的 **RouterOS 7.x** 配置教程。按真实场景一步步做：家里上网、组网、防火墙、回家 VPN。打开 WinBox，照着点就能配完。
+<p align="center">
+  <img src="images/00-routeros-panorama.jpg" alt="FIG_000.A · RouterOS" width="480" />
+</p>
+
+**Read in your language:** [中文](README.md) · [English](en/README.md)
+
+---
+
+第一次上手 MikroTik，从这里开始。
 
 RouterOS 把整套网络功能放在一台设备里，值得上手。
 
@@ -11,12 +25,12 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 
 它的搭法和 OpenWrt（大家说的 OP）不一样。OP 给你一个装好的玩具，到手就能玩。RouterOS 给你的是底层网络积木：接口、地址、路由、防火墙，要自己一块块接上。刚开始会有点不习惯，把原理弄懂之后，这些零件可以按你的网络自由组合。
 
-## 🔗 在线阅读
+## 🌐 在线阅读
 
 - [GitHub Pages](https://gygy.github.io/routeros-starter-guide/)
 - [GitHub 仓库](https://github.com/gygy/routeros-starter-guide)
 
-## 入门
+## 🚀 入门
 
 顺着往下做就行。先把课文看懂，再去做实验。
 
@@ -32,7 +46,7 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 
 后面的章在「按需求找教程」。实验总表在文末。
 
-## 按需求找教程
+## 🧭 按需求找教程
 
 | 章 | 教程 |
 | --- | --- |
@@ -98,14 +112,14 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 | 60 | [第 60 章：让路由器挡住短时大量 SYN 冲击](<docs/05-防火墙(firewall)/10-挡住连接洪水/第 60 章：让路由器挡住短时大量 SYN 冲击.md>) |
 | 61 | [第 61 章：让 RouterOS 跑起一个小 Docker 应用](<docs/20-高级(advanced)/03-容器/第 61 章：让 RouterOS 跑起一个小 Docker 应用.md>) |
 
-## 目录
+## 📂 目录
 
 - [课文](docs/实战课表.md)
 - [实验](labs/00-目录.md)
 - [课程索引](docs/00-目录.md)
 - [文件清单](COURSE-TREE.md)
 
-## 章
+## 📘 章
 
 - [00 入门](<docs/00-入门(introduction)/00-目录.md>)
 - [01 网络基础](<docs/01-网络基础(networking-basics)/00-目录.md>)
@@ -129,7 +143,7 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 - [19 MPLS](<docs/19-MPLS(mpls)/00-目录.md>)
 - [20 高级](<docs/20-高级(advanced)/00-目录.md>)
 
-## Lab
+## 🧪 Lab
 
 | Lab | 内容 |
 | --- | --- |
@@ -151,7 +165,7 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 | [15](<labs/15-MPLS(mpls)/15-MPLS.md>) | MPLS |
 | [16](<labs/16-自动化(automation)/16-自动化.md>) | 自动化 |
 
-## 其它
+## 📦 其它
 
 - [实践分享](cookbook/00-home/00-目录.md)
 - [整机配置](configs/00-目录.md)
@@ -159,13 +173,25 @@ RouterOS 把整套网络功能放在一台设备里，值得上手。
 - [备份脚本](scripts/00-目录.md)
 - [v6 升 v7](migration/v6-to-v7/00-目录.md)
 
-## 欢迎贡献
+## 🤝 欢迎贡献
 
 本教程目前是一个正在进行中的项目，如有疏漏在所难免，欢迎任何的 PR 及 issue 讨论。
+
+在您开始之前，请花时间阅读我们的 [贡献指南](CONTRIBUTING.md) 和 [行为准则](CODE_OF_CONDUCT.md)。
 
 - 🐛 报告 Bug：发现内容或代码问题，请提交 Issue
 - 💡 提出建议：对项目有好想法，欢迎发起讨论
 - 📝 完善内容：帮助改进教程，提交你的 Pull Request
 - ✍️ 分享实践：把学习笔记和项目放到 [实践分享](cookbook/00-home/00-目录.md)
 
-MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。许可：[LICENSE](LICENSE)。
+MikroTik 文档：<https://help.mikrotik.com/docs/spaces/ROS/overview>。
+
+## ⚖️ 授权许可
+
+除特别声明外，本书中的内容使用 [CC BY-SA 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/) (创作共用 署名-相同方式共享3.0 许可协议) 授权，代码遵循 [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause) (3 项条款的 BSD 许可协议) 。
+
+<p align="center">如果这个项目对您有帮助，请考虑为其点亮一颗 Star 🌟！</p>
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gygy/routeros-starter-guide&type=Date)](https://star-history.com/#gygy/routeros-starter-guide&Date)

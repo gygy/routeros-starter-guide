@@ -21,6 +21,8 @@
     }
     .lang-switch a { margin: 0 4px; color: #1e3a5f; text-decoration: none; }
     .lang-switch a.active { font-weight: 700; text-decoration: underline; }
+    .sidebar { padding-top: 40px; }
+    .markdown-section img { max-width: 100%; }
   </style>
 </head>
 <body>
@@ -30,23 +32,49 @@
   </div>
   <div id="app">加载中…</div>
   <script>
+    function fixMdLinks(content) {
+      if (!content) return content;
+      // GitHub angle-bracket links: ](<path with spaces/parens>)
+      content = content.replace(/\]\(\<([^>]+)\>\)/g, function (_, p) {
+        return '](' + encodeURI(p.trim()) + ')';
+      });
+      // Plain markdown links to .md / images with spaces or CJK — encode path only
+      content = content.replace(/\]\(([^)#]+)(#[^)]*)?\)/g, function (m, path, hash) {
+        if (/^(https?:|mailto:|\/\/|#)/i.test(path)) return m;
+        try {
+          var decoded = decodeURI(path);
+          var enc = encodeURI(decoded);
+          return '](' + enc + (hash || '') + ')';
+        } catch (e) {
+          return m;
+        }
+      });
+      return content;
+    }
+
     window.$docsify = {
       name: 'RouterOS 入门实战',
       repo: 'gygy/routeros-starter-guide',
       homepage: 'README.md',
-      loadSidebar: false,
+      loadSidebar: true,
+      autoHeader: false,
       subMaxLevel: 2,
       auto2top: true,
       relativePath: true,
+      mergeNavbar: true,
       search: {
-        placeholder: '搜索 / Search',
+        placeholder: '搜索课文 / Search',
         noData: '没有结果 / No results',
-        depth: 3
+        depth: 3,
+        pathNamespaces: ['/', '/en/']
+      },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
       },
       plugins: [
         function (hook, vm) {
           hook.beforeEach(function (content) {
-            return content.replace(/\]\(\<([^>]+)\>\)/g, ']($1)');
+            return fixMdLinks(content);
           });
           hook.doneEach(function () {
             var path = (vm.route.path || '/').toLowerCase();
